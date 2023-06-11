@@ -8,7 +8,7 @@ body {
   height: 100%;
 }
 .wrapper {
-  width: 1920px;
+  width: 100%;
 }
 /* begin 1920px *******************************************************************************/
 /* basic containers styles */
@@ -56,7 +56,7 @@ header {
   position: fixed;
   z-index: 100;
   right: 0;
-  width: 1920px;
+  width: 100%;
   height: 88px;
 }
 .nav_bar {
@@ -64,7 +64,7 @@ header {
   justify-content: space-between;
   position: relative;
   top: 28.88px;
-  max-width: 1168px;
+  width: 1168px;
   height: 30.24px;
   margin: 0 auto;
 }
@@ -968,7 +968,6 @@ footer {
 @media (max-width: 1042px) {
   /* basic header, containers , footer styles */
   header,
-  .container_nav_bar,
   .container_take_your_tour,
   .container_collect_your_tour,
   .container_reviewer,
@@ -1260,8 +1259,10 @@ footer {
 /* begin 360px ********************************************************************************/
 @media (max-width: 360px) {
   /* basic header , containers , footer styles */
+  .wrapper {
+    width: 360px;
+  }
   header,
-  .container_nav_bar,
   .block_header_preview,
   .container_take_your_tour,
   .container_collect_your_tour,
@@ -1383,6 +1384,7 @@ footer {
   .title_take_your_tour {
     left: 0;
     height: 124px;
+    width: 100%;
   }
   .title_take_your_tour h2 {
     position: relative;
