@@ -17,6 +17,5 @@ window.addEventListener("scroll", () => {
 });
 
 const changeClass = (elem, className, isScrolled) => {
-  console.log(elem);
   isScrolled ? elem.classList.add(className) : elem.classList.remove(className);
 };
