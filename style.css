@@ -48,13 +48,14 @@ body {
 }
 /* begin 1920px header navbar  ****************************************************************/
 header {
-  width: 1920px;
+  max-width: 1920px;
   height: 831px;
-  background: url(../img1920/header/header-img.jpg) center/cover;
+  background: url(./img1920/header/header-img.jpg) center/cover;
 }
 .container_nav_bar {
   position: fixed;
   z-index: 100;
+  right: 0;
   width: 1920px;
   height: 88px;
 }
@@ -242,22 +243,22 @@ header {
   background-position: center center;
 }
 .card_tour_img_1 {
-  background-image: url(../img1920/main/take_your_tour/card\ tour\ photo-1.jpg);
+  background-image: url(./img1920/main/take_your_tour/card\ tour\ photo-1.jpg);
 }
 .card_tour_img_2 {
-  background-image: url(../img1920/main/take_your_tour/card\ tour\ photo-2.jpg);
+  background-image: url(./img1920/main/take_your_tour/card\ tour\ photo-2.jpg);
 }
 .card_tour_img_3 {
-  background-image: url(../img1920/main/take_your_tour/card\ tour\ photo-3.jpg);
+  background-image: url(./img1920/main/take_your_tour/card\ tour\ photo-3.jpg);
 }
 .card_tour_img_4 {
-  background-image: url(../img1920/main/take_your_tour/card\ tour\ photo-4.jpg);
+  background-image: url(./img1920/main/take_your_tour/card\ tour\ photo-4.jpg);
 }
 .card_tour_img_5 {
-  background-image: url(../img1920/main/take_your_tour/card\ tour\ photo-5.jpg);
+  background-image: url(./img1920/main/take_your_tour/card\ tour\ photo-5.jpg);
 }
 .card_tour_img_6 {
-  background-image: url(../img1920/main/take_your_tour/card\ tour\ photo-6.jpg);
+  background-image: url(./img1920/main/take_your_tour/card\ tour\ photo-6.jpg);
 }
 .overlay {
   position: absolute;
