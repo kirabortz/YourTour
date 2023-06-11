@@ -56,7 +56,8 @@ header {
   position: fixed;
   z-index: 100;
   right: 0;
-  width: 100%;
+  width: 1920px;
+  max-width: 100%;
   height: 88px;
 }
 .nav_bar {
@@ -1315,6 +1316,12 @@ footer {
     bottom: 0;
     height: 488px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  }
+  .container_nav_bar {
+    width: 360px;
+    left: 0;
+    max-width: 100vw;
+    height: 88px;
   }
   .nav_bar {
     top: 32.5px;
