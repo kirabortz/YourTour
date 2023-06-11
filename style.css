@@ -365,7 +365,7 @@ header {
 .form select {
   appearance: none;
   overflow: hidden;
-  background: url(../img1920/main/icons/ic-dropdown.svg) no-repeat right;
+  background: url(./img1920/main/icons/ic-dropdown.svg) no-repeat right;
   background-color: #f9f7f4;
   background-position-x: calc(100% - 20px);
   color: #a6a6a6;
@@ -438,11 +438,11 @@ header {
 }
 .radio_btn_yes label:before,
 .radio_btn_no label:before {
-  content: url(../img1920/main/icons/empty_radiobutton.svg);
+  content: url(./img1920/main/icons/empty_radiobutton.svg);
 }
 .radio_btn_yes input:checked + label:before,
 .radio_btn_no input:checked + label:before {
-  content: url(../img1920/main/icons/checked_radiobutton.svg);
+  content: url(./img1920/main/icons/checked_radiobutton.svg);
 }
 .form_block_license {
   position: relative;
@@ -463,14 +463,14 @@ header {
   display: none;
 }
 .form_block_license label:before {
-  content: url(../img1920/main/icons/empty_checkbox.svg);
+  content: url(./img1920/main/icons/empty_checkbox.svg);
   position: relative;
   top: 7px;
   margin-right: 19px;
   cursor: pointer;
 }
 .form_block_license input[type="checkbox"]:checked + label:before {
-  content: url(../img1920/main/icons/checked_checkbox.svg);
+  content: url(./img1920/main/icons/checked_checkbox.svg);
 }
 .form_block_license a:hover {
   border-bottom: 1px solid black;
@@ -630,43 +630,43 @@ header {
   height: 301px;
 }
 .travel_photo_1 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-1.jpg);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-1.jpg);
 }
 .travel_photo_2 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-2.jpg);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-2.jpg);
 }
 .travel_photo_3 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-3.jpg);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-3.jpg);
 }
 .travel_photo_4 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-4.jpg);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-4.jpg);
 }
 .travel_photo_5 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-5.png);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-5.png);
 }
 .travel_photo_6 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-6.png);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-6.png);
 }
 .travel_photo_7 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-7.png);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-7.png);
 }
 .travel_photo_8 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-8.png);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-8.png);
 }
 .travel_photo_9 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-9.png);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-9.png);
 }
 .travel_photo_10 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-10.jpg);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-10.jpg);
 }
 .travel_photo_11 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-11.jpg);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-11.jpg);
 }
 .travel_photo_12 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-12.jpg);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-12.jpg);
 }
 .travel_photo_13 {
-  background-image: url(../img1920/main/travel_photos/travel\ photo-13.jpg);
+  background-image: url(./img1920/main/travel_photos/travel\ photo-13.jpg);
 }
 .travel_photo_1,
 .travel_photo_2,
@@ -728,13 +728,13 @@ header {
   position: relative;
 }
 .travel_stories_card_img_1 {
-  background-image: url(../img1920/main/travel_stories/story\ photo-1.png);
+  background-image: url(./img1920/main/travel_stories/story\ photo-1.png);
 }
 .travel_stories_card_img_2 {
-  background-image: url(../img1920/main/travel_stories/story\ photo-2.png);
+  background-image: url(./img1920/main/travel_stories/story\ photo-2.png);
 }
 .travel_stories_card_img_3 {
-  background-image: url(../img1920/main/travel_stories/story\ photo-3.png);
+  background-image: url(./img1920/main/travel_stories/story\ photo-3.png);
 }
 .travel_stories_card_img_1,
 .travel_stories_card_img_2,
@@ -879,7 +879,7 @@ header {
   width: 370px;
   height: 370px;
   border-radius: 50px;
-  background-image: url(../img1920/main/travel_with_us/footer\ photo.jpg);
+  background-image: url(./img1920/main/travel_with_us/footer\ photo.jpg);
   background-size: cover;
   background-position: center center;
 }
@@ -978,7 +978,7 @@ footer {
     max-width: 1024px;
   }
   header {
-    background-image: url(../img1024/header/header_bg.png);
+    background-image: url(./img1024/header/header_bg.png);
   }
   header::before {
     content: "";
@@ -1030,22 +1030,22 @@ footer {
     width: calc(50% - 9px);
   }
   .card_tour_img_1 {
-    background-image: url(../img1024/main/take_your_tour/card\ tour\ photo-1.jpg);
+    background-image: url(./img1024/main/take_your_tour/card\ tour\ photo-1.jpg);
   }
   .card_tour_img_2 {
-    background-image: url(../img1024/main/take_your_tour/card\ tour\ photo-2.jpg);
+    background-image: url(./img1024/main/take_your_tour/card\ tour\ photo-2.jpg);
   }
   .card_tour_img_3 {
-    background-image: url(../img1024/main/take_your_tour/card\ tour\ photo-3.jpg);
+    background-image: url(./img1024/main/take_your_tour/card\ tour\ photo-3.jpg);
   }
   .card_tour_img_4 {
-    background-image: url(../img1024/main/take_your_tour/card\ tour\ photo-4.jpg);
+    background-image: url(./img1024/main/take_your_tour/card\ tour\ photo-4.jpg);
   }
   .card_tour_img_5 {
-    background-image: url(../img1024/main/take_your_tour/card\ tour\ photo-5.jpg);
+    background-image: url(./img1024/main/take_your_tour/card\ tour\ photo-5.jpg);
   }
   .card_tour_img_6 {
-    background-image: url(../img1024/main/take_your_tour/card\ tour\ photo-6.jpg);
+    background-image: url(./img1024/main/take_your_tour/card\ tour\ photo-6.jpg);
   }
   .card_tour_img_1,
   .card_tour_img_2,
@@ -1140,34 +1140,34 @@ footer {
     max-width: 984px;
   }
   .travel_photo_1 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-1.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-1.png);
   }
   .travel_photo_3 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-3.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-3.png);
   }
   .travel_photo_4 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-4.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-4.png);
   }
   .travel_photo_5 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-5.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-5.png);
   }
   .travel_photo_6 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-6.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-6.png);
   }
   .travel_photo_8 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-8.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-8.png);
   }
   .travel_photo_9 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-9.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-9.png);
   }
   .travel_photo_10 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-10.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-10.png);
   }
   .travel_photo_11 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-11.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-11.png);
   }
   .travel_photo_12 {
-    background-image: url(../img1024/main/travel_photos/travel\ photo-12.png);
+    background-image: url(./img1024/main/travel_photos/travel\ photo-12.png);
   }
   .travel_photo_2,
   .travel_photo_7,
@@ -1213,13 +1213,13 @@ footer {
     padding: 0 53px;
   }
   .travel_stories_card_img_1 {
-    background-image: url(../img1024/main/travel_stories/story\ photo-1.png);
+    background-image: url(./img1024/main/travel_stories/story\ photo-1.png);
   }
   .travel_stories_card_img_2 {
-    background-image: url(../img1024/main/travel_stories/story\ photo-2.png);
+    background-image: url(./img1024/main/travel_stories/story\ photo-2.png);
   }
   .travel_stories_card_img_3 {
-    background-image: url(../img1024/main/travel_stories/story\ photo-3.png);
+    background-image: url(./img1024/main/travel_stories/story\ photo-3.png);
   }
   .travel_stories_card_img_1,
   .travel_stories_card_img_2,
@@ -1301,7 +1301,7 @@ footer {
   }
   header {
     height: 488px;
-    background-image: url(../img360/header/header_bg.png);
+    background-image: url(./img360/header/header_bg.png);
     background-size: cover;
     background-position: center center;
   }
@@ -1417,22 +1417,22 @@ footer {
     border-radius: 20px;
   }
   .card_tour_img_1 {
-    background-image: url(../img360/main/take_your_tour/card\ tour\ photo-1.png);
+    background-image: url(./img360/main/take_your_tour/card\ tour\ photo-1.png);
   }
   .card_tour_img_2 {
-    background-image: url(../img360/main/take_your_tour/card\ tour\ photo-2.png);
+    background-image: url(./img360/main/take_your_tour/card\ tour\ photo-2.png);
   }
   .card_tour_img_3 {
-    background-image: url(../img360/main/take_your_tour/card\ tour\ photo-3.png);
+    background-image: url(./img360/main/take_your_tour/card\ tour\ photo-3.png);
   }
   .card_tour_img_4 {
-    background-image: url(../img360/main/take_your_tour/card\ tour\ photo-4.png);
+    background-image: url(./img360/main/take_your_tour/card\ tour\ photo-4.png);
   }
   .card_tour_img_5 {
-    background-image: url(../img360/main/take_your_tour/card\ tour\ photo-5.png);
+    background-image: url(./img360/main/take_your_tour/card\ tour\ photo-5.png);
   }
   .card_tour_img_6 {
-    background-image: url(../img360/main/take_your_tour/card\ tour\ photo-6.png);
+    background-image: url(./img360/main/take_your_tour/card\ tour\ photo-6.png);
   }
   .card_tour_img_1,
   .card_tour_img_2,
@@ -1583,11 +1583,11 @@ footer {
   }
   .radio_btn_yes label:before,
   .radio_btn_no label:before {
-    content: url(../img360/main/icons/empty_radiobutton_mobile.svg);
+    content: url(./img360/main/icons/empty_radiobutton_mobile.svg);
   }
   .radio_btn_yes input:checked + label:before,
   .radio_btn_no input:checked + label:before {
-    content: url(../img360/main/icons/checked_radiobutton_mobile.svg);
+    content: url(./img360/main/icons/checked_radiobutton_mobile.svg);
   }
   .form_block_license {
     top: 7px;
@@ -1606,10 +1606,10 @@ footer {
     height: 20px;
   }
   .form_block_license label:before {
-    content: url(../img360/main/icons/empty_checkbox_mobile.svg);
+    content: url(./img360/main/icons/empty_checkbox_mobile.svg);
   }
   .form_block_license input[type="checkbox"]:checked + label:before {
-    content: url(../img360/main/icons/checked_checkbox_mobile.svg);
+    content: url(./img360/main/icons/checked_checkbox_mobile.svg);
   }
   .form_block_license a:hover,
   .form_block_license a:active {
@@ -1745,25 +1745,25 @@ footer {
     height: 110px;
   }
   .travel_photo_1 {
-    background-image: url(../img360/main/travel_photos/travel\ photo-1.png);
+    background-image: url(./img360/main/travel_photos/travel\ photo-1.png);
   }
   .travel_photo_4 {
-    background-image: url(../img360/main/travel_photos/travel\ photo-4.png);
+    background-image: url(./img360/main/travel_photos/travel\ photo-4.png);
   }
   .travel_photo_5 {
-    background-image: url(../img360/main/travel_photos/travel\ photo-5.png);
+    background-image: url(./img360/main/travel_photos/travel\ photo-5.png);
   }
   .travel_photo_8 {
-    background-image: url(../img360/main/travel_photos/travel\ photo-8.png);
+    background-image: url(./img360/main/travel_photos/travel\ photo-8.png);
   }
   .travel_photo_9 {
-    background-image: url(../img360/main/travel_photos/travel\ photo-9.png);
+    background-image: url(./img360/main/travel_photos/travel\ photo-9.png);
   }
   .travel_photo_10 {
-    background-image: url(../img360/main/travel_photos/travel\ photo-10.png);
+    background-image: url(./img360/main/travel_photos/travel\ photo-10.png);
   }
   .travel_photo_11 {
-    background-image: url(../img360/main/travel_photos/travel\ photo-11.png);
+    background-image: url(./img360/main/travel_photos/travel\ photo-11.png);
   }
   .travel_photo_2,
   .travel_photo_3,
@@ -1831,13 +1831,13 @@ footer {
     padding: 0;
   }
   .travel_stories_card_img_1 {
-    background-image: url(../img360/main/travel_stories/story\ photo-1.png);
+    background-image: url(./img360/main/travel_stories/story\ photo-1.png);
   }
   .travel_stories_card_img_2 {
-    background-image: url(../img360/main/travel_stories/story\ photo-2.png);
+    background-image: url(./img360/main/travel_stories/story\ photo-2.png);
   }
   .travel_stories_card_img_3 {
-    background-image: url(../img360/main/travel_stories/story\ photo-3.png);
+    background-image: url(./img360/main/travel_stories/story\ photo-3.png);
   }
   .travel_stories_card_img_1,
   .travel_stories_card_img_2,
@@ -1917,7 +1917,7 @@ footer {
     width: 130px;
     height: 133px;
     border-radius: 20px;
-    background-image: url(../img360/main/travel_with_us/footer\ photo.png);
+    background-image: url(./img360/main/travel_with_us/footer\ photo.png);
   }
   .title_travel_with_us {
     width: 291px;
