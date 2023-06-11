@@ -12,7 +12,7 @@ window.addEventListener("scroll", () => {
   const isScrolled = window.scrollY > 450;
   changeClass(containerNavBar, "scrolled_container_nav_bar", isScrolled);
   changeClass(navBarTel, "scrolled_nav_bar_tel", isScrolled);
-  logo.src = `/img1920/header/YourTour_${isScrolled ? "black" : "white"}.svg`;
+  logo.src = `./img1920/header/YourTour_${isScrolled ? "black" : "white"}.svg`;
   navBarMenu.forEach((item) => changeClass(item, "scrolled_nav_bar_menu", isScrolled));
 });
 
