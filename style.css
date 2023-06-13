@@ -3,12 +3,11 @@
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: #f9f7f4;
-  height: 100%;
-}
 .wrapper {
-  width: 100%;
+  width: 1903px;
+  height: 9100px;
+  overflow: hidden;
+  background-color: #f9f7f4;
 }
 /* begin 1920px *******************************************************************************/
 /* basic containers styles */
@@ -48,7 +47,8 @@ body {
 }
 /* begin 1920px header navbar  ****************************************************************/
 header {
-  max-width: 1920px;
+  position: relative;
+  width: 1920px;
   height: 831px;
   background: url(./img1920/header/header-img.jpg) center/cover;
 }
@@ -56,8 +56,7 @@ header {
   position: fixed;
   z-index: 100;
   right: 0;
-  width: 1920px;
-  max-width: 100%;
+  width: 100%;
   height: 88px;
 }
 .nav_bar {
@@ -65,7 +64,7 @@ header {
   justify-content: space-between;
   position: relative;
   top: 28.88px;
-  width: 1168px;
+  max-width: 1168px;
   height: 30.24px;
   margin: 0 auto;
 }
@@ -113,9 +112,9 @@ header {
   text-align: center;
   position: absolute;
   top: 88px;
-  max-width: 1920px;
   height: 743px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
 }
 .block_header_preview h1 {
   display: flex;
@@ -595,7 +594,7 @@ header {
 .container_travel_photos {
   position: relative;
   top: 538px;
-  max-width: 1920px;
+  max-width: 100%;
   height: 1222px;
 }
 .title_travel_photos {
@@ -619,6 +618,7 @@ header {
   justify-content: space-between;
   position: relative;
   top: 100px;
+  max-width: 1860px;
   height: 963px;
   padding: 0 30px;
 }
@@ -911,7 +911,7 @@ footer {
   justify-content: center;
   position: absolute;
   top: 9012px;
-  width: 1920px;
+  width: 1903px;
   height: 88px;
   background-color: #f4f0e9;
   font: 400 20px/28.4px Roboto, sans-serif;
@@ -968,6 +968,9 @@ footer {
 /* begin 1024px *******************************************************************************/
 @media (max-width: 1042px) {
   /* basic header, containers , footer styles */
+  .wrapper {
+    width: 1024px;
+  }
   header,
   .container_take_your_tour,
   .container_collect_your_tour,
@@ -989,6 +992,9 @@ footer {
     bottom: 80px;
     height: 830px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+  }
+  .container_nav_bar {
+    width: 100vw;
   }
   .nav_bar {
     max-width: 910px;
@@ -1262,6 +1268,7 @@ footer {
   /* basic header , containers , footer styles */
   .wrapper {
     width: 360px;
+    height: 8185px;
   }
   header,
   .block_header_preview,
@@ -1314,6 +1321,7 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
+    width: 360px;
     height: 488px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   }
@@ -1321,7 +1329,6 @@ footer {
     width: 360px;
     left: 0;
     max-width: 100vw;
-    height: 88px;
   }
   .nav_bar {
     top: 32.5px;
