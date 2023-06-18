@@ -6,6 +6,10 @@
     <meta name="description" content="Купите тур прямо сейчас и отправляйтесь в незабываемое путешествие! Мы предлагаем большой выбор туров по всему миру, высокое качество обслуживания и доступные цены!" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="preload" href="./img1920/main/icons/checked_checkbox.svg" as="image" />
+    <link rel="preload" href="./img1920/main/icons/checked_radiobutton.svg" as="image" />
+    <link rel="preload" href="./img360/main/icons/checked_checkbox_mobile.svg" as="image" />
+    <link rel="preload" href="./img360/main/icons/checked_radiobutton_mobile.svg" as="image" />
     <title>YourTour</title>
   </head>
   <body>
@@ -22,7 +26,7 @@
               <a class="menu_item" href="#reviewer">Отзывы</a>
               <a class="menu_item" href="#travel_stories">Истории</a>
             </div>
-            <div class="phone"><a class="menu_tel" href="/">+7 999 999 99 99</a></div>
+            <div class="phone"><a class="menu_tel" href="tel:+79999999999">+7 999 999 99 99</a></div>
           </nav>
         </div>
         <div class="block_header_preview">
@@ -36,7 +40,7 @@
           <div class="title_take_your_tour">
             <h2>Выбери свой тур</h2>
             <div class="your_tour_variants">
-              <a href="#">Популярные</a>
+              <a href="#" class="active">Популярные</a>
               <a href="#">Авторские</a>
               <a href="#">Походы</a>
               <a href="#">Сплавы</a>
@@ -45,67 +49,67 @@
           </div>
           <div class="block_tours">
             <div class="card_tour">
-              <div class="card_tour_img_1"></div>
+              <a href="#" class="bg_gradient"><div class="card_tour_img_1"></div></a>
               <div class="overlay">
                 <h3>Путешествие в горы</h3>
                 <p>от 80 000 руб</p>
                 <div class="about_tour_btn">
-                  <a>Подробнее</a>
+                  <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                 </div>
               </div>
             </div>
             <div class="card_tour">
-              <div class="card_tour_img_2"></div>
+              <a href="#" class="bg_gradient"><div class="card_tour_img_2"></div></a>
               <div class="overlay">
                 <h3>Путешествие в горы</h3>
                 <p>от 80 000 руб</p>
                 <div class="about_tour_btn">
-                  <a>Подробнее</a>
+                  <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                 </div>
               </div>
             </div>
             <div class="card_tour">
-              <div class="card_tour_img_3"></div>
+              <a href="#" class="bg_gradient"><div class="card_tour_img_3"></div></a>
               <div class="overlay">
                 <h3>Путешествие в горы</h3>
                 <p>от 80 000 руб</p>
                 <div class="about_tour_btn">
-                  <a>Подробнее</a>
+                  <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                 </div>
               </div>
             </div>
             <div class="card_tour">
-              <div class="card_tour_img_4"></div>
+              <a href="#" class="bg_gradient"><div class="card_tour_img_4"></div></a>
               <div class="overlay">
                 <h3>Путешествие в горы</h3>
                 <p>от 80 000 руб</p>
                 <div class="about_tour_btn">
-                  <a>Подробнее</a>
+                  <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                 </div>
               </div>
             </div>
             <div class="card_tour">
-              <div class="card_tour_img_5"></div>
+              <a href="#" class="bg_gradient"><div class="card_tour_img_5"></div></a>
               <div class="overlay">
                 <h3>Путешествие в горы</h3>
                 <p>от 80 000 руб</p>
                 <div class="about_tour_btn">
-                  <a>Подробнее</a>
+                  <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                 </div>
               </div>
             </div>
             <div class="card_tour">
-              <div class="card_tour_img_6"></div>
+              <a href="#" class="bg_gradient"><div class="card_tour_img_6"></div></a>
               <div class="overlay">
                 <h3>Путешествие в горы</h3>
                 <p>от 80 000 руб</p>
                 <div class="about_tour_btn">
-                  <a>Подробнее</a>
+                  <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                 </div>
               </div>
@@ -146,11 +150,11 @@
             <div class="form_block">
               <div class="form">
                 <label for="from-date">Дата от</label>
-                <input type="datetime" id="from-date" name="from-date" placeholder="ДД.ММ.ГГГГ" required />
+                <input placeholder="ДД.ММ.ГГГГ" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" id="from-date" name="from-date" required />
               </div>
               <div class="form">
                 <label for="to-date">Дата до</label>
-                <input type="datetime" id="to-date" name="to-date" placeholder="ДД.ММ.ГГГГ" required />
+                <input placeholder="ДД.ММ.ГГГГ" type="text" onfocus="this.type='date'" onblur="if(this.value==''){this.type='text'}" id="to-date" name="to-date" required />
               </div>
             </div>
             <div class="form_block_comment">
@@ -249,13 +253,12 @@
           </div>
           <div class="block_travel_stories_cards">
             <div class="travel_stories_card">
-              <div class="travel_stories_card_img_1"></div>
+              <a href="#" class="bg_gradient"><div class="travel_stories_card_img_1"></div></a>
               <div class="travel_stories_overlay">
                 <div>
                   <h3>Автостопом в Стамбул</h3>
                   <p>Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений:</p>
                 </div>
-
                 <ul>
                   <li>вкусная еда</li>
                   <li>дешевый транспорт</li>
@@ -263,7 +266,7 @@
                 </ul>
                 <div class="travel_stories_overlay_btns">
                   <div class="about_travel_story_btn">
-                    <a href="#" type="button">Подробнее</a>
+                    <a href="#" class="more_btn">Подробнее</a>
                     <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                   </div>
                   <div class="contacts_1">
@@ -275,7 +278,7 @@
               </div>
             </div>
             <div class="travel_stories_card">
-              <div class="travel_stories_card_img_2"></div>
+              <a href="#" class="bg_gradient"><div class="travel_stories_card_img_2"></div></a>
               <div class="travel_stories_overlay">
                 <div>
                   <h3>Автостопом в Стамбул</h3>
@@ -283,7 +286,7 @@
                 </div>
                 <div class="travel_stories_overlay_btns">
                   <div class="about_travel_story_btn">
-                    <a href="#" type="button">Подробнее</a>
+                    <a href="#" class="more_btn">Подробнее</a>
                     <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                   </div>
                   <div class="contacts_2">
@@ -294,7 +297,7 @@
               </div>
             </div>
             <div class="travel_stories_card">
-              <div class="travel_stories_card_img_3"></div>
+              <a href="#" class="bg_gradient"><div class="travel_stories_card_img_3"></div></a>
               <div class="travel_stories_overlay">
                 <div>
                   <h3>Автостопом в Стамбул</h3>
@@ -302,7 +305,7 @@
                 </div>
                 <div class="travel_stories_overlay_btns">
                   <div class="about_travel_story_btn">
-                    <a href="#" type="button">Подробнее</a>
+                    <a href="#" class="more_btn">Подробнее</a>
                     <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
                   </div>
                   <div class="contacts_3">
@@ -316,10 +319,12 @@
           </div>
         </section>
         <section class="container_travel_with_us">
-          <div class="travel_with_us_img"></div>
-          <div class="title_travel_with_us">
-            <h3>Пора в путешествие вместе с нами!</h3>
-            <p>Напиши на почту и узнай подробности на <a>yourtour@gmail.com</a></p>
+          <div class="block_travel_with_us">
+            <div class="travel_with_us_img"></div>
+            <div class="title_travel_with_us">
+              <h3>Пора в путешествие вместе с нами!</h3>
+              <p>Напиши на почту и узнай подробности на <a href="#">yourtour@gmail.com</a></p>
+            </div>
           </div>
         </section>
       </main>
