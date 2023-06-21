@@ -3,7 +3,13 @@
   margin: 0;
   padding: 0;
 }
+/* body {
+  box-sizing: content-box;
+  min-height: 100%;
+} */
 .wrapper {
+  display: flex;
+  flex-flow: column wrap;
   max-width: 1920px;
   height: 9100px;
   overflow: hidden;
@@ -49,19 +55,23 @@
 /* begin 1920px header navbar  ****************************************************************/
 header {
   position: relative;
-  width: 1920px;
+  max-width: 100%;
   height: 831px;
-  background: url(./img1920/header/header-img.jpg) center/cover;
+  background: url(./img1920/header/header-img.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .container_nav_bar {
   right: 0;
-  width: 100%;
+  max-width: 100vw;
   height: 88px;
 }
 .nav_bar {
   display: flex;
   justify-content: space-between;
   position: relative;
+  left: 7px;
   top: 28.88px;
   max-width: 1168px;
   height: 30.24px;
@@ -113,6 +123,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
   position: absolute;
   top: 88px;
@@ -122,10 +133,8 @@ header {
 }
 .block_header_preview h1 {
   display: flex;
-  justify-content: center;
   position: absolute;
   top: 119px;
-  left: 576px;
   width: 768px;
   height: 315px;
   font: 700 96px/104.64px Roboto, sans-serif;
@@ -135,7 +144,6 @@ header {
 .block_header_preview p {
   position: absolute;
   top: 484px;
-  left: 679px;
   width: 562px;
   height: 56px;
   color: white;
@@ -143,7 +151,6 @@ header {
 .find_tour_btn {
   position: absolute;
   top: 590px;
-  left: 901px;
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -172,16 +179,24 @@ header {
   color: black;
 }
 /* end 1920px block_header_preview  ***********************************************************/
+main {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  width: 100%;
+}
 /* begin 1920px container_take_your_tour  *****************************************************/
 .container_take_your_tour {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   position: relative;
   top: 135px;
-  left: 375px;
   height: 1334px;
+  margin: 0 auto;
 }
 .title_take_your_tour {
   position: absolute;
-  left: 235px;
   width: 700px;
   height: 130px;
   text-align: center;
@@ -240,7 +255,7 @@ header {
 .card_tour_img_4,
 .card_tour_img_5,
 .card_tour_img_6 {
-  max-width: 370px;
+  width: 370px;
   height: 531px;
   border-radius: 50px;
   background-size: cover;
@@ -266,6 +281,8 @@ header {
 }
 .overlay {
   position: absolute;
+  display: flex;
+  flex-flow: column nowrap;
   top: 50px;
   left: 50px;
   max-width: 240px;
@@ -315,21 +332,26 @@ header {
 /* end 1920px container_take_your_tour  *******************************************************/
 /* begin 1920px container_collect_your_tour  **************************************************/
 .container_collect_your_tour {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   position: relative;
   top: 270px;
-  left: 375px;
   height: 1245px;
+  margin: 0 auto;
 }
 .title_collect_your_tour {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  left: 355px;
   max-width: 458px;
   height: 159px;
 }
 .title_collect_your_tour p {
   position: absolute;
   top: 103px;
-  left: 30px;
   width: 400px;
   height: 56px;
   text-align: center;
@@ -342,6 +364,7 @@ header {
   gap: 33px;
   position: relative;
   top: 100px;
+  width: 1170px;
   height: 986px;
   border-radius: 50px;
   background-color: white;
@@ -467,8 +490,7 @@ header {
 .form_block_license {
   position: relative;
   bottom: 5px;
-  right: 240px;
-  max-width: 600px;
+  width: 1030px;
   font: 400 17px/24.14px Roboto, sans-serif;
   letter-spacing: -0.2px;
   color: #a6a6a6;
@@ -507,9 +529,13 @@ input[type="checkbox"]:checked + label::before {
   justify-content: space-between;
   position: relative;
   bottom: 5px;
-  right: 265px;
-  width: 500px;
+  width: 1030px;
   height: 58px;
+}
+.block_btns {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
 }
 .find-tour-btn,
 .reset-btn {
@@ -541,14 +567,22 @@ input[type="checkbox"]:checked + label::before {
 /* end 1920px container_collect_your_tour  ****************************************************/
 /* begin 1920px container_reviewer  ***********************************************************/
 .container_reviewer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   position: relative;
   top: 403px;
-  left: 375px;
+
   height: 1005px;
+  margin: 0 auto;
 }
 .title_reviewer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
-  left: 320px;
+
   max-width: 529px;
   height: 232px;
   text-align: center;
@@ -556,7 +590,6 @@ input[type="checkbox"]:checked + label::before {
 .title_reviewer p {
   position: absolute;
   top: 176px;
-  left: 56px;
   max-width: 418px;
   height: 56px;
 }
@@ -614,18 +647,22 @@ input[type="checkbox"]:checked + label::before {
 /* end 1920px container_reviewer  *************************************************************/
 /* begin 1920px container_travel_photos  ******************************************************/
 .container_travel_photos {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
   position: relative;
   top: 538px;
   max-width: 100%;
   height: 1222px;
+  margin: 0 auto;
 }
 .title_travel_photos {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  left: 595px;
   max-width: 730px;
   height: 160px;
   text-align: center;
@@ -639,17 +676,17 @@ input[type="checkbox"]:checked + label::before {
   flex-flow: column wrap;
   justify-content: space-between;
   position: relative;
-  top: 100px;
-  max-width: 1860px;
+  max-width: 98%;
   height: 963px;
   padding: 0 30px;
 }
 .four_travel_photos,
 .five_travel_photos {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  width: 1860px;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 100%;
   height: 301px;
 }
 .travel_photo_1 {
@@ -701,6 +738,7 @@ input[type="checkbox"]:checked + label::before {
 .travel_photo_13 {
   width: 442.5px;
   height: 300px;
+
   border-radius: 50px;
   background-size: cover;
   background-position: center center;
@@ -712,6 +750,7 @@ input[type="checkbox"]:checked + label::before {
 .travel_photo_9 {
   width: 348.72px;
   height: 301px;
+
   border-radius: 50px;
   background-size: cover;
   background-position: center center;
@@ -719,10 +758,13 @@ input[type="checkbox"]:checked + label::before {
 /* end 1920px container_travel_photos  ********************************************************/
 /* begin 1920px container_travel_stories  *****************************************************/
 .container_travel_stories {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   position: relative;
   top: 675px;
-  left: 375px;
   height: 2060px;
+  margin: 0 auto;
 }
 .title_travel_stories {
   display: flex;
@@ -730,7 +772,6 @@ input[type="checkbox"]:checked + label::before {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  left: 277.5px;
   max-width: 615px;
   height: 159px;
   text-align: center;
@@ -762,7 +803,7 @@ input[type="checkbox"]:checked + label::before {
 .travel_stories_card_img_1,
 .travel_stories_card_img_2,
 .travel_stories_card_img_3 {
-  max-width: 1170px;
+  width: 1170px;
   height: 567px;
   border-radius: 50px;
   background-size: cover;
@@ -892,21 +933,23 @@ input[type="checkbox"]:checked + label::before {
 .container_travel_with_us {
   position: relative;
   top: 810px;
-  left: 375px;
   display: flex;
-  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
   max-width: 1170px;
+  margin: 0 auto;
 }
 .block_travel_with_us {
-  width: 770px;
+  max-width: 770px;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
 }
 .travel_with_us_img {
   width: 370px;
   height: 370px;
+  margin-right: 20px;
   border-radius: 50px;
   background-image: url(./img1920/main/travel_with_us/footer\ photo.jpg);
   background-size: cover;
@@ -936,11 +979,12 @@ input[type="checkbox"]:checked + label::before {
 /* begin 1920px footer  ***********************************************************************/
 footer {
   display: flex;
+  justify-content: center;
   align-items: center;
   position: absolute;
   top: 9012px;
   width: 100%;
-  max-width: 1903px;
+  max-width: 1920px;
   margin: 0 auto;
   height: 88px;
   background-color: #f4f0e9;
@@ -950,7 +994,6 @@ footer {
   display: flex;
   justify-content: space-between;
   position: relative;
-  left: 375px;
   width: 61.5%;
 }
 .contacts_footer {
@@ -996,20 +1039,20 @@ footer {
 /* end 1920px footer  *************************************************************************/
 /* end 1920px  ********************************************************************************/
 /* begin 1024px *******************************************************************************/
-@media (max-width: 1042px) {
+@media (min-width: 761px) and (max-width: 1280px) {
   /* basic header, containers , footer styles */
   .wrapper {
-    max-width: 1024px;
+    max-width: 1280px;
     height: 9784px;
   }
-  header,
   .container_take_your_tour,
   .container_collect_your_tour,
   .container_reviewer,
   .container_travel_photos,
   .container_travel_stories,
+  .container_travel_with_us,
   footer {
-    max-width: 1024px;
+    max-width: 1280px;
   }
   header {
     background-image: url(./img1024/header/header_bg.png);
@@ -1024,8 +1067,10 @@ footer {
     height: 830px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   }
-  .container_nav_bar {
-    max-width: 100vw;
+  @media (min-width: 761px) and (max-width: 920px) {
+    .container_nav_bar {
+      display: none;
+    }
   }
   .nav_bar {
     max-width: 910px;
@@ -1036,29 +1081,22 @@ footer {
   /* end 1024px header navbar *****************************************************************/
   /* begin 1024px block_header_preview  *******************************************************/
   .block_header_preview h1 {
-    left: 55px;
-    width: 914px;
+    max-width: 914px;
   }
   .block_header_preview p {
-    left: 291px;
-    max-width: 442px;
-  }
-  .find_tour_btn {
-    left: 453px;
+    width: 442px;
   }
   /* end 1024px block_header_preview  *********************************************************/
   /* begin 1024px container_take_your_tour  ***************************************************/
   .container_take_your_tour {
-    left: 0;
     height: 1871px;
   }
   .title_take_your_tour {
-    left: 162px;
     height: 142px;
   }
   .block_tours {
     gap: 18px;
-    width: 918px;
+    max-width: 1138px;
     height: 1629px;
     padding: 0 53px;
   }
@@ -1089,68 +1127,73 @@ footer {
   .card_tour_img_4,
   .card_tour_img_5,
   .card_tour_img_6 {
-    max-width: 450px;
+    width: 560px;
+    max-width: 100%;
   }
   .overlay {
-    max-width: 350px;
+    right: 50px;
+    max-width: 100%;
     height: 83px;
   }
   .overlay p {
-    top: 59px;
+    position: relative;
+    top: 14px;
   }
   .about_tour_btn {
-    top: 354px;
+    position: absolute;
+    top: 393px;
+    left: -20px;
   }
   /* end 1024px container_take_your_tour  *****************************************************/
   /* begin 1024px container_collect_your_tour  ************************************************/
   .container_collect_your_tour {
-    left: 0;
     height: 1225px;
-  }
-  .title_collect_your_tour {
-    left: 283px;
+    width: 100%;
   }
   .form_collect_your_tour {
-    left: 53px;
-    max-width: 918px;
+    max-width: 1138px;
+    width: 91%;
     height: 966px;
   }
   .form_block {
     gap: 20px;
-    max-width: 798px;
+    justify-content: initial;
+    width: 87.5%;
+  }
+  .form {
+    width: 100%;
   }
   .form input,
-  .form select {
-    width: 389px;
+  .form select,
+  .form input[type="date"],
+  .form textarea {
+    max-width: 517px;
+    width: 100%;
   }
   .form_block_comment {
-    left: 3px;
+    width: 88%;
   }
   .form_block_comment .form textarea {
-    width: 781px;
+    max-width: 97.5%;
   }
   .form_block_radio {
-    max-width: 798px;
+    width: 87.5%;
   }
   .form_block_license {
-    bottom: 5px;
-    right: 127px;
+    width: 88%;
   }
   .form_block_license label:before {
     margin-right: 11px;
   }
   .form_block_btns {
-    right: 149px;
+    width: 88%;
   }
   /* end 1024px container_collect_your_tour  **************************************************/
   /* begin 1024px container_reviewer  *********************************************************/
   .container_reviewer {
     top: 405px;
-    left: 0;
     height: 1173px;
-  }
-  .title_reviewer {
-    left: 247.5px;
+    width: 100%;
   }
   .block_reviewer {
     gap: 18px;
@@ -1161,18 +1204,42 @@ footer {
     max-width: 450px;
     max-height: 818px;
   }
+  @media (max-width: 947px) {
+    .container_reviewer {
+      height: 1208px;
+    }
+    .block_reviewer {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+    }
+    .card_reviewer {
+      max-width: 675px;
+      width: 100%;
+      max-height: 818px;
+    }
+    .reviewer_text {
+      max-width: 673px;
+    }
+    .reviewer_data_1,
+    .reviewer_data_2 {
+      width: 355px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+  }
   /* end 1024px container_reviewer  ***********************************************************/
   /* begin 1024px container_travel_photos  ****************************************************/
-  .title_travel_photos {
-    top: 1px;
-    left: 147px;
+  .container_travel_photos {
+    width: 100%;
   }
   .block_travel_photos {
     padding: 0 20px;
   }
+
   .four_travel_photos,
   .five_travel_photos {
-    max-width: 984px;
+    width: 100%;
   }
   .travel_photo_1 {
     background-image: url(./img1024/main/travel_photos/travel\ photo-1.png);
@@ -1218,7 +1285,7 @@ footer {
   .travel_photo_12,
   .travel_photo_13 {
     gap: 20px;
-    max-width: 314.67px;
+    max-width: 390px;
     height: 300px;
     border-radius: 50px;
     background-size: cover;
@@ -1229,7 +1296,7 @@ footer {
   .travel_photo_7,
   .travel_photo_8,
   .travel_photo_9 {
-    max-width: 231px;
+    max-width: 286px;
     height: 301px;
     border-radius: 50px;
     background-size: cover;
@@ -1238,14 +1305,17 @@ footer {
   /* end 1024px container_travel_photos  ******************************************************/
   /* begin 1024px container_travel_stories  ***************************************************/
   .container_travel_stories {
-    left: 0;
-    height: 1801px;
+    width: 100%;
+    height: 2062px;
   }
-  .title_travel_stories {
-    left: 204.5px;
-  }
+
   .block_travel_stories_cards {
-    padding: 0 53px;
+    margin: 0 auto;
+    width: 91.5%;
+  }
+  .travel_stories_card {
+    max-width: 1153px;
+    width: 100%;
   }
   .travel_stories_card_img_1 {
     background-image: url(./img1024/main/travel_stories/story\ photo-1.png);
@@ -1259,19 +1329,28 @@ footer {
   .travel_stories_card_img_1,
   .travel_stories_card_img_2,
   .travel_stories_card_img_3 {
-    max-width: 918px;
+    width: 100%;
     border-radius: 50px;
     background-size: cover;
     background-position: center center;
   }
+  .travel_stories_overlay {
+    max-width: 1050px;
+    width: 90%;
+  }
   .travel_stories_overlay_btns {
-    width: 817px;
+    width: 100%;
   }
   /* end 1024px container_travel_stories  *****************************************************/
   /* begin 1024px container_travel_with_us  ***************************************************/
   .container_travel_with_us {
-    top: 1070px;
-    left: 53px;
+    top: 808px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .block_travel_with_us {
+    justify-content: initial;
+    width: 91%;
   }
   /* end 1024px container_travel_with_us  *****************************************************/
   /* begin 1024px footer  *********************************************************************/
@@ -1279,7 +1358,6 @@ footer {
     top: 9697px;
   }
   .container_footer {
-    left: 53px;
     width: 89.7%;
   }
   .instagram a:hover,
@@ -1291,14 +1369,14 @@ footer {
 /* end 1024px footer  *************************************************************************/
 /* end 1024px *********************************************************************************/
 /* begin 360px ********************************************************************************/
-@media (max-width: 360px) {
+@media (min-width: 360px) and (max-width: 760px) {
   /* basic header , containers , footer styles */
   .wrapper {
-    width: 360px;
-    height: 8185px;
+    max-width: 760px;
+    max-height: 100%;
+    height: 7445px;
   }
   header,
-  .block_header_preview,
   .container_take_your_tour,
   .container_collect_your_tour,
   .container_reviewer,
@@ -1306,7 +1384,7 @@ footer {
   .container_travel_stories,
   .container_travel_with_us,
   footer {
-    width: 360px;
+    max-width: 760px;
   }
   /* basic h2 styles */
   .title_take_your_tour h2,
@@ -1348,19 +1426,20 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    width: 360px;
+    max-width: 760px;
     height: 488px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   }
   .container_nav_bar {
-    width: 360px;
+    max-width: 760px;
     left: 0;
     max-width: 100vw;
   }
   .nav_bar {
     top: 32.5px;
-    width: 320px;
+    width: 100%;
     height: 23px;
+    justify-content: space-around;
   }
   .logo a img {
     width: 133px;
@@ -1382,7 +1461,6 @@ footer {
   }
   .block_header_preview h1 {
     top: 30px;
-    left: 0;
     width: 360px;
     height: 114px;
     font: 700 34px/38.08px Roboto, sans-serif;
@@ -1390,13 +1468,11 @@ footer {
   }
   .block_header_preview p {
     top: 184px;
-    left: 25px;
     width: 310px;
     height: 69px;
   }
   .find_tour_btn {
     top: 292px;
-    left: 123px;
     font: 400 16px/22.72px Roboto, sans-serif;
     letter-spacing: -0.08px;
   }
@@ -1419,17 +1495,16 @@ footer {
   /* begin 360px container_take_your_tour  ****************************************************/
   .container_take_your_tour {
     top: 76px;
-    left: 0;
-    height: 2172px;
+    width: 100%;
+    height: 24.35%;
+    max-height: 100%;
   }
   .title_take_your_tour {
-    left: 0;
-    height: 124px;
     width: 100%;
   }
   .title_take_your_tour h2 {
     position: relative;
-    left: 39px;
+    margin: 0 auto;
     width: 282px;
     height: 38px;
     letter-spacing: 0.6px;
@@ -1438,8 +1513,7 @@ footer {
     flex-flow: row wrap;
     justify-content: center;
     top: 25px;
-    left: 20px;
-    width: 320px;
+    max-width: 760px;
     height: 56px;
   }
   .your_tour_variants a {
@@ -1451,16 +1525,24 @@ footer {
     border-bottom: 2px solid #efa501;
   }
   .block_tours {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 18px;
     top: 172px;
-    width: 318px;
-    height: 1998px;
+    max-width: 700px;
     padding: 0 21px;
+    height: auto;
+    margin: 0 auto;
   }
   .card_tour {
-    width: 318px;
+    border-radius: 20px;
+    width: calc(50% - 11px);
+    max-height: 408px;
+    min-height: 318px;
   }
   .card_tour .bg_gradient::before {
-    width: 318px;
+    width: 100%;
+    height: auto;
     border-radius: 20px;
   }
   .card_tour_img_1 {
@@ -1487,24 +1569,71 @@ footer {
   .card_tour_img_4,
   .card_tour_img_5,
   .card_tour_img_6 {
-    width: 318px;
-    height: 318px;
+    max-width: 100%;
+    max-height: 408px;
+    min-height: 318px;
     border-radius: 20px;
+  }
+  @media (max-width: 600px) {
+    .wrapper {
+      max-height: 100%;
+      height: 8185px;
+      flex-flow: column nowrap;
+      width: 100%;
+    }
+    .container_take_your_tour {
+      top: 76px;
+      width: 100%;
+      height: 33%;
+      max-height: 100%;
+    }
+    .block_tours {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+      padding: 0 21px;
+    }
+    .card_tour {
+      width: 100%;
+      border-radius: 20px;
+      aspect-ratio: 16/9;
+    }
+    .card_tour .bg_gradient::before {
+      width: 100%;
+      border-radius: 20px;
+    }
+    .card_tour_img_1,
+    .card_tour_img_2,
+    .card_tour_img_3,
+    .card_tour_img_4,
+    .card_tour_img_5,
+    .card_tour_img_6 {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+    .about_tour_btn {
+      position: absolute;
+      top: 245px;
+      left: -20px;
+    }
   }
   .overlay {
     top: 27px;
     left: 25px;
-    width: 318px;
-    max-height: 318px;
+    right: 25px;
+    max-width: 100%;
+    height: auto;
   }
   .overlay h3 {
     letter-spacing: 1px;
   }
   .overlay p {
-    top: 41px;
+    position: relative;
+    top: 15px;
   }
   .about_tour_btn {
-    top: 215px;
+    top: 245px;
     right: 20px;
     width: 123px;
     height: 26px;
@@ -1518,12 +1647,11 @@ footer {
   /* end 360px container_take_your_tour  *****************************************************/
   /* begin 360px container_collect_your_tour  ************************************************/
   .container_collect_your_tour {
-    top: 152px;
-    left: 21px;
-    height: 1254px;
+    top: 132px;
+    margin: 0;
+    height: 1262px;
   }
   .title_collect_your_tour {
-    left: 0;
     width: 318px;
     height: 104px;
     text-align: center;
@@ -1532,7 +1660,6 @@ footer {
     letter-spacing: 0.7px;
   }
   .title_collect_your_tour p {
-    left: 0;
     top: 58px;
     width: 318px;
     height: 46px;
@@ -1542,9 +1669,8 @@ footer {
     justify-content: initial;
     gap: 0;
     top: 37px;
-    left: 0;
-    width: 318px;
-    height: 1110px;
+    width: 90%;
+    height: 1052px;
     padding: 20px 0 0 0;
     border-radius: 30px;
   }
@@ -1552,7 +1678,7 @@ footer {
     flex-direction: column;
     justify-content: initial;
     gap: 10px;
-    width: 278px;
+    max-width: 90%;
     height: 181px;
     margin-bottom: 27px;
   }
@@ -1561,14 +1687,14 @@ footer {
   .form_block_radio {
     flex-direction: column;
     justify-content: initial;
-    width: 278px;
+    max-width: 100%;
     height: 65px;
     margin-bottom: 27px;
     font: 400 16px/22.72px Roboto, sans-serif;
   }
   .form_block .form input,
   .form_block .form select {
-    width: 278px;
+    width: 100%;
     height: 43px;
     cursor: default;
     text-indent: 10px;
@@ -1588,18 +1714,19 @@ footer {
     font: 400 16px/22.72px Roboto, sans-serif;
   }
   .form_block_comment {
-    left: 0px;
+    width: 90%;
   }
   .form_block_comment .form {
     height: 165px;
   }
   .form_block_comment .form textarea {
     bottom: 20px;
-    width: 258px;
+    width: 97%;
     height: 112px;
     font: 400 16px/22.72px Roboto, sans-serif;
   }
   .form_block_radio {
+    max-width: 90%;
     position: relative;
     top: 7px;
     height: 54px;
@@ -1637,14 +1764,15 @@ footer {
   }
   .form_block_license {
     top: 7px;
-    right: 13px;
-    width: 253px;
+    /* right: 13px;
+    width: 253px; */
+    max-width: 90%;
     height: 69px;
     font: 400 16px/22.72px Roboto, sans-serif;
   }
   .form_block_license label span {
     position: relative;
-    left: 30px;
+
     border: 1px solid transparent;
   }
   .form_block_license input {
@@ -1652,6 +1780,8 @@ footer {
     height: 20px;
   }
   .form_block_license label:before {
+    top: 0px;
+    margin-right: 9px;
     content: url(./img360/main/icons/empty_checkbox_mobile.svg);
   }
   .form_block_license input[type="checkbox"]:checked + label:before {
@@ -1672,10 +1802,12 @@ footer {
     background-color: #e0f0e5;
   }
   .form_block_btns {
-    top: 40px;
-    left: 0px;
-    width: 278px;
+    top: 10px;
+    width: 90%;
     height: 47px;
+  }
+  .block_btns {
+    width: 285px;
   }
   .find-tour-btn,
   .reset-btn {
@@ -1685,12 +1817,11 @@ footer {
   /* end 360px container_collect_your_tour  **************************************************/
   /* begin 360px container_reviewer  *********************************************************/
   .container_reviewer {
-    top: 226px;
-    left: 0;
-    height: 1210px;
+    top: 238px;
+    height: 1263px;
+    width: 100%;
   }
   .title_reviewer {
-    left: 0;
     height: 142px;
   }
   .title_reviewer h2 {
@@ -1698,7 +1829,6 @@ footer {
   }
   .title_reviewer p {
     top: 96px;
-    left: 21px;
     width: 318px;
   }
   .block_reviewer {
@@ -1708,6 +1838,11 @@ footer {
     top: 50px;
     height: 1018px;
     padding: 0 21px;
+    width: 100%;
+  }
+  .card_reviewer {
+    width: 80%;
+    margin: 0 auto;
   }
   #card_reviewer_1 {
     height: 408px;
@@ -1761,11 +1896,11 @@ footer {
   /* end 360px container_reviewer  ***********************************************************/
   /* begin 360px container_travel_photos  ****************************************************/
   .container_travel_photos {
-    top: 300px;
-    height: 558px;
+    top: 309px;
+    height: 582px;
+    width: 100%;
   }
   .title_travel_photos {
-    left: 0;
     height: 142px;
   }
   .title_travel_photos h2 {
@@ -1777,14 +1912,19 @@ footer {
     height: 46px;
   }
   .block_travel_photos {
-    top: 50px;
     height: 366px;
     padding: 0 20px;
+    width: 93%;
   }
   .four_travel_photos,
   .five_travel_photos {
+    gap: 10px;
     width: 318px;
     height: 110px;
+    margin: 0 auto;
+  }
+  .four_travel_photos {
+    gap: 20px;
   }
   .travel_photo_1 {
     background-image: url(./img360/main/travel_photos/travel\ photo-1.png);
@@ -1843,19 +1983,17 @@ footer {
   /* end 360px container_travel_photos  *******************************************************/
   /* begin 360px container_travel_stories  ****************************************************/
   .container_travel_stories {
-    top: 375px;
-    left: 0;
+    top: 384px;
+    width: 100%;
     height: 1597px;
   }
   .title_travel_stories {
     align-items: initial;
-    left: -0.5px;
     width: 321px;
     height: 142px;
     padding: 0 20.5px;
   }
   .title_travel_stories h2 {
-    left: 0;
     width: 319px;
     height: 76px;
     letter-spacing: 0.7px;
@@ -1867,25 +2005,15 @@ footer {
   .block_travel_stories_cards {
     gap: 20px;
     top: 192px;
-    left: 21px;
-    width: 318px;
+    width: 93%;
     height: 1405px;
     padding: 0;
-  }
-  .travel_stories_card_img_1 {
-    background-image: url(./img360/main/travel_stories/story\ photo-1.png);
-  }
-  .travel_stories_card_img_2 {
-    background-image: url(./img360/main/travel_stories/story\ photo-2.png);
-  }
-  .travel_stories_card_img_3 {
-    background-image: url(./img360/main/travel_stories/story\ photo-3.png);
   }
   .travel_stories_card_img_1,
   .travel_stories_card_img_2,
   .travel_stories_card_img_3 {
-    width: 318px;
     height: 455px;
+    max-width: 100%;
     border-radius: 20px;
   }
   .travel_stories_card .bg_gradient::after {
@@ -1895,23 +2023,23 @@ footer {
     justify-content: initial;
     top: 30px;
     left: 30px;
-    width: 318px;
+    width: 85%;
     height: 455px;
   }
   .travel_stories_overlay h3 {
-    width: 150px;
+    max-width: 66%;
     height: 56px;
     letter-spacing: 1px;
   }
   .travel_stories_overlay p {
     top: 10px;
-    width: 263px;
+    max-width: 99%;
     height: 230px;
   }
   .travel_stories_overlay ul {
-    left: 0;
-    bottom: 60px;
+    bottom: 18%;
     width: 263px;
+    left: 0;
   }
   .travel_stories_overlay ul li {
     position: relative;
@@ -1925,11 +2053,12 @@ footer {
   }
   .travel_stories_overlay_btns {
     top: 362px;
-    left: -2px;
     width: 128px;
     height: 26px;
   }
   .about_travel_story_btn {
+    position: relative;
+    left: 18px;
     height: 42px;
     border-radius: 50px;
   }
@@ -1937,7 +2066,6 @@ footer {
   .about_travel_story_btn:active {
     background: none;
   }
-
   .about_travel_story_btn a {
     font: 700 16px/22.72px Roboto, sans-serif;
     margin-right: 16px;
@@ -1950,16 +2078,17 @@ footer {
   /* end 360px container_travel_stories  ******************************************************/
   /* begin 360px container_travel_with_us  ****************************************************/
   .container_travel_with_us {
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     align-items: center;
     justify-content: space-between;
-    top: 435px;
-    left: 0;
-    height: 285px;
+    top: 525px;
+    width: 100%;
+    height: 295px;
   }
   .block_travel_with_us {
-    width: 360px;
+    width: 100%;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
   }
@@ -1973,7 +2102,7 @@ footer {
     position: relative;
     top: 25px;
     width: 291px;
-    height: 122px;
+    height: 128px;
     text-align: center;
   }
   .title_travel_with_us h3 {
@@ -2001,7 +2130,7 @@ footer {
   /* begin 360px footer  **********************************************************************/
   footer {
     position: relative;
-    top: 525px;
+    top: 603px;
     height: 95px;
     font: 400 16px/22.72px Roboto, sans-serif;
   }
@@ -2009,7 +2138,6 @@ footer {
     flex-flow: column wrap;
     justify-content: space-between;
     align-items: center;
-    left: 20px;
     width: 318px;
     height: 53px;
   }
@@ -2018,7 +2146,6 @@ footer {
     align-items: initial;
     justify-content: initial;
     top: 0;
-    left: 0;
     width: 314px;
     height: 23px;
   }
@@ -2072,4 +2199,9 @@ footer {
   /* end 360px ********************************************************************************/
   /*★★★★★★★★★★★★★★★★★★★★★★★ ||| BE GREATEST ||| ★★★★★★★★★★★★★★★★★★★★★★★*/
   /************************************ !!!   FINISH   !!! ************************************/
+}
+@media (max-width: 359px) {
+  body {
+    display: none;
+  }
 }
