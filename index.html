@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.1" />
     <meta name="description" content="Купите тур прямо сейчас и отправляйтесь в незабываемое путешествие! Мы предлагаем большой выбор туров по всему миру, высокое качество обслуживания и доступные цены!" />
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -40,19 +40,22 @@
           <div class="title_take_your_tour">
             <h2>Выбери свой тур</h2>
             <div class="your_tour_variants">
-              <a href="#" class="active">Популярные</a>
-              <a href="#">Авторские</a>
-              <a href="#">Походы</a>
-              <a href="#">Сплавы</a>
-              <a href="#">Велопрогулки</a>
+              <a class="active">Популярные</a>
+              <a>Авторские</a>
+              <a>Походы</a>
+              <a>Сплавы</a>
+              <a>Велопрогулки</a>
             </div>
           </div>
           <div class="block_tours">
             <div class="card_tour">
               <a href="#" class="bg_gradient"><div class="card_tour_img_1"></div></a>
               <div class="overlay">
-                <h3>Путешествие в горы</h3>
-                <p>от 80 000 руб</p>
+                <div>
+                  <h3>Путешествие в горы</h3>
+                  <p>от 80 000 руб</p>
+                </div>
+
                 <div class="about_tour_btn">
                   <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
@@ -62,8 +65,10 @@
             <div class="card_tour">
               <a href="#" class="bg_gradient"><div class="card_tour_img_2"></div></a>
               <div class="overlay">
-                <h3>Путешествие в горы</h3>
-                <p>от 80 000 руб</p>
+                <div>
+                  <h3>Путешествие в горы</h3>
+                  <p>от 80 000 руб</p>
+                </div>
                 <div class="about_tour_btn">
                   <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
@@ -73,8 +78,10 @@
             <div class="card_tour">
               <a href="#" class="bg_gradient"><div class="card_tour_img_3"></div></a>
               <div class="overlay">
-                <h3>Путешествие в горы</h3>
-                <p>от 80 000 руб</p>
+                <div>
+                  <h3>Путешествие в горы</h3>
+                  <p>от 80 000 руб</p>
+                </div>
                 <div class="about_tour_btn">
                   <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
@@ -84,8 +91,10 @@
             <div class="card_tour">
               <a href="#" class="bg_gradient"><div class="card_tour_img_4"></div></a>
               <div class="overlay">
-                <h3>Путешествие в горы</h3>
-                <p>от 80 000 руб</p>
+                <div>
+                  <h3>Путешествие в горы</h3>
+                  <p>от 80 000 руб</p>
+                </div>
                 <div class="about_tour_btn">
                   <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
@@ -95,8 +104,10 @@
             <div class="card_tour">
               <a href="#" class="bg_gradient"><div class="card_tour_img_5"></div></a>
               <div class="overlay">
-                <h3>Путешествие в горы</h3>
-                <p>от 80 000 руб</p>
+                <div>
+                  <h3>Путешествие в горы</h3>
+                  <p>от 80 000 руб</p>
+                </div>
                 <div class="about_tour_btn">
                   <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
@@ -106,8 +117,10 @@
             <div class="card_tour">
               <a href="#" class="bg_gradient"><div class="card_tour_img_6"></div></a>
               <div class="overlay">
-                <h3>Путешествие в горы</h3>
-                <p>от 80 000 руб</p>
+                <div>
+                  <h3>Путешествие в горы</h3>
+                  <p>от 80 000 руб</p>
+                </div>
                 <div class="about_tour_btn">
                   <a href="#" class="more_btn">Подробнее</a>
                   <img src="./img1920/main/take_your_tour/arrow btn.svg" alt="arrow icon" />
@@ -178,9 +191,8 @@
             </div>
             <div class="form_block_license">
               <input type="checkbox" id="license_checkbox" name="license" value="accepted" />
-              <label for="license_checkbox"
-                >Нажимая кнопку, я принимаю <span>условия <a>Лицензионного договора</a></span></label
-              >
+              <label for="license_checkbox"></label>
+              <span>Нажимая кнопку, я принимаю условия <a>Лицензионного договора</a></span>
             </div>
             <div class="form_block_btns">
               <div class="block_btns">
