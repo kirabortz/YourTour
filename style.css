@@ -234,6 +234,8 @@ main {
 .card_tour {
   position: relative;
   width: calc(33.33% - 20px);
+  transition: 300ms ease;
+  transform: scale(1);
 }
 .card_tour .bg_gradient::before {
   content: "";
@@ -244,6 +246,11 @@ main {
   bottom: 0;
   border-radius: 50px;
   background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
+}
+.card_tour:hover {
+  transition: 300ms ease;
+  transform: scale(1.2);
+  z-index: 99;
 }
 .card_tour_img_1,
 .card_tour_img_2,
@@ -780,6 +787,14 @@ input[type="checkbox"]:checked + label::before {
 .travel_stories_card {
   cursor: pointer;
   position: relative;
+  width: 100%;
+  transition: 300ms ease;
+  transform: scale(1);
+}
+.travel_stories_card:hover {
+  transition: 300ms ease;
+  transform: scale(1.2);
+  z-index: 99;
 }
 .travel_stories_card_img_1 {
   background-image: url(./img1920/main/travel_stories/story\ photo-1.png);
