@@ -234,8 +234,8 @@ main {
 .card_tour {
   position: relative;
   width: calc(33.33% - 20px);
-  transition: 300ms ease;
-  transform: scale(1);
+  overflow: hidden;
+  border-radius: 50px;
 }
 .card_tour .bg_gradient::before {
   content: "";
@@ -246,12 +246,11 @@ main {
   bottom: 0;
   border-radius: 50px;
   background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
-}
-.card_tour:hover {
   transition: 300ms ease;
-  transform: scale(1.2);
-  z-index: 99;
+  transform: scale(1);
+  z-index: 1;
 }
+
 .card_tour_img_1,
 .card_tour_img_2,
 .card_tour_img_3,
@@ -263,6 +262,17 @@ main {
   border-radius: 50px;
   background-size: cover;
   background-position: center center;
+  transition: 300ms ease;
+  transform: scale(1);
+}
+.card_tour:hover .card_tour_img_1,
+.card_tour:hover .card_tour_img_2,
+.card_tour:hover .card_tour_img_3,
+.card_tour:hover .card_tour_img_4,
+.card_tour:hover .card_tour_img_5,
+.card_tour:hover .card_tour_img_6 {
+  transition: 300ms ease;
+  transform: scale(1.2);
 }
 .card_tour_img_1 {
   background-image: url(./img1920/main/take_your_tour/card\ tour\ photo-1.jpg);
@@ -291,6 +301,7 @@ main {
   max-width: 240px;
   height: 126px;
   color: white;
+  z-index: 5;
 }
 .overlay h3 {
   color: white;
@@ -788,14 +799,10 @@ input[type="checkbox"]:checked + label::before {
   cursor: pointer;
   position: relative;
   width: 100%;
-  transition: 300ms ease;
-  transform: scale(1);
+  overflow: hidden;
+  border-radius: 50px;
 }
-.travel_stories_card:hover {
-  transition: 300ms ease;
-  transform: scale(1.2);
-  z-index: 99;
-}
+
 .travel_stories_card_img_1 {
   background-image: url(./img1920/main/travel_stories/story\ photo-1.png);
 }
@@ -813,6 +820,14 @@ input[type="checkbox"]:checked + label::before {
   border-radius: 50px;
   background-size: cover;
   background-position: center center;
+  transition: 300ms ease;
+  transform: scale(1);
+}
+.travel_stories_card:hover .travel_stories_card_img_1,
+.travel_stories_card:hover .travel_stories_card_img_2,
+.travel_stories_card:hover .travel_stories_card_img_3 {
+  transition: 300ms ease;
+  transform: scale(1.2);
 }
 .travel_stories_card .bg_gradient::after {
   content: "";
@@ -1588,6 +1603,15 @@ footer {
     border-radius: 20px;
     background-size: 100% 100%;
   }
+  .card_tour:hover .card_tour_img_1,
+  .card_tour:hover .card_tour_img_2,
+  .card_tour:hover .card_tour_img_3,
+  .card_tour:hover .card_tour_img_4,
+  .card_tour:hover .card_tour_img_5,
+  .card_tour:hover .card_tour_img_6 {
+    transition: initial;
+    transform: scale(1);
+  }
   @media (max-width: 600px) {
     .wrapper {
       max-height: 100%;
@@ -2055,6 +2079,12 @@ footer {
     max-width: 100%;
     border-radius: 20px;
     background-size: 100% 100%;
+  }
+  .travel_stories_card:hover .travel_stories_card_img_1,
+  .travel_stories_card:hover .travel_stories_card_img_2,
+  .travel_stories_card:hover .travel_stories_card_img_3 {
+    transition: initial;
+    transform: scale(1);
   }
   .travel_stories_card .bg_gradient::after {
     border-radius: 20px;
