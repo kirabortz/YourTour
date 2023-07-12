@@ -1,6 +1,7 @@
 const header = document.querySelector(".header");
 const logo = document.querySelector(".logo>a>img");
 const selectedVariantTour = document.querySelectorAll(".your_tour_variants a");
+const dateInputs = document.querySelectorAll(".date_tour");
 
 for (let i = 0; i < selectedVariantTour.length; i++) {
   selectedVariantTour[i].addEventListener("click", () => {
@@ -9,6 +10,14 @@ for (let i = 0; i < selectedVariantTour.length; i++) {
     }
     selectedVariantTour[i].classList.add("active");
   });
+}
+
+for (var i = 0; i < dateInputs.length; i++) {
+  for (let k = 0; k < dateInputs.length; k++) {
+    dateInputs[k].addEventListener("focus", function () {
+      dateInputs[k].style.color = "black";
+    });
+  }
 }
 
 window.addEventListener("scroll", () => {

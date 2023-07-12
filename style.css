@@ -380,6 +380,7 @@ header {
   color: #a6a6a6;
 }
 .form_collect_your_tour input[type="date"] {
+  color: #a6a6a6;
   text-indent: 10px;
   text-transform: uppercase;
 }
