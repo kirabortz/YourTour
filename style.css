@@ -384,6 +384,9 @@ header {
   text-indent: 10px;
   text-transform: uppercase;
 }
+.form_collect_your_tour input[type="date"].active {
+  color: black;
+}
 .form_collect_your_tour input[type="date"]::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
