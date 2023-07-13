@@ -1313,6 +1313,7 @@ footer {
   .about_tour_btn .more {
     display: flex;
     align-items: center;
+    width: initial;
     padding: 0 16px 0 0;
     font-weight: 700;
     font-size: 16px;
@@ -1334,6 +1335,7 @@ footer {
     letter-spacing: 0.7px;
   }
   .title_collect_your_tour .description {
+    width: 318px;
     height: 46px;
     margin-top: 0;
   }
