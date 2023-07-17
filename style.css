@@ -402,12 +402,6 @@ header {
   max-width: 166px;
   height: 28px;
 }
-.radio_btn_yes {
-  width: 63px;
-}
-.radio_btn_no {
-  width: 72px;
-}
 .radio_label {
   display: flex;
   justify-content: space-between;
@@ -418,6 +412,7 @@ header {
   display: none;
 }
 .radio_label::before {
+  margin-right: 12px;
   content: url(./img1920/main/icons/empty-radiobutton.svg);
 }
 #age_yes:checked + .radio_label::before,
@@ -1302,12 +1297,6 @@ footer {
   .radio_btns {
     width: 139px;
     height: 23px;
-  }
-  .radio_btn_yes {
-    width: 51px;
-  }
-  .radio_btn_no {
-    width: 58px;
   }
   #age_yes,
   #age_no {
