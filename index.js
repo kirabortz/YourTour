@@ -1,6 +1,6 @@
 const header = document.querySelector(".header");
 const logo = document.querySelector(".logo>img");
-const selectedVariantTour = document.querySelectorAll(".your_tour_variants a");
+const selectedVariantTour = document.querySelectorAll(".variant_link");
 
 for (let i = 0; i < selectedVariantTour.length; i++) {
   selectedVariantTour[i].addEventListener("click", () => {

@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Roboto, sans-serif;
 }
 html,
 body {
@@ -13,56 +14,34 @@ body {
   margin: 0 auto;
 }
 /* begin 1920px *******************************************************************************/
-/* basic containers styles */
-.container_take_your_tour,
-.container_collect_your_tour,
-.container_reviewer,
-.container_travel_stories {
+/* ↓↓↓ basic styles ↓↓↓ */
+.case_size {
   max-width: 1170px;
-  margin-top: 135px;
+  margin: 135px auto 0;
 }
-/* basic name_title styles */
-.name_title_take_your_tour,
-.name_title_collect_your_tour,
-.name_title_reviewer,
-.name_title_travel_photos,
-.name_title_travel_stories {
+.name_title {
   font-weight: 700;
   font-size: 59px;
   line-height: 73.16px;
-  font-family: Roboto, sans-serif;
   color: #1b1f2b;
 }
-/* basic h3 styles */
-.card_tour_title,
-.reviewer_name,
-.name_travel_stories,
-.name_title_travel_with_us {
+.item_title {
   font-weight: 500;
   font-size: 35px;
   line-height: 42.7px;
-  font-family: Roboto, sans-serif;
+
   color: #1b1f2b;
 }
-/* basic p styles */
-.block_header_preview .description,
-.title_collect_your_tour .description,
-.title_reviewer .description,
-.title_travel_photos .description,
-.title_travel_stories .description,
-.description,
-.title_travel_with_us .description {
+.description {
   width: 410px;
   margin-top: 30px;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
   color: #a6a6a6;
 }
+/* ↑↑↑ basic styles ↑↑↑ */
 /* begin 1920px header navbar  ****************************************************************/
 header {
-  position: relative;
-  max-width: 1920px;
   height: 831px;
   background: url(./img1920/header/header-img.jpg);
   background-size: cover;
@@ -71,40 +50,41 @@ header {
   margin: 0 auto;
 }
 .container_nav_bar {
-  max-width: 1920px;
+  position: absolute;
+  right: 0;
+  left: 0;
   height: 88px;
 }
 .nav_bar {
   display: flex;
   justify-content: space-between;
-  position: relative;
-  top: 28.88px;
+  align-items: center;
   max-width: 1168px;
-  height: 30.24px;
   margin: 0 auto;
+  padding-top: 28.88px;
 }
 .menu {
   list-style-type: none;
   display: flex;
   justify-content: space-between;
   width: 468px;
+  height: 28px;
 }
-.menu_item a,
+.menu_item_link,
 .menu_tel {
   text-decoration: none;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
-  color: white;
+  color: #ffffff;
 }
 .menu_item:hover {
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid #ffffff;
 }
 /***************************** ↓↓↓ Used by Javascript ↓↓↓ *************************************/
 .scrolled_container_nav_bar .container_nav_bar {
   position: fixed;
   z-index: 100;
+  top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -112,60 +92,49 @@ header {
   backdrop-filter: blur(54px);
 }
 .scrolled_container_nav_bar .menu_item:hover {
-  border-bottom: 1px solid black;
-  color: black;
+  border-bottom: 1px solid #1b1f2b;
+  color: #1b1f2b;
 }
-.scrolled_container_nav_bar .menu_item a,
+.scrolled_container_nav_bar .menu_item_link,
 .scrolled_container_nav_bar .menu_tel {
-  color: black;
+  color: #1b1f2b;
 }
 /***************************** ↑↑↑ Used by Javascript ↑↑↑ *************************************/
 /* end 1920px header navbar *******************************************************************/
 /* begin 1920px block_header_preview  *********************************************************/
 .block_header_preview {
-  display: flex;
-  justify-content: center;
+  position: relative;
   text-align: center;
-  height: auto;
   width: 100%;
-  max-width: 1920px;
 }
 .block_header_preview .name_header {
-  display: flex;
-  position: absolute;
-  top: 207px;
-  width: 768px;
-  height: 315px;
+  max-width: 768px;
+  margin: 0 auto;
+  padding-top: 207px;
   font-weight: 700;
   font-size: 96px;
   line-height: 104.64px;
-  font-family: Roboto, sans-serif;
   letter-spacing: 2px;
-  color: white;
+  color: #ffffff;
 }
 .block_header_preview .description {
-  position: absolute;
-  top: 541px;
   width: 562px;
-  height: 56px;
-  color: white;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: #ffffff;
 }
 .find_tour_btn {
-  position: absolute;
-  top: 677px;
+  margin-top: 50px;
   border-radius: 10px;
   border: none;
-  background-color: white;
-  font-weight: 400;
+  background-color: #ffffff;
   font-size: 17px;
   line-height: 24.14px;
-  font-family: Roboto, sans-serif;
-  letter-spacing: 2px;
   letter-spacing: -0.3px;
   cursor: pointer;
   color: #1b1f2b;
 }
-.find_tour_btn p {
+.find_tour_btn_text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,27 +142,23 @@ header {
   height: 34px;
   border-radius: 10px;
   text-decoration: none;
-  color: black;
+  color: #1b1f2b;
 }
-.find_tour_btn p:hover {
+.find_tour_btn_text:hover {
   background-color: #efa501;
-  color: white;
+  color: #ffffff;
 }
-.find_tour_btn p:active {
+.find_tour_btn_text:active {
   background-color: #f8e6be;
-  color: black;
+  color: #1b1f2b;
 }
 /* end 1920px block_header_preview  ***********************************************************/
-.main {
-  display: flex;
-  flex-flow: column nowrap;
-}
 /* begin 1920px container_take_your_tour  *****************************************************/
 .container_take_your_tour {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 135px auto;
+  width: 100%;
 }
 .title_take_your_tour {
   width: 700px;
@@ -207,32 +172,34 @@ header {
   height: 28px;
   list-style-type: none;
 }
-.your_tour_variants a {
+.variant_link {
   text-decoration: none;
   border: 2px solid transparent;
   font-weight: 700;
   font-size: 23px;
   line-height: 28.06px;
-  font-family: Roboto, sans-serif;
-  color: black;
+  color: #1b1f2b;
   cursor: pointer;
 }
-.your_tour_variants a.active {
+.variant_link.active {
   color: #efa501;
   border-bottom: 2px solid #efa501;
 }
-.your_tour_variants a:hover {
+.variant_link:hover {
   border-bottom: 2px solid #efa501;
   color: #efa501;
 }
 .block_tours {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 30px;
   margin-top: 90px;
+  min-width: 1170px;
 }
 .card_tour {
   position: relative;
+  width: 31%;
   max-height: 531px;
   overflow: hidden;
   border-radius: 50px;
@@ -255,6 +222,7 @@ header {
   border-radius: 50px;
   transition: 300ms ease;
   transform: scale(1);
+  object-fit: cover;
 }
 .card_tour:hover .card_tour_img {
   transition: 300ms ease;
@@ -268,18 +236,16 @@ header {
   left: 50px;
   height: 445px;
   max-width: 240px;
-  color: white;
+  color: #ffffff;
   z-index: 1;
 }
 .overlay .card_tour_title {
-  color: white;
+  color: #ffffff;
 }
 .overlay .price {
   margin-top: 16px;
-  font-weight: 400;
   font-size: 17px;
   line-height: 24.14px;
-  font-family: Roboto, sans-serif;
 }
 .about_tour_btn {
   display: flex;
@@ -306,8 +272,7 @@ header {
   font-weight: 700;
   font-size: 23px;
   line-height: 28.06px;
-  font-family: Roboto, sans-serif;
-  color: white;
+  color: #ffffff;
 }
 /* end 1920px container_take_your_tour  *******************************************************/
 /* begin 1920px container_collect_your_tour  **************************************************/
@@ -315,7 +280,7 @@ header {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 0 auto;
+  width: 100%;
 }
 .title_collect_your_tour {
   display: flex;
@@ -334,98 +299,92 @@ header {
   justify-content: center;
   gap: 32px;
   margin-top: 100px;
-  width: 1170px;
+  width: 100%;
+  min-width: 1170px;
   height: 986px;
   border-radius: 50px;
-  background-color: white;
+  background-color: #ffffff;
 }
 .form_block {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  align-content: space-between;
-  margin: 0 auto;
-  width: 1030px;
+  gap: 30px;
+  width: 100%;
+  padding: 0 53px;
   height: 104px;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
 }
-.form_block select:valid {
-  color: black;
+#direction:valid {
+  color: #1b1f2b;
 }
-.form_collect_your_tour input,
-.form_collect_your_tour select,
-.form_collect_your_tour input[type="date"] {
+#direction,
+.form_input {
   display: flex;
-  width: 500px;
+  width: 100%;
+  min-width: 500px;
   height: 68px;
   margin-top: 8px;
   border: 1px solid #f4f0e9;
   border-radius: 10px;
   cursor: pointer;
   background-color: #f9f7f4;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
   text-indent: 20px;
 }
-.form_collect_your_tour select {
+#direction {
   appearance: none;
   background: url(./img1920/main/icons/ic-dropdown.svg) no-repeat right;
   background-color: #f9f7f4;
   background-position-x: calc(100% - 20px);
   color: #a6a6a6;
 }
-.form_collect_your_tour input[type="date"] {
-  color: black;
+#from-date,
+#to-date {
+  color: #1b1f2b;
   text-indent: 10px;
-  text-transform: uppercase;
 }
-.form_collect_your_tour input[type="date"]:invalid {
+#from-date:invalid,
+#to-date:invalid {
+  text-transform: uppercase;
   color: #a6a6a6;
 }
-.form_collect_your_tour input[type="date"]::-webkit-calendar-picker-indicator {
+.form_input::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
-.form_collect_your_tour input:focus,
-.form_collect_your_tour select:focus,
-.form_collect_your_tour textarea[id="comment"]:focus {
+.form_input:focus,
+#direction:focus,
+#comment:focus {
   outline: none;
   border: 1px solid #a6a6a6;
 }
-.form_collect_your_tour input::placeholder {
-  font-weight: 400;
+.form_input::placeholder {
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
   text-indent: 20px;
   color: #a6a6a6;
 }
 .form_block_comment {
-  margin: 0 auto;
+  padding: 0 53px;
   height: 190px;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
 }
-.form_block_comment textarea {
+#comment {
   display: flex;
   margin-top: 8px;
-  width: 1030px;
+  width: 100%;
+  min-width: 1030px;
   height: 132px;
   padding: 10px;
   border: 1px solid #f4f0e9;
   border-radius: 10px;
   resize: none;
   background-color: #f9f7f4;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
 }
 .form_block_radio {
   display: flex;
@@ -433,10 +392,8 @@ header {
   justify-content: space-between;
   margin-left: 70px;
   height: 64px;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
 }
 .radio_btns {
   display: flex;
@@ -453,59 +410,53 @@ header {
 .radio_btn_no {
   width: 72px;
 }
-.radio_btn_yes input,
-.radio_btn_no input,
-.radio_btn_yes label,
-.radio_btn_no label {
+.radio_label {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
 }
-.radio_btn_yes input,
-.radio_btn_no input {
+#age_yes,
+#age_no {
   display: none;
 }
-.radio_btn_yes label::before,
-.radio_btn_no label::before {
+.radio_label::before {
   content: url(./img1920/main/icons/empty-radiobutton.svg);
 }
-.radio_btn_yes input:checked + label::before,
-.radio_btn_no input:checked + label::before {
+#age_yes:checked + .radio_label::before,
+#age_no:checked + .radio_label::before {
   content: url(./img1920/main/icons/checked-radiobutton.svg);
 }
 .form_block_license {
   display: flex;
   width: 1030px;
   margin-left: 70px;
-  font-weight: 400;
   font-size: 17px;
   line-height: 24.14px;
-  font-family: Roboto, sans-serif;
   letter-spacing: -0.2px;
   color: #a6a6a6;
 }
-.form_block_license a {
-  color: black;
+.license_link {
+  color: #1b1f2b;
 }
-.form_block_license input {
+#license_checkbox {
   display: none;
 }
-.form_block_license label::before {
+.license_label::before {
   content: url(./img1920/main/icons/empty-checkbox.svg);
   margin-right: 19px;
   cursor: pointer;
 }
-input[type="checkbox"]:checked + label::before {
+#license_checkbox:checked + .license_label::before {
   content: url(./img1920/main/icons/checked-checkbox.svg);
 }
-.form_block_license label {
+.license_label {
   display: flex;
 }
-.form_block_license a:hover {
-  border-bottom: 1px solid black;
+.license_link:hover {
+  border-bottom: 1px solid #1b1f2b;
   cursor: pointer;
 }
-.form_block_license a:active {
+.license_link:active {
   border-bottom: 1px solid #286562;
   color: #286562;
 }
@@ -528,12 +479,10 @@ input[type="checkbox"]:checked + label::before {
   border-radius: 10px;
   cursor: pointer;
   padding: 15px 30px;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
   background-color: #286562;
-  color: white;
+  color: #ffffff;
 }
 .reset-btn {
   background-color: #e0f0e5;
@@ -557,7 +506,7 @@ input[type="checkbox"]:checked + label::before {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 135px auto;
+  width: 100%;
 }
 .title_reviewer {
   display: flex;
@@ -568,13 +517,15 @@ input[type="checkbox"]:checked + label::before {
   height: 232px;
   text-align: center;
 }
-.title_reviewer p {
+.title_reviewer .description {
   max-width: 418px;
   height: 56px;
 }
 .block_reviewer {
   display: flex;
+  justify-content: center;
   gap: 30px;
+  min-width: 117px;
   margin-top: 100px;
   color: #1b1f2b;
 }
@@ -582,28 +533,21 @@ input[type="checkbox"]:checked + label::before {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  max-width: 570px;
+  width: 100%;
   padding: 40px;
   border-radius: 50px;
   background-color: #f4f0e9;
 }
 .reviewer_text {
-  max-width: 490px;
   font-weight: 700;
   font-size: 23px;
   line-height: 28.06px;
-  font-family: Roboto, sans-serif;
-}
-.reviewer_text p {
   margin-bottom: 30px;
 }
 .reviewer_data {
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
-  align-content: end;
-  max-width: 490px;
-  height: 118px;
+  margin-top: 40px;
 }
 .reviewer {
   display: flex;
@@ -612,10 +556,9 @@ input[type="checkbox"]:checked + label::before {
   height: 75px;
 }
 .tour_name {
-  font-weight: 400;
   font-size: 16px;
   line-height: 24.14px;
-  font-family: Roboto, sans-serif;
+
   color: #a6a6a6;
 }
 .reviewer_photo {
@@ -628,9 +571,7 @@ input[type="checkbox"]:checked + label::before {
 .container_travel_photos {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
   max-width: 100%;
-  margin: 0 auto;
 }
 .title_travel_photos {
   display: flex;
@@ -638,8 +579,9 @@ input[type="checkbox"]:checked + label::before {
   align-items: center;
   max-width: 730px;
   text-align: center;
+  margin: 0 auto;
 }
-.title_travel_photos p {
+.title_travel_photos .description {
   width: 418px;
   height: 56px;
 }
@@ -653,7 +595,6 @@ input[type="checkbox"]:checked + label::before {
 .five_travel_photos {
   display: flex;
   width: 100%;
-  max-width: 1920px;
   margin: 0 auto;
   height: 301px;
   padding: 0 15px;
@@ -676,7 +617,6 @@ input[type="checkbox"]:checked + label::before {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  margin: 135px auto;
 }
 .title_travel_stories {
   display: flex;
@@ -731,17 +671,17 @@ input[type="checkbox"]:checked + label::before {
   top: 60px;
   left: 60px;
   z-index: 1;
-  color: white;
+  color: #ffffff;
 }
 .name_travel_stories {
-  color: white;
+  color: #ffffff;
 }
 .travel_stories_overlay .description {
   width: initial;
   margin-top: 37px;
   padding-right: 50px;
   max-width: 603px;
-  color: white;
+  color: #ffffff;
 }
 .reasons_list {
   display: flex;
@@ -749,14 +689,12 @@ input[type="checkbox"]:checked + label::before {
   margin-left: 12px;
   margin-top: 27px;
 }
-.reasons_list li {
+.reason {
   list-style-type: none;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
 }
-.reasons_list li::before {
+.reason::before {
   content: "·";
   padding-right: 13px;
   font-size: 21px;
@@ -785,8 +723,7 @@ input[type="checkbox"]:checked + label::before {
   font-weight: 700;
   font-size: 23px;
   line-height: 28.06px;
-  font-family: Roboto, sans-serif;
-  color: white;
+  color: #ffffff;
 }
 .about_travel_story_btn .more img {
   max-width: 22px;
@@ -802,37 +739,30 @@ input[type="checkbox"]:checked + label::before {
 .contacts {
   display: flex;
   list-style-type: none;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
 }
-.contacts .contact_link {
+.contact_link {
   padding-left: 27px;
   text-decoration: none;
-  color: white;
+  color: #ffffff;
 }
-.contacts .contact_link span:hover {
-  border-bottom: 1px solid white;
+.contant_name:hover {
+  border-bottom: 1px solid #ffffff;
 }
-.contacts .contact_link span:active {
+.contant_name:active {
   border-bottom: 1px solid #efa501;
   color: #efa501;
 }
 /* end 1920px container_travel_stories  *******************************************************/
 /* begin 1920px container_travel_with_us  *****************************************************/
-.container_travel_with_us {
-  margin: 0 auto;
-  padding: 0 126px;
-}
 .block_travel_with_us {
   display: flex;
+  justify-content: center;
   align-items: center;
-  /* width: 771px; */
 }
 .travel_with_us_img {
   max-width: 370px;
-  /* height: 370px; */
   margin-right: 20px;
   border-radius: 50px;
 }
@@ -844,18 +774,19 @@ input[type="checkbox"]:checked + label::before {
   min-height: 162px;
 }
 .title_travel_with_us .description {
+  width: 371px;
   margin-top: 0;
   padding-right: 0;
 }
-.title_travel_with_us .email {
+.email {
   text-decoration: none;
-  color: black;
+  color: #1b1f2b;
 }
-.title_travel_with_us .email:hover {
-  border-bottom: 1px solid black;
+.email:hover {
+  border-bottom: 1px solid #1b1f2b;
   cursor: pointer;
 }
-.title_travel_with_us .email:active {
+.email:active {
   border-bottom: 1px solid #286562;
   color: #286562;
 }
@@ -865,14 +796,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1920px;
   margin: 135px auto 0;
   height: 88px;
   background-color: #f4f0e9;
-  font-weight: 400;
   font-size: 20px;
   line-height: 28.4px;
-  font-family: Roboto, sans-serif;
 }
 .container_footer {
   display: flex;
@@ -892,15 +820,13 @@ footer {
 .social_link {
   display: flex;
   cursor: pointer;
-}
-.social_link a {
   text-decoration: none;
   color: #1b1f2b;
 }
-.social_link span:hover {
-  border-bottom: 1px solid black;
+.social_link .contant_name:hover {
+  border-bottom: 1px solid #1b1f2b;
 }
-.social_link span:active {
+.social_link .contant_name:active {
   border-bottom: 1px solid #efa501;
   color: #efa501;
 }
@@ -911,15 +837,13 @@ footer {
 /* end 1920px  ********************************************************************************/
 /* begin 1024px *******************************************************************************/
 @media (min-width: 761px) and (max-width: 1280px) {
-  /* basic header, containers , footer styles */
   .container_nav_bar {
     margin: 0 auto;
   }
-  .container_take_your_tour,
-  .container_collect_your_tour,
-  .container_reviewer,
-  .container_travel_photos,
-  .container_travel_stories,
+  .nav_bar {
+    padding: 28.88px 53px 0;
+  }
+  .case_size,
   footer {
     max-width: 1280px;
     width: 100%;
@@ -945,17 +869,17 @@ footer {
       display: none;
     }
   }
-  .nav_bar {
-    padding: 0 53px;
-  }
   .menu {
     max-width: 408px;
   }
   /* end 1024px header navbar *****************************************************************/
   /* begin 1024px container_take_your_tour  ***************************************************/
+  .container_take_your_tour {
+    padding: 0 53px;
+  }
   .block_tours {
     gap: 18px;
-    padding: 0 53px;
+    min-width: initial;
   }
   .card_tour {
     width: 48.5%;
@@ -974,27 +898,29 @@ footer {
   }
   .form_collect_your_tour {
     width: 100%;
+    min-width: initial;
   }
   .form_block {
     margin: initial;
     padding: 0 60px;
+    gap: 20px;
     width: 100%;
   }
   .form_block label {
     width: 49%;
   }
-  .form_collect_your_tour input,
-  .form_collect_your_tour select,
-  .form_collect_your_tour input[type="date"] {
+  #direction,
+  .form_input {
     max-width: 100%;
+    min-width: initial;
   }
   .form_block_comment {
     margin: initial;
     width: 100%;
-    padding: 0 60px;
   }
-  .form_block_comment textarea {
+  #comment {
     width: 100%;
+    min-width: initial;
   }
   .form_block_radio {
     max-width: 170px;
@@ -1049,9 +975,9 @@ footer {
     width: 23.5%;
     padding: 0;
   }
-  img[alt="travel photo-2"],
-  img[alt="travel photo-7"],
-  img[alt="travel photo-13"] {
+  .four_travel_photos:nth-child(1) img:nth-child(2),
+  .five_travel_photos img:nth-child(3),
+  .four_travel_photos:nth-child(3) img:nth-child(4) {
     display: none;
   }
   /* end 1024px container_travel_photos  ******************************************************/
@@ -1075,19 +1001,29 @@ footer {
   }
   /* end 1024px container_travel_stories  *****************************************************/
   /* begin 1024px container_travel_with_us  ***************************************************/
-  /* .container_travel_with_us {
-    margin: 0 auto;
-  } */
+  .container_travel_with_us {
+    width: initial;
+  }
   .block_travel_with_us {
     width: 100%;
     height: 370px;
-    /* padding: 0 126px; */
-  }
-  .title_travel_with_us .description {
-    width: initial;
   }
   .travel_with_us_img {
     width: 50%;
+  }
+  @media (max-width: 920px) {
+    .block_travel_with_us {
+      flex-flow: column nowrap;
+    }
+    .travel_with_us_img {
+      width: 200px;
+      border-radius: 20px;
+      margin-right: 0;
+    }
+    .title_travel_with_us {
+      margin-top: 25px;
+      text-align: center;
+    }
   }
   /* end 1024px container_travel_with_us  *****************************************************/
   /* begin 1024px footer  *********************************************************************/
@@ -1095,9 +1031,7 @@ footer {
     width: 100%;
     padding: 0 53px;
   }
-  .instagram a:hover,
-  .facebook a:hover,
-  .vkontakte a:hover {
+  .social_link .contant_name:hover {
     border: none;
   }
 }
@@ -1105,57 +1039,28 @@ footer {
 /* end 1024px *********************************************************************************/
 /* begin 360px ********************************************************************************/
 @media (max-width: 760px) {
-  /* basic header , containers , footer styles */
-  .wrapper {
-    max-width: 760px;
-  }
-  header,
-  .container_take_your_tour,
-  .container_collect_your_tour,
-  .container_reviewer,
-  .container_travel_photos,
-  .container_travel_stories,
-  .container_travel_with_us,
+  /* ↓↓↓ basic styles ↓↓↓ */
+  .case_size,
   footer {
+    margin: 75px auto 0;
     max-width: 760px;
   }
-  /* basic h2 styles */
-  .name_title_take_your_tour,
-  .name_title_collect_your_tour,
-  .name_title_reviewer,
-  .name_title_travel_photos,
-  .name_title_travel_stories {
+  .name_title {
     font-weight: 700;
     font-size: 34px;
     line-height: 38.08px;
-    font-family: Roboto, sans-serif;
   }
-  /* basic h3 styles */
-  .card_tour_title,
-  .reviewer_name,
-  .travel_stories_overlay h3,
-  .name_title_travel_with_us {
+  .item_title {
     font-weight: 700;
     font-size: 23px;
     line-height: 27.6px;
-    font-family: Roboto, sans-serif;
   }
-  /* basic p styles */
-  .block_header_preview .description,
-  .title_collect_your_tour p.description,
-  .overlay p,
-  .title_reviewer p,
-  .reviewer_name p,
-  .title_travel_photos .description,
-  .title_travel_stories .description,
-  .description,
-  .title_travel_with_us .description {
+  .description {
     width: 318px;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
+  /* ↑↑↑ basic styles ↑↑↑ */
   header {
     height: 488px;
     background-image: url(./img360/header/header-bg.png);
@@ -1169,15 +1074,14 @@ footer {
     left: 0;
     right: 0;
     bottom: 0;
-    max-width: 760px;
+    min-width: 360px;
+    height: 488px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
   }
   .nav_bar {
-    top: 32.5px;
     min-width: 320px;
     max-width: 550px;
-    height: 23px;
-    padding: 0 20px;
+    padding: 28.88px 20px 0;
   }
   .logo img {
     width: 133px;
@@ -1186,54 +1090,42 @@ footer {
     display: none;
   }
   .menu_tel {
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   /* end 360px header navbar ******************************************************************/
   /* begin 360px block_header_preview  ********************************************************/
-  .block_header_preview {
-    position: absolute;
-    top: 0;
-  }
   .block_header_preview .name_header {
-    top: 141px;
     width: 360px;
+    padding-top: 140px;
     font-weight: 700;
     font-size: 34px;
     line-height: 38.08px;
-    font-family: Roboto, sans-serif;
     letter-spacing: 0.7px;
   }
   .block_header_preview .description {
-    top: 265px;
     width: 245px;
-    padding: 0;
+    padding-top: 41px;
   }
   .find_tour_btn {
-    top: 403px;
-    font-weight: 400;
+    margin-top: 40px;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
+
     letter-spacing: -0.08px;
   }
-  .find_tour_btn a {
+  .find_tour_btn_text {
     width: 114px;
   }
-  .find_tour_btn a:hover {
+  .find_tour_btn_text:hover {
     background-color: inherit;
-    color: black;
+    color: #1b1f2b;
   }
-  .find_tour_btn a:active {
+  .find_tour_btn_text:active {
     background-color: inherit;
   }
   /* end 360px block_header_preview  **********************************************************/
   /* begin 360px container_take_your_tour  ****************************************************/
-  .container_take_your_tour {
-    margin: 75px auto;
-  }
   .title_take_your_tour {
     width: 100%;
     min-width: 360px;
@@ -1245,19 +1137,20 @@ footer {
     flex-flow: row wrap;
     justify-content: center;
     max-width: 760px;
-    margin-top: 22px;
+    margin-top: 30px;
+    padding: 0 20px;
   }
-  .your_tour_variants a {
+  .variant_link {
     padding: 7px 0 0;
     margin-right: 12px;
     font-weight: 700;
     font-size: 17px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
     border: none;
   }
   .block_tours {
     width: 100%;
+    min-width: 360px;
     gap: 18px;
     padding: 0 21px;
     margin-top: 25px;
@@ -1278,8 +1171,10 @@ footer {
   }
   @media (max-width: 658px) {
     .your_tour_variants {
-      width: 360px;
+      max-width: 360px;
+      min-width: 360px;
       height: 56px;
+      margin: 30px auto 0;
     }
     .block_tours {
       max-width: 420px;
@@ -1293,7 +1188,7 @@ footer {
     display: flex;
     top: 27px;
     left: 25px;
-    right: 25px;
+    right: 24px;
     height: initial;
     max-width: 100%;
   }
@@ -1318,12 +1213,10 @@ footer {
     font-weight: 700;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   /* end 360px container_take_your_tour  *****************************************************/
   /* begin 360px container_collect_your_tour  ************************************************/
   .container_collect_your_tour {
-    margin: 0;
     padding: 0 21px;
   }
   .title_collect_your_tour {
@@ -1344,78 +1237,69 @@ footer {
     justify-content: initial;
     width: 100%;
     height: 100%;
+    min-width: initial;
     margin-top: 40px;
     padding: 40px 0;
     gap: 5px;
     border-radius: 30px;
   }
   .form_block {
-    width: 100%;
     justify-content: initial;
     padding: 0 21px;
-    font-weight: 400;
     font-size: 16px;
+    gap: 8px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
+    min-width: initial;
   }
   .form_block label {
     width: 49%;
   }
-  .form_collect_your_tour input,
-  .form_collect_your_tour select,
-  .form_collect_your_tour input[type="date"] {
+  #direction,
+  .form_input {
     max-width: 100%;
+    min-width: initial;
     height: 43px;
     margin-top: 8px;
     margin-bottom: 28px;
     cursor: default;
     text-indent: 10px;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
-  .form_collect_your_tour input[type="date"] {
+  .form_input {
     text-indent: 5px;
   }
-  .form_collect_your_tour input:focus,
-  .form_collect_your_tour select:focus,
-  .form_collect_your_tour textarea[id="comment"]:focus {
+  .form_input:focus,
+  #direction:focus,
+  #comment:focus {
     outline: none;
     border: none;
   }
-  .form_collect_your_tour input::placeholder {
+  .form_input::placeholder {
     text-indent: 10px;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   .form_block_comment {
     height: 163px;
     padding: 0 21px;
     margin: 0 0 25px 0;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
-  .form_block_comment textarea {
+  #comment {
     max-width: 100%;
-    font-weight: 400;
+    min-width: initial;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   .form_block_radio {
     max-width: 100%;
     height: 54px;
     margin: 0 0 25px 0;
     padding: 0 21px;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   .radio_btns {
     width: 139px;
@@ -1431,44 +1315,41 @@ footer {
   .radio_btn_no {
     width: 58px;
   }
-  .radio_btn_yes input,
-  .radio_btn_no input {
+  #age_yes,
+  #age_no {
     width: 20px;
     height: 20px;
   }
-  .radio_btn_yes label:before,
-  .radio_btn_no label:before {
+  .radio_label:before {
     content: url(./img360/main/icons/empty-radiobutton-mobile.svg);
   }
-  .radio_btn_yes input:checked + label:before,
-  .radio_btn_no input:checked + label:before {
+  #age_yes:checked + .radio_label::before,
+  #age_no:checked + .radio_label::before {
     content: url(./img360/main/icons/checked-radiobutton-mobile.svg);
   }
   .form_block_license {
     max-width: 100%;
     padding: 0 21px;
     margin: 0 0 25px 0;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
-  .form_block_license input {
+  #license_checkbox {
     width: 20px;
     height: 20px;
   }
-  .form_block_license label:before {
+  .license_label:before {
     margin-right: 9px;
     content: url(./img360/main/icons/empty-checkbox-mobile.svg);
   }
-  .form_block_license input[type="checkbox"]:checked + label:before {
+  #license_checkbox:checked + .license_label::before {
     content: url(./img360/main/icons/checked-checkbox-mobile.svg);
   }
-  .form_block_license a:hover,
-  .form_block_license a:active {
+  .license_link:hover,
+  .license_link:active {
     border: none;
     cursor: default;
-    color: black;
+    color: #1b1f2b;
   }
   .find-tour-btn:hover,
   .find-tour-btn:active {
@@ -1490,10 +1371,8 @@ footer {
   .find-tour-btn,
   .reset-btn {
     width: 130px;
-    font-weight: 400;
     font-size: 15px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   @media (max-width: 658px) {
     .form_collect_your_tour {
@@ -1505,12 +1384,11 @@ footer {
     .form_block label {
       width: 100%;
     }
-    .form_collect_your_tour input,
-    .form_collect_your_tour select,
-    .form_collect_your_tour input[type="date"] {
+    #direction,
+    .form_input {
       width: 100%;
     }
-    .form_collect_your_tour select {
+    #direction {
       background-position-x: calc(100% - 10px);
     }
   }
@@ -1529,10 +1407,8 @@ footer {
   }
   .title_reviewer .description {
     width: 318px;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   .block_reviewer {
     flex-flow: column nowrap;
@@ -1552,7 +1428,6 @@ footer {
     font-weight: 700;
     font-size: 16px;
     line-height: 22.87px;
-    font-family: Roboto, sans-serif;
   }
   .reviewer_data {
     flex-wrap: nowrap;
@@ -1607,12 +1482,11 @@ footer {
     border-radius: 20px;
     padding: 0;
   }
-  img[alt="travel photo-2"],
-  img[alt="travel photo-3"],
-  img[alt="travel photo-6"],
-  img[alt="travel photo-7"],
-  img[alt="travel photo-12"],
-  img[alt="travel photo-13"] {
+  .four_travel_photos:nth-child(1) img:nth-child(2),
+  .four_travel_photos:nth-child(1) img:nth-child(3),
+  .five_travel_photos img:nth-child(2),
+  .five_travel_photos img:nth-child(3),
+  .four_travel_photos:nth-child(3) img:nth-child(4) {
     display: none;
   }
   /* end 360px container_travel_photos  *******************************************************/
@@ -1657,8 +1531,7 @@ footer {
     max-width: 464px;
   }
   .name_travel_stories {
-    max-width: 50%;
-    height: 56px;
+    max-width: 86%;
     letter-spacing: 1px;
   }
   .travel_stories_overlay .description {
@@ -1668,15 +1541,13 @@ footer {
   .reasons_list {
     margin-left: 0;
   }
-  .travel_stories_overlay ul li {
+  .reason {
     margin-left: 8px;
     list-style-type: none;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
-  .reasons_list li::before {
+  .reason::before {
     padding-right: 10px;
   }
   .travel_stories_overlay_btns {
@@ -1695,7 +1566,6 @@ footer {
     font-weight: 700;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   .travel_stories_card:hover .about_travel_story_btn,
   .about_travel_story_btn:active {
@@ -1731,23 +1601,21 @@ footer {
   .title_travel_with_us .description {
     width: 291px;
   }
-  .title_travel_with_us .description .email {
+  .email {
     text-decoration: none;
   }
-  .title_travel_with_us .email:hover,
-  .title_travel_with_us .email:active {
+  .email:hover,
+  .email:active {
     border: none;
-    color: black;
+    color: #1b1f2b;
   }
   /* end 360px container_travel_with_us  ******************************************************/
   /* begin 360px footer  **********************************************************************/
   footer {
     margin-top: 75px;
     height: 95px;
-    font-weight: 400;
     font-size: 16px;
     line-height: 22.72px;
-    font-family: Roboto, sans-serif;
   }
   .container_footer {
     flex-flow: column wrap;
@@ -1763,11 +1631,11 @@ footer {
     height: 23px;
     padding: 0 21px;
   }
-  .social_link span:hover,
-  .social_link span:active {
+  .social_link .contant_name:hover,
+  .social_link .contant_name:active {
     border: none;
     cursor: default;
-    color: black;
+    color: #1b1f2b;
   }
   /* end 360px footer  ************************************************************************/
   /* end 360px ********************************************************************************/
