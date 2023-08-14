@@ -1,0 +1,115 @@
+.container_travel_photos {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 100%;
+    margin: 135px auto 0;
+  }
+  .title_travel_photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 730px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .title_travel_photos .description {
+    width: 418px;
+    height: 56px;
+  }
+  .block_travel_photos {
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 100px;
+    gap: 30px;
+  }
+  .four_travel_photos,
+  .five_travel_photos {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    height: 301px;
+    padding: 0 15px;
+  }
+  .four_travel_photos img {
+    width: 25%;
+    padding: 0 15px;
+    border-radius: 50px;
+    object-fit: cover;
+  }
+  .five_travel_photos img {
+    width: 20%;
+    padding: 0 15px;
+    border-radius: 50px;
+    object-fit: cover;
+  }
+  @media (min-width: 761px) and (max-width: 1280px) {
+    .block_travel_photos {
+        padding: 0 20px;
+      }
+      .four_travel_photos,
+      .five_travel_photos {
+        justify-content: space-between;
+        padding: 0;
+      }
+      .four_travel_photos img {
+        width: 32%;
+        padding: 0;
+      }
+      .five_travel_photos img {
+        width: 23.5%;
+        padding: 0;
+      }
+      .four_travel_photos:nth-child(1) img:nth-child(2),
+      .five_travel_photos img:nth-child(3),
+      .four_travel_photos:nth-child(3) img:nth-child(4) {
+        display: none;
+      }
+}
+@media (max-width: 760px) {
+    .container_travel_photos {
+        margin: 75px auto 0;
+      }
+      .title_travel_photos {
+        height: 142px;
+      }
+      .name_title_travel_photos {
+        width: 318px;
+        letter-spacing: 0.7px;
+      }
+      .title_travel_photos .description {
+        width: 318px;
+        height: 46px;
+      }
+      .block_travel_photos {
+        margin-top: 50px;
+        width: 100%;
+        gap: 20px;
+      }
+      .four_travel_photos,
+      .five_travel_photos {
+        justify-content: space-between;
+        gap: 10px;
+        height: 110px;
+        padding: 0 20px;
+      }
+      .four_travel_photos {
+        gap: 20px;
+      }
+      .four_travel_photos img {
+        width: calc(50% - 10px);
+        border-radius: 20px;
+        padding: 0;
+      }
+      .five_travel_photos img {
+        width: calc(33.3% - 10px);
+        border-radius: 20px;
+        padding: 0;
+      }
+      .four_travel_photos:nth-child(1) img:nth-child(2),
+      .four_travel_photos:nth-child(1) img:nth-child(3),
+      .five_travel_photos img:nth-child(2),
+      .five_travel_photos img:nth-child(3),
+      .four_travel_photos:nth-child(3) img:nth-child(4) {
+        display: none;
+      }
+}

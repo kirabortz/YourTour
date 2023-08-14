@@ -1,0 +1,95 @@
+.block_travel_with_us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .travel_with_us_img {
+    max-width: 370px;
+    margin-right: 20px;
+    border-radius: 50px;
+  }
+  .title_travel_with_us {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    max-width: 371px;
+    min-height: 162px;
+  }
+  .title_travel_with_us .description {
+    width: 371px;
+    margin-top: 0;
+    padding-right: 0;
+  }
+  .email {
+    text-decoration: none;
+    color: #1b1f2b;
+  }
+  .email:hover {
+    border-bottom: 1px solid #1b1f2b;
+    cursor: pointer;
+  }
+  .email:active {
+    border-bottom: 1px solid #286562;
+    color: #286562;
+  }
+  @media (min-width: 761px) and (max-width: 1280px) {
+    .container_travel_with_us {
+        width: initial;
+      }
+      .block_travel_with_us {
+        width: 100%;
+        height: 370px;
+      }
+      .travel_with_us_img {
+        width: 50%;
+      }
+      @media (max-width: 920px) {
+        .block_travel_with_us {
+          flex-flow: column nowrap;
+        }
+        .travel_with_us_img {
+          width: 200px;
+          border-radius: 20px;
+          margin-right: 0;
+        }
+        .title_travel_with_us {
+          margin-top: 25px;
+          text-align: center;
+        }
+      }
+}
+@media (max-width: 760px) {
+    .container_travel_with_us {
+        padding: 0;
+      }
+      .block_travel_with_us {
+        width: 100%;
+        flex-flow: column nowrap;
+      }
+      .travel_with_us_img {
+        width: 130px;
+        height: 133px;
+        border-radius: 20px;
+        margin-right: 0;
+      }
+      .title_travel_with_us {
+        margin-top: 25px;
+        width: 291px;
+        min-height: 128px;
+        text-align: center;
+      }
+      .name_title_travel_with_us {
+        letter-spacing: 0.9px;
+      }
+      .title_travel_with_us .description {
+        width: 291px;
+      }
+      .email {
+        text-decoration: none;
+      }
+      .email:hover,
+      .email:active {
+        border: none;
+        color: #1b1f2b;
+      }
+}

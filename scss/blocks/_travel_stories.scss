@@ -1,0 +1,245 @@
+.container_travel_stories {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  .title_travel_stories {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 159px;
+    text-align: center;
+  }
+  .title_travel_stories .description {
+    max-width: 418px;
+    margin-top: 30px;
+  }
+  .block_travel_stories_cards {
+    display: flex;
+    gap: 50px;
+    flex-flow: column wrap;
+    margin-top: 100px;
+  }
+  .travel_stories_card {
+    position: relative;
+    height: 567px;
+    overflow: hidden;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .travel_stories_card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50px;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+  }
+  .travel_stories_card_img {
+    border-radius: 50px;
+    transition: 300ms ease;
+    transform: scale(1);
+  }
+  .travel_stories_card:hover .travel_stories_card_img {
+    transition: 300ms ease;
+    transform: scale(1.2);
+  }
+  .travel_stories_overlay {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    z-index: 1;
+    color: #ffffff;
+  }
+  .name_travel_stories {
+    
+    color: #ffffff;
+  }
+  .travel_stories_overlay .description {
+    width: initial;
+    margin-top: 37px;
+    padding-right: 50px;
+    max-width: 603px;
+    color: #ffffff;
+  }
+  .reasons_list {
+    display: flex;
+    flex-flow: column;
+    margin-left: 12px;
+    margin-top: 27px;
+  }
+  .reason {
+    list-style-type: none;
+    font-size: 20px;
+    line-height: 28.4px;
+  }
+  .reason::before {
+    content: "·";
+    padding-right: 13px;
+    font-size: 21px;
+  }
+  .travel_stories_overlay_btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    margin-top: 412px;
+    margin-left: -20px;
+    width: 1070px;
+  }
+  .about_travel_story_btn {
+    height: 42px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: none;
+  }
+  .about_travel_story_btn .more {
+    max-width: 199px;
+    padding: 7px 16px 7px 20px;
+    margin-top: 0;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 28.06px;
+    color: #ffffff;
+  }
+  .about_travel_story_btn .more img {
+    max-width: 22px;
+    height: 15px;
+    margin-left: 15px;
+  }
+  .travel_stories_card:hover .about_travel_story_btn {
+    background-color: #286562;
+  }
+  .travel_stories_card .about_travel_story_btn:active {
+    background-color: #efa501;
+  }
+  .contacts {
+    display: flex;
+    list-style-type: none;
+    font-size: 20px;
+    line-height: 28.4px;
+  }
+  .contact_link {
+    padding-left: 27px;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .contant_name:hover {
+    border-bottom: 1px solid #ffffff;
+  }
+  .contant_name:active {
+    border-bottom: 1px solid #efa501;
+    color: #efa501;
+  }
+  @media (min-width: 761px) and (max-width: 1280px) {
+    .container_travel_stories {
+        padding: 0 60px;
+      }
+      .travel_stories_card {
+        height: 567px;
+      }
+      .travel_stories_card_img {
+        width: 100%;
+        height: 567px;
+        object-fit: cover;
+      }
+      .travel_stories_overlay {
+        width: 90%;
+      }
+      .travel_stories_overlay_btns {
+        width: 100%;
+      }
+}
+@media (max-width: 760px) {
+    .container_travel_stories {
+        margin-top: 75px;
+        margin-bottom: 75px;
+      }
+      .title_travel_stories {
+        width: 360px;
+        height: 142px;
+      }
+      .name_title_travel_stories {
+        letter-spacing: 0.7px;
+      }
+      .title_travel_stories .description {
+        width: 319px;
+        height: 46px;
+      }
+      .block_travel_stories_cards {
+        gap: 20px;
+        padding: 0 20px;
+        margin-top: 50px;
+      }
+      .travel_stories_card {
+        height: 455px;
+        border-radius: 20px;
+      }
+      .travel_stories_card::before {
+        height: 455px;
+        border-radius: 20px;
+      }
+      .travel_stories_card_img {
+        height: 455px;
+        max-width: 100%;
+        border-radius: 20px;
+      }
+      .travel_stories_overlay {
+        top: 30px;
+        left: 30px;
+        min-width: 263px;
+        max-width: 464px;
+      }
+      .name_travel_stories {
+        max-width: 86%;
+        letter-spacing: 1px;
+      }
+      .travel_stories_overlay .description {
+        margin-top: 20px;
+        padding-right: 20px;
+      }
+      .reasons_list {
+        margin-left: 0;
+      }
+      .reason {
+        margin-left: 8px;
+        list-style-type: none;
+        font-size: 16px;
+        line-height: 22.72px;
+      }
+      .reason::before {
+        padding-right: 10px;
+      }
+      .travel_stories_overlay_btns {
+        margin-top: 370px;
+        width: 128px;
+        height: 26px;
+        margin-left: 0;
+      }
+      .about_travel_story_btn {
+        height: 26px;
+      }
+      .about_travel_story_btn .more {
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22.72px;
+      }
+      .travel_stories_card:hover .about_travel_story_btn,
+      .about_travel_story_btn:active {
+        background: none;
+      }
+      .contacts {
+        display: none;
+      }
+}

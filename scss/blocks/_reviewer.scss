@@ -1,0 +1,136 @@
+.container_reviewer {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+  }
+  .title_reviewer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-width: 529px;
+    height: 232px;
+    text-align: center;
+  }
+  .title_reviewer .description {
+    max-width: 418px;
+    height: 56px;
+  }
+  .block_reviewer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    min-width: 117px;
+    margin-top: 100px;
+    color: #1b1f2b;
+  }
+  .card_reviewer {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px;
+    border-radius: 50px;
+    background-color: #f4f0e9;
+  }
+  .reviewer_text {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 28.06px;
+    margin-bottom: 30px;
+  }
+  .reviewer_data {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+  }
+  .reviewer {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    height: 75px;
+  }
+  .tour_name {
+    font-size: 16px;
+    line-height: 24.14px;
+  
+    color: #a6a6a6;
+  }
+  .reviewer_photo {
+    width: 75px;
+    height: 75px;
+    border-radius: 100px;
+  }
+  @media (min-width: 761px) and (max-width: 1280px) {
+    .block_reviewer {
+        gap: 18px;
+        padding: 0 53px;
+      }
+      @media (max-width: 947px) {
+        .block_reviewer {
+          display: flex;
+          flex-flow: column nowrap;
+        }
+        .card_reviewer {
+          max-width: 450px;
+        }
+        .reviewer_text {
+          max-width: 673px;
+        }
+        .reviewer_data {
+          width: 355px;
+          margin: 0 auto;
+          padding: 40px 0 0 0;
+        }
+      }
+}
+@media (max-width: 760px) {
+    .container_reviewer {
+        width: 100%;
+        margin-top: 75px;
+        margin-bottom: 75px;
+      }
+      .title_reviewer {
+        height: 152px;
+      }
+      .name_title_reviewer {
+        letter-spacing: 0.7px;
+      }
+      .title_reviewer .description {
+        width: 318px;
+        font-size: 16px;
+        line-height: 22.72px;
+      }
+      .block_reviewer {
+        flex-flow: column nowrap;
+        align-items: center;
+        gap: 18px;
+        margin-top: 50px;
+        padding: 0 21px;
+        width: 100%;
+      }
+      .card_reviewer {
+        align-items: center;
+        max-width: 318px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+      .reviewer_text {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22.87px;
+      }
+      .reviewer_data {
+        flex-wrap: nowrap;
+        width: 278px;
+        height: 75px;
+      }
+      .reviewer_name {
+        margin-top: 15px;
+        letter-spacing: 0.6px;
+      }
+      .reviewer_photo {
+        height: 75px;
+      }
+}

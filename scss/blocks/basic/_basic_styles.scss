@@ -1,0 +1,64 @@
+* {
+    font-family: Roboto, sans-serif;
+}
+html,
+body {
+  min-width: 359px;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: #f9f7f4;
+  margin: 0 auto;
+}
+.case_size {
+    max-width: 1170px;
+    margin: 135px auto 0;
+}
+.name_title {
+    font-weight: 700;
+    font-size: 59px;
+    line-height: 73.16px;
+    color: #1b1f2b;
+}
+.item_title {
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 42.7px;
+    color: #1b1f2b;
+}
+.description {
+    width: 410px;
+    margin-top: 30px;
+    font-size: 20px;
+    line-height: 28.4px;
+    color: #a6a6a6;
+}
+@media (min-width: 761px) and (max-width: 1280px) {
+    .case_size,
+    footer {
+      max-width: 1280px;
+      width: 100%;
+    }
+}
+@media (max-width:760px) {
+    .case_size,
+    footer {
+      margin: 75px auto 0;
+      max-width: 760px;
+    }
+    .name_title {
+      font-weight: 700;
+      font-size: 34px;
+      line-height: 38.08px;
+    }
+    .item_title {
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 27.6px;
+    }
+    .description {
+      width: 318px;
+      font-size: 16px;
+      line-height: 22.72px;
+    }
+    
+}

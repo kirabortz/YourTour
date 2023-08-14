@@ -1,0 +1,234 @@
+.container_take_your_tour {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+  }
+  .title_take_your_tour {
+    width: 700px;
+    height: 150px;
+    text-align: center;
+  }
+  .your_tour_variants {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    height: 28px;
+    list-style-type: none;
+  }
+  .variant_link {
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 28.06px;
+    color: #1b1f2b;
+    cursor: pointer;
+  }
+  .variant_link.active {
+    color: #efa501;
+    border-bottom: 2px solid #efa501;
+  }
+  .variant_link:hover {
+    border-bottom: 2px solid #efa501;
+    color: #efa501;
+  }
+  .block_tours {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 90px;
+    min-width: 1170px;
+  }
+  .card_tour {
+    position: relative;
+    width: 31%;
+    max-height: 531px;
+    overflow: hidden;
+    border-radius: 50px;
+  }
+  .card_tour::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50px;
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
+    z-index: 1;
+  }
+  
+  .card_tour_img {
+    width: 100%;
+    height: 531px;
+    border-radius: 50px;
+    transition: 300ms ease;
+    transform: scale(1);
+    object-fit: cover;
+  }
+  .card_tour:hover .card_tour_img {
+    transition: 300ms ease;
+    transform: scale(1.2);
+  }
+  .overlay {
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    top: 50px;
+    left: 50px;
+    height: 445px;
+    max-width: 240px;
+    color: #ffffff;
+    z-index: 1;
+  }
+  .overlay .card_tour_title {
+    color: #ffffff;
+  }
+  .overlay .price {
+    margin-top: 16px;
+    font-size: 17px;
+    line-height: 24.14px;
+  }
+  .about_tour_btn {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    width: 199px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+  .card_tour:hover .about_tour_btn {
+    background-color: #286562;
+  }
+  .card_tour:hover .about_tour_btn:active {
+    background-color: #efa501;
+  }
+  .about_tour_btn .more {
+    max-width: 199px;
+    padding: 7px 16px 7px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 28.06px;
+    color: #ffffff;
+  }
+  @media (min-width: 761px) and (max-width: 1280px) {
+    .case_size,
+    footer {
+      max-width: 1280px;
+      width: 100%;
+    }
+    .container_take_your_tour {
+        padding: 0 53px;
+      }
+      .block_tours {
+        gap: 18px;
+        min-width: initial;
+      }
+      .card_tour {
+        width: 48.5%;
+      }
+      .card_tour_img {
+        object-fit: cover;
+      }
+      .overlay {
+        right: 50px;
+        max-width: 100%;
+      }
+}
+@media (max-width: 760px) {
+    .title_take_your_tour {
+        width: 100%;
+        min-width: 360px;
+      }
+      .name_title_take_your_tour {
+        letter-spacing: 0.6px;
+      }
+      .your_tour_variants {
+        flex-flow: row wrap;
+        justify-content: center;
+        max-width: 760px;
+        margin-top: 30px;
+        padding: 0 20px;
+      }
+      .variant_link {
+        padding: 7px 0 0;
+        margin-right: 12px;
+        font-weight: 700;
+        font-size: 17px;
+        line-height: 22.72px;
+        border: none;
+      }
+      .block_tours {
+        width: 100%;
+        min-width: 360px;
+        gap: 18px;
+        padding: 0 21px;
+        margin-top: 25px;
+      }
+      .card_tour {
+        border-radius: 20px;
+        width: calc(48.5%);
+        height: 318px;
+      }
+      .card_tour_img {
+        height: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+      }
+      .card_tour::before {
+        width: 100%;
+        border-radius: 20px;
+      }
+      @media (max-width: 658px) {
+        .your_tour_variants {
+          max-width: 360px;
+          min-width: 360px;
+          height: 56px;
+          margin: 30px auto 0;
+        }
+        .block_tours {
+          max-width: 420px;
+          flex-flow: column nowrap;
+        }
+        .card_tour {
+          width: 100%;
+        }
+      }
+      .overlay {
+        display: flex;
+        top: 27px;
+        left: 25px;
+        right: 24px;
+        height: initial;
+        max-width: 100%;
+      }
+      .overlay .card_tour_title {
+        letter-spacing: 1px;
+      }
+      .about_tour_btn {
+        top: 240px;
+        left: 0;
+      }
+      .card_tour:hover .about_tour_btn {
+        background-color: transparent;
+      }
+      .card_tour:hover .about_tour_btn:active {
+        background-color: transparent;
+      }
+      .about_tour_btn .more {
+        display: flex;
+        align-items: center;
+        width: initial;
+        padding: 0 16px 0 0;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 22.72px;
+      }
+}
