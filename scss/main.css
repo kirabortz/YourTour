@@ -93,7 +93,7 @@ body {
 
 header {
   height: 831px;
-  background: url(../../img/header/header-bg.jpg);
+  background: url(../img/header/header-bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -203,7 +203,7 @@ header {
     padding: 28.88px 53px 0;
   }
   header {
-    background-image: url(../../img/header/header-bg-1024.png);
+    background-image: url(../img/header/header-bg-1024.png);
   }
   header::before {
     content: "";
@@ -232,7 +232,7 @@ header {
 @media (max-width: 760px) {
   header {
     height: 488px;
-    background-image: url(../../img/header/header-bg-360.png);
+    background-image: url(../img/header/header-bg-360.png);
     background-size: cover;
     background-position: center center;
   }
