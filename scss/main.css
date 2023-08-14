@@ -710,13 +710,20 @@ header {
 }
 
 .radio_label::before {
+  content: "";
   margin-right: 12px;
-  content: url(../../img/main/icons/empty-radiobutton.svg);
+  width: 26px;
+  height: 26px;
+  border: 2px solid #000000;
+  border-radius: 50%;
 }
 
 #age_yes:checked + .radio_label::before,
 #age_no:checked + .radio_label::before {
-  content: url(../../img/main/icons/checked-radiobutton.svg);
+  content: "⬤";
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .form_block_license {
@@ -738,13 +745,19 @@ header {
 }
 
 .license_label::before {
-  content: url(../../img/main/icons/empty-checkbox.svg);
+  content: "";
   margin-right: 19px;
-  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #000000;
+  border-radius: 5px;
 }
 
 #license_checkbox:checked + .license_label::before {
-  content: url(../../img/main/icons/checked-checkbox.svg);
+  content: "✔";
+  text-align: center;
+  color: #000000;
+  font-size: 1.25rem;
 }
 
 .license_label {
