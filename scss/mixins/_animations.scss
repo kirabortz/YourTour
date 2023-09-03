@@ -1,0 +1,3 @@
+@mixin btnLinkTransition($color, $duration: 0.3s, $easing: ease) {
+  transition: $color $duration $easing, background-color $duration $easing, border-bottom $duration $easing;
+}

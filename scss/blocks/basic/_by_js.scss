@@ -1,18 +1,25 @@
 .scrolled_container_nav_bar .container_nav_bar {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    background-color: #f3efe899;
-    backdrop-filter: blur(54px);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #f3efe899;
+  backdrop-filter: blur(54px);
+  .nav_bar {
+    .menu {
+      .menu_item {
+        &:hover {
+          border-bottom: 1px solid $black-color;
+        }
+        .menu_item_link {
+          color: $black-color;
+        }
+      }
+    }
+    .menu_tel {
+      color: $black-color;
+    }
   }
-  .scrolled_container_nav_bar .menu_item:hover {
-    border-bottom: 1px solid #1b1f2b;
-    color: #1b1f2b;
-  }
-  .scrolled_container_nav_bar .menu_item_link,
-  .scrolled_container_nav_bar .menu_tel {
-    color: #1b1f2b;
-  }
+}

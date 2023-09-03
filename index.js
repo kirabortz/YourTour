@@ -13,7 +13,7 @@ selectedVariantTour.forEach((elem) => {
 window.addEventListener("scroll", () => {
   const isScrolled = window.scrollY > 450;
   changeClass(header, "scrolled_container_nav_bar", isScrolled);
-  logo.forEach((item) => (isScrolled ? (item.style.fill = "black") : (item.style.fill = "white")));
+  logo.forEach((item) => (item.style.fill = isScrolled ? "black" : "white"));
 });
 
 const changeClass = (elem, className, isScrolled) => {

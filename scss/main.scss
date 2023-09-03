@@ -1,4 +1,15 @@
 @import "./blocks/basic/reset.css";
+@import "./variables";
+
+@import "./mixins/media_queries";
+@import "./mixins/general_rules";
+@import "./mixins/typography";
+@import "./mixins/color";
+@import "./mixins/animations";
+
+@import "./mixins/effects/gradients";
+@import "./mixins/layout/flexbox";
+
 @import "./blocks/basic/basic_styles";
 @import "./blocks/basic/by_js";
 @import "./blocks/header";

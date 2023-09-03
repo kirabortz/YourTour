@@ -1,10 +1,19 @@
 header {
+  height: 831px;
+  background: url(../img/header/header-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+
+  &::before {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 80px;
     height: 831px;
-    background: url(../img/header/header-bg.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 0 auto;
+    @include header-gradient();
   }
   .container_nav_bar {
     position: absolute;
@@ -13,174 +22,151 @@ header {
     min-width: 360px;
     height: 88px;
     z-index: 2;
+
+    .nav_bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include margin-horizontal(100%, 1168px, 0 auto);
+      padding-top: 29px;
+
+      .menu_tel {
+        text-decoration: none;
+        @include font(400, 20px, 28px, $white-color);
+      }
+      .menu {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        width: 468px;
+        height: 28px;
+        .menu_item {
+          @include btnLinkTransition(null);
+          &:hover {
+            border-bottom: 1px solid $white-color;
+          }
+          .menu_item_link {
+            text-decoration: none;
+            @include font(400, 20px, 28px, $white-color);
+          }
+        }
+      }
+    }
   }
-  .nav_bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1168px;
-    margin: 0 auto;
-    padding-top: 28.88px;
-  }
-  .menu {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    width: 468px;
-    height: 28px;
-  }
-  .menu_item_link,
-  .menu_tel {
-    text-decoration: none;
-    font-size: 20px;
-    line-height: 28.4px;
-    color: #ffffff;
-  }
-  .menu_item:hover {
-    border-bottom: 1px solid #ffffff;
-  }.block_header_preview {
+  .block_header_preview {
     position: absolute;
     text-align: center;
     width: 100%;
     min-width: 360px;
+    .name_header {
+      @include margin-vertical(100%, 768px, 207px auto 0);
+      @include font(700, 96px, 105px, $white-color);
+      letter-spacing: 2px;
+    }
   }
-  .block_header_preview .name_header {
-    max-width: 768px;
-    margin: 207px auto 0;
-    font-weight: 700;
-    font-size: 96px;
-    line-height: 104.64px;
-    letter-spacing: 2px;
-    color: #ffffff;
-  }
-  .block_header_preview .description {
-    width: 562px;
-    margin: 50px auto 0;
-    color: #ffffff;
+  .description {
+    @include margin-vertical(100%, 562px, 50px auto 0);
+    color: $white-color;
   }
   .find_tour_btn {
     margin-top: 50px;
     padding: 0;
     border-radius: 10px;
     border: none;
-    background-color: #ffffff;
-    font-size: 17px;
-    line-height: 24.14px;
-    letter-spacing: -0.3px;
+    background-color: $white-color;
+    @include font(400, 17px, 24px, $black-color);
     cursor: pointer;
-    color: #1b1f2b;
-  }
-  .find_tour_btn_text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 118px;
-    height: 34px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #1b1f2b;
-  }
-  .find_tour_btn_text:hover {
-    background-color: #efa501;
-    color: #ffffff;
-  }
-  .find_tour_btn_text:active {
-    background-color: #f8e6be;
-    color: #1b1f2b;
-  }
 
-
-  @media (min-width: 761px) and (max-width: 1280px) {
-    .container_nav_bar {
-      margin: 0 auto;
-    }
-    .nav_bar {
-      padding: 28.88px 53px 0;
-    }
-    header {
-      background-image: url(../img/header/header-bg-1024.png);
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 80px;
-      height: 830px;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-    }
-    .block_header_preview .description {
-      width: 442px;
-    }
-    @media (min-width: 761px) and (max-width: 920px) {
-      .menu {
-        display: none;
+    .find_tour_btn_text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 118px;
+      height: 34px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: $black-color;
+      @include btnLinkTransition(null);
+      &:hover {
+        background-color: $active-color;
+        color: $white-color;
+      }
+      &:active {
+        background-color: #f8e6be;
+        color: $black-color;
       }
     }
-    .menu {
-      max-width: 408px;
-    }}
-    @media (max-width: 760px) {
-        header {
-            height: 488px;
-            background-image: url(../img/header/header-bg-360.png);
-            background-size: cover;
-            background-position: center center;
-          }
-          header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            min-width: 360px;
-            height: 488px;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-          }
-          .nav_bar {
-            min-width: 320px;
-            max-width: 550px;
-            padding: 28.88px 20px 0;
-          }
-          #logo_img {
-            width: 133px;
-          }
+  }
+}
+
+@include laptop() {
+  header {
+    .container_nav_bar {
+      .nav_bar {
+        padding: 29px 53px 0;
+        .menu {
+          max-width: 408px;
+        }
+        @media (min-width: 761px) and (max-width: 920px) {
           .menu {
             display: none;
           }
-          .menu_tel {
-            font-size: 16px;
-            line-height: 22.72px;
-          }
-          .block_header_preview .name_header {
-            width: 360px;
-            margin-top: 140px;
-            font-weight: 700;
-            font-size: 34px;
-            line-height: 38.08px;
-            letter-spacing: 0.7px;
-          }
-          .block_header_preview .description {
-            width: 245px;
-            margin-top: 41px;
-          }
-          .find_tour_btn {
-            margin-top: 40px;
-            font-size: 16px;
-            line-height: 22.72px;
-        
-            letter-spacing: -0.08px;
-          }
-          .find_tour_btn_text {
-            width: 114px;
-          }
-          .find_tour_btn_text:hover {
-            background-color: inherit;
-            color: #1b1f2b;
-          }
-          .find_tour_btn_text:active {
-            background-color: inherit;
-          }
+        }
+      }
     }
+    .block_header_preview {
+      .description {
+        width: 442px;
+      }
+    }
+  }
+}
+@include phone() {
+  header {
+    height: 488px;
+    &::before {
+      bottom: 0;
+      min-width: 360px;
+      height: 488px;
+    }
+    .container_nav_bar {
+      .nav_bar {
+        @include margin-horizontal(100%, 550px, 0 auto, 320px);
+        padding: 29px 20px 0;
+        #logo_img {
+          width: 133px;
+        }
+        .menu {
+          display: none;
+        }
+        .menu_tel {
+          @include font(400, 16px, 23px, $white-color);
+        }
+      }
+    }
+
+    .block_header_preview {
+      .name_header {
+        @include margin-vertical(360px, 100%, 140px auto 0);
+        @include font(700, 34px, 38px, $white-color);
+      }
+      .description {
+        @include margin-vertical(315px, 100%, 41px auto 0, 315px);
+      }
+      .find_tour_btn {
+        margin-top: 40px;
+        @include font(400, 16px, 23px, $black-color);
+        .find_tour_btn_text {
+          width: 114px;
+          &:hover {
+            background-color: inherit;
+            color: $black-color;
+          }
+          &:active {
+            background-color: inherit;
+          }
+        }
+      }
+    }
+  }
+}
