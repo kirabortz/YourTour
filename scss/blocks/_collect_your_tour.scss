@@ -1,403 +1,429 @@
-.container_collect_your_tour {
+.collect-tour-section {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
-}
-.title_collect_your_tour {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 159px;
-  .description {
-    @include description();
+  .collect-tour-section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 159px;
   }
-}
 
-.form_collect_your_tour {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  gap: 32px;
-  @include margin-vertical(100%, 100%, 100px auto 0);
-  min-width: 1170px;
-  height: 986px;
-  border-radius: $border-radius-min-761px;
-  background-color: $white-color;
-}
-.form_block {
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: space-between;
-  gap: 30px;
-  width: 100%;
-  padding: 0 53px;
-  height: 104px;
-  @include font(400, 20px, 28px, $black-color);
-}
-#direction:valid {
-  color: $black-color;
-}
-#direction,
-.form_input {
-  display: flex;
-  @include margin-vertical(100%, 100%, 8px auto 0);
-  min-width: 500px;
-  height: 68px;
-  border: 1px solid $border-color;
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: $background-color;
-  @include font(400, 20px, 28px, $black-color);
-  text-indent: 20px;
-}
-#direction {
-  appearance: none;
-  background: url(../../img/main/icons/ic-dropdown.svg) no-repeat right;
-  background-color: $background-color;
-  background-position-x: calc(100% - 20px);
-  color: $description-color;
-}
-#from-date,
-#to-date {
-  color: $black-color;
-  text-indent: 10px;
-}
-#from-date:invalid,
-#to-date:invalid {
-  text-transform: uppercase;
-  color: $description-color;
-}
-.form_input::-webkit-calendar-picker-indicator {
-  opacity: 0;
-}
-.form_input:focus,
-#direction:focus,
-#comment:focus {
-  outline: none;
-  border: 1px solid $description-color;
-}
-.form_input::placeholder {
-  @include font(400, 20px, 28px, $description-color);
-  text-indent: 20px;
-}
-.form_block_comment {
-  padding: 0 53px;
-  height: 190px;
-  @include font(400, 20px, 28px, $description-color);
-}
-#comment {
-  display: flex;
-  @include margin-vertical(100%, 100%, 8px auto 0);
-  min-width: 1030px;
-  height: 132px;
-  padding: 10px;
-  border: 1px solid $border-color;
-  border-radius: 10px;
-  resize: none;
-  background-color: $background-color;
-  @include font(400px, 20px, 28px, $black-color);
-  text-indent: 10px;
-}
-.form_block_radio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-left: 70px;
-  height: 64px;
-  @include font(400px, 20px, 28px, $black-color);
-}
-.radio_btns {
-  display: flex;
-  justify-content: space-between;
-  max-width: 166px;
-  height: 28px;
-}
-.radio_label {
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer;
-}
-#age_yes,
-#age_no {
-  display: none;
-}
+  .collect-tour-section-form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    gap: 32px;
+    @include blockSize(100%, 100%, 100px auto 0);
+    min-width: 1170px;
+    height: 986px;
+    border-radius: $border-radius-min-761px;
+    background-color: $white-color;
+    .collect-tour-section-form-block {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      gap: 30px;
+      width: 100%;
+      padding: 0 53px;
+      height: 104px;
+      @include font(400, 20px, 28px, $black-color);
+      .collect-tour-section-form-block-label {
+        &__input,
+        .collect-tour-section-form-block-label-select {
+          display: flex;
+          @include blockSize(100%, 100%, 8px auto 0);
+          min-width: 500px;
+          height: 68px;
+          border: 1px solid $border-color;
+          border-radius: 10px;
+          cursor: pointer;
+          background-color: $main-background-color;
+          @include font(400, 20px, 28px, $black-color);
+          text-indent: 20px;
+        }
+        .collect-tour-section-form-block-label-select {
+          appearance: none;
+          background: url(../../img/main/icons/ic-dropdown.svg) no-repeat right;
+          background-color: $main-background-color;
+          background-position-x: calc(100% - 20px);
+          color: $subtitle-color;
+          &:valid {
+            color: $black-color;
+          }
+        }
+        #from-date,
+        #to-date {
+          color: $black-color;
+          text-indent: 10px;
+          &:invalid {
+            text-transform: uppercase;
+            color: $subtitle-color;
+          }
+          &::-webkit-calendar-picker-indicator {
+            opacity: 0;
+          }
+        }
+        &__input {
+          &::placeholder {
+            @include font(400, 20px, 28px, $subtitle-color);
+            text-indent: 20px;
+          }
+          &:focus {
+            outline: none;
+            border: 1px solid $subtitle-color;
+          }
+        }
+        .collect-tour-section-form-block-label-select:focus {
+          outline: none;
+          border: 1px solid $subtitle-color;
+        }
+      }
+    }
 
-.radio_label::before {
-  content: "";
-  margin-right: 12px;
-  width: 26px;
-  height: 26px;
-  border: 2px solid $black-color;
-  border-radius: 50%;
-}
-#age_yes:checked + .radio_label::before,
-#age_no:checked + .radio_label::before {
-  content: "⬤";
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.form_block_license {
-  display: flex;
-  @include margin-horizontal(1030px, 100%, 0 0 0 70px);
-  @include font(400px, 17px, 24px, $description-color);
-}
-.license_link {
-  color: $black-color;
-  text-decoration: none;
-  @include btnLinkTransition(null);
-}
-#license_checkbox {
-  display: none;
-}
-.license_label::before {
-  content: "";
-  margin-right: 19px;
-  min-width: 25px;
-  height: 25px;
-  border: 2px solid $black-color;
-  border-radius: 5px;
-}
-#license_checkbox:checked + .license_label::before {
-  content: "✔";
-  text-align: center;
-  color: $black-color;
-  font-size: 18px;
-}
-.license_label {
-  display: flex;
-}
-.license_link:hover {
-  border-bottom: 1px solid $black-color;
-  cursor: pointer;
-}
-.license_link:active {
-  border-bottom: 1px solid #286562;
-  color: #286562;
-}
-.form_block_btns {
-  display: flex;
-  justify-content: space-between;
-  @include margin-horizontal(1030px, 100%, 0 0 0 70px);
-  height: 58px;
-}
-.block_btns {
-  width: 500px;
-  display: flex;
-  justify-content: space-between;
-}
-.find-tour-btn,
-.reset-btn {
-  width: 235px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 15px 30px;
-  @include font(400, 20px, 28px, $white-color);
-  background-color: #286562;
-  @include btnLinkTransition(null);
-}
-.reset-btn {
-  background-color: #e0f0e5;
-  color: #286562;
-}
-.find-tour-btn:hover {
-  background-color: #3b7e7b;
-}
-.find-tour-btn:active {
-  background-color: #627f7e;
-}
-.reset-btn:hover {
-  background-color: #f1f3f2;
-}
-.reset-btn:active {
-  background-color: #d9dfdb;
+    .collect-tour-section-form-block-comment {
+      padding: 0 53px;
+      height: 190px;
+      @include font(400, 20px, 28px, $black-color);
+      &__textarea {
+        display: flex;
+        @include blockSize(100%, 100%, 8px auto 0);
+        min-width: 1030px;
+        height: 132px;
+        padding: 10px;
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        resize: none;
+        background-color: $main-background-color;
+        @include font(400px, 20px, 28px, $black-color);
+        text-indent: 10px;
+        &:focus {
+          outline: none;
+          border: 1px solid $subtitle-color;
+        }
+      }
+    }
+    .collect-tour-section-form-block-radio {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: 53px;
+      height: 64px;
+      @include font(400px, 20px, 28px, $black-color);
+      .collect-tour-section-form-block-radio-btns {
+        display: flex;
+        justify-content: space-between;
+        max-width: 166px;
+        height: 28px;
+        .collect-tour-section-form-block-radio-btns-btn {
+          &__input {
+            display: none;
+          }
+          &__label {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            &::before {
+              content: "";
+              margin-right: 12px;
+              width: 26px;
+              height: 26px;
+              border: 2px solid $black-color;
+              border-radius: 50%;
+            }
+          }
+          .collect-tour-section-form-block-radio-btns-btn__input:checked + .collect-tour-section-form-block-radio-btns-btn__label::before {
+            content: "⬤";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+
+    .collect-tour-section-form-block-license {
+      display: flex;
+      @include blockSize(1030px, 100%, 0 0 0 53px);
+      @include font(400px, 17px, 24px, $subtitle-color);
+      &__checkbox {
+        display: none;
+      }
+      &__label {
+        display: flex;
+        &::before {
+          content: "";
+          margin-right: 19px;
+          min-width: 25px;
+          height: 25px;
+          border: 2px solid $black-color;
+          border-radius: 5px;
+        }
+      }
+      &__link {
+        color: $black-color;
+        text-decoration: none;
+        @include transition(border-bottom);
+        &:hover {
+          border-bottom: 1px solid $black-color;
+          cursor: pointer;
+        }
+        &:active {
+          border-bottom: 1px solid #286562;
+          color: #286562;
+        }
+      }
+      .collect-tour-section-form-block-license__checkbox:checked + .collect-tour-section-form-block-license__label::before {
+        content: "✔";
+        text-align: center;
+        color: $black-color;
+        font-size: 18px;
+      }
+    }
+
+    .collect-tour-section-form-block-confirm {
+      display: flex;
+      justify-content: space-between;
+      @include blockSize(1030px, 100%, 0 0 0 53px);
+      height: 58px;
+      .collect-tour-section-form-block-confirm-btns {
+        width: 500px;
+        display: flex;
+        justify-content: space-between;
+        &__submit,
+        &__reset {
+          width: 235px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          padding: 15px 30px;
+          @include font(400, 20px, 28px, $white-color);
+          background-color: #286562;
+          @include transition(background-color);
+        }
+        &__submit {
+          &:hover {
+            background-color: #3b7e7b;
+          }
+          &:active {
+            background-color: #627f7e;
+          }
+        }
+        &__reset {
+          background-color: #e0f0e5;
+          color: #286562;
+          &:hover {
+            background-color: #f1f3f2;
+          }
+          &:active {
+            background-color: #d9dfdb;
+          }
+        }
+      }
+    }
+  }
 }
 @media (min-width: 761px) and (max-width: 1280px) {
-  .container_collect_your_tour {
+  .collect-tour-section {
     padding: 0 53px;
-  }
-  .form_collect_your_tour {
-    width: 100%;
-    min-width: initial;
-  }
-  .form_block {
-    margin: initial;
-    padding: 0 60px;
-    gap: 20px;
-    width: 100%;
-  }
-  .form_block label {
-    width: 49%;
-  }
-  #direction,
-  .form_input {
-    max-width: 100%;
-    min-width: initial;
-  }
-  .form_block_comment {
-    margin: initial;
-    width: 100%;
-  }
-  #comment {
-    width: 100%;
-    min-width: initial;
-  }
-  .form_block_radio {
-    @include margin-horizontal(100%, 170px, 0 0 0 60px);
-  }
-  .form_block_license {
-    @include margin-horizontal(81%, 100%, 0 0 0 60px);
-  }
-  .form_block_btns {
-    @include margin-horizontal(100%, 500px, 0 0 0 60px);
+
+    .collect-tour-section-form {
+      width: 100%;
+      min-width: initial;
+      .collect-tour-section-form-block {
+        margin: initial;
+        padding: 0 60px;
+        gap: 20px;
+        width: 100%;
+        .collect-tour-section-form-block-label {
+          width: 49%;
+          &__input,
+          .collect-tour-section-form-block-label-select {
+            max-width: 100%;
+            min-width: initial;
+          }
+        }
+      }
+
+      .collect-tour-section-form-block-comment {
+        margin: initial;
+        width: 100%;
+        &__textarea {
+          width: 100%;
+          min-width: initial;
+        }
+      }
+      .collect-tour-section-form-block-radio {
+        @include blockSize(100%, 170px, 0 0 0 60px);
+      }
+      .collect-tour-section-form-block-license {
+        @include blockSize(81%, 100%, 0 0 0 60px);
+      }
+      .collect-tour-section-form-block-confirm {
+        @include blockSize(100%, 500px, 0 0 0 60px);
+      }
+    }
   }
 }
 @media (max-width: 760px) {
-  .container_collect_your_tour {
+  .collect-tour-section {
     padding: 0 21px;
-  }
-  .title_collect_your_tour {
-    width: 327px;
-    height: 104px;
-    text-align: center;
-  }
-  .title_collect_your_tour .description {
-    width: 318px;
-    height: 46px;
-    margin-top: 0;
-  }
-  .form_collect_your_tour {
-    flex-flow: column nowrap;
-    justify-content: initial;
-    @include margin-vertical(100%, 100%, 40px auto 0);
-    height: 100%;
-    min-width: initial;
-    padding: 40px 0;
-    gap: 5px;
-    border-radius: 30px;
-  }
-  .form_block {
-    justify-content: initial;
-    padding: 0 21px;
-    @include font(400, 16px, 23px, $black-color);
-    gap: 8px;
-    min-width: initial;
-  }
-  .form_block label {
-    width: 49%;
-  }
-  #direction,
-  .form_input {
-    @include margin-vertical(100%, 100%, 8px auto 28px);
-    min-width: initial;
-    height: 43px;
-    cursor: default;
-    text-indent: 10px;
-    @include font(400, 16px, 23px, $black-color);
-  }
-  #direction {
-    @include font(400, 16px, 23px, $description-color);
-  }
-  #from-date,
-  #to-date {
-    text-indent: 5px;
-  }
-  .form_input:focus,
-  #direction:focus,
-  #comment:focus {
-    outline: none;
-    border: none;
-  }
-  .form_input::placeholder {
-    text-indent: 10px;
-    @include font(400, 16px, 23px, $description-color);
-  }
-  .form_block_comment {
-    height: 163px;
-    padding: 0 21px;
-    margin: 0 0 25px 0;
-    @include font(400, 16px, 23px, $black-color);
-  }
-  #comment {
-    max-width: 100%;
-    min-width: initial;
-    @include font(400, 16px, 23px, $black-color);
-    text-indent: 0;
-  }
-  .form_block_radio {
-    height: 54px;
-    @include margin-vertical(100%, 100%, 0 0 25px 0);
-    padding: 0 21px;
-    @include font(400, 16px, 23px, $black-color);
-  }
-  .radio_btns {
-    width: 139px;
-    height: 23px;
-  }
-  #age_yes,
-  #age_no {
-    width: 20px;
-    height: 20px;
-  }
-  .form_block_license {
-    @include margin-vertical(100%, 100%, 0 0 25px 0, 242px);
-    padding: 0 21px;
-    @include font(400, 16px, 23px, $description-color);
-  }
-  #license_checkbox {
-    width: 20px;
-    height: 20px;
-  }
-  .license_label:before {
-    margin-right: 9px;
-  }
-  .license_link:hover,
-  .license_link:active {
-    border: none;
-    cursor: default;
-    color: $black-color;
-  }
-  .find-tour-btn:hover,
-  .find-tour-btn:active {
-    background-color: #286562;
-  }
-  .reset-btn:hover,
-  .reset-btn:active {
-    background-color: #e0f0e5;
-  }
-  .form_block_btns {
-    @include margin-horizontal(280px, 100%, initial, 280px);
-    padding: 0 21px;
-    height: 47px;
-  }
-  .block_btns {
-    gap: 10px;
-  }
-  .find-tour-btn,
-  .reset-btn {
-    width: 130px;
-    font-size: 15px;
-    line-height: 23px;
+    .collect-tour-section-header {
+      width: 327px;
+      height: 104px;
+      text-align: center;
+    }
+    .collect-tour-section-form {
+      flex-flow: column nowrap;
+      justify-content: initial;
+      @include blockSize(100%, 100%, 40px auto 0);
+      height: 100%;
+      min-width: initial;
+      padding: 40px 0;
+      gap: 5px;
+      border-radius: 30px;
+
+      .collect-tour-section-form-block {
+        justify-content: initial;
+        padding: 0 21px;
+        @include font(400, 16px, 23px, $black-color);
+        gap: 8px;
+        min-width: initial;
+        .collect-tour-section-form-block-label {
+          width: 49%;
+          &__input,
+          .collect-tour-section-form-block-label-select {
+            @include blockSize(100%, 100%, 8px auto 28px);
+            min-width: initial;
+            height: 43px;
+            cursor: default;
+            @include font(400, 16px, 23px, $black-color);
+          }
+          .collect-tour-section-form-block-label-select {
+            @include font(400, 16px, 23px, $subtitle-color);
+            &:focus {
+              outline: none;
+              border: none;
+            }
+          }
+          &__input {
+            &:focus {
+              outline: none;
+              border: none;
+            }
+            &::placeholder {
+              @include font(400, 16px, 23px, $subtitle-color);
+            }
+          }
+        }
+      }
+
+      .collect-tour-section-form-block-comment {
+        height: 163px;
+        padding: 0 21px;
+        margin: 0 0 25px 0;
+        @include font(400, 16px, 23px, $black-color);
+        &__textarea {
+          max-width: 100%;
+          min-width: initial;
+          @include font(400, 16px, 23px, $black-color);
+          text-indent: 0;
+          &:focus {
+            outline: none;
+            border: none;
+          }
+        }
+      }
+
+      .collect-tour-section-form-block-radio {
+        height: 54px;
+        @include blockSize(100%, 100%, 0 0 25px 0);
+        padding: 0 21px;
+        @include font(400, 16px, 23px, $black-color);
+        .collect-tour-section-form-block-radio-btns {
+          width: 139px;
+          height: 23px;
+          .collect-tour-section-form-block-radio-btns-btn {
+            &__input {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+
+      .collect-tour-section-form-block-license {
+        @include blockSize(100%, 100%, 0 0 25px 0);
+        min-width: 242px;
+        padding: 0 21px;
+        @include font(400, 16px, 23px, $subtitle-color);
+        &__checkbox {
+          width: 20px;
+          height: 20px;
+        }
+        &__label {
+          &::before {
+            margin-right: 9px;
+          }
+        }
+        &__link {
+          &:hover,
+          &:active {
+            border: none;
+            cursor: default;
+            color: $black-color;
+          }
+        }
+      }
+      .collect-tour-section-form-block-confirm {
+        @include blockSize(280px, 100%, initial);
+        min-width: 280px;
+        padding: 0 21px;
+        height: 47px;
+        .collect-tour-section-form-block-confirm-btns {
+          gap: 10px;
+          &__submit,
+          &__reset {
+            width: 130px;
+            font-size: 15px;
+            line-height: 23px;
+          }
+          &__submit {
+            &:hover,
+            &:active {
+              background-color: #286562;
+            }
+          }
+          &__reset {
+            &:hover,
+            &:active {
+              background-color: #e0f0e5;
+            }
+          }
+        }
+      }
+    }
   }
   @media (max-width: 658px) {
-    .form_collect_your_tour {
-      padding: 20px 0 40px;
-    }
-    .form_block {
-      height: 100%;
-    }
-    .form_block label {
-      width: 100%;
-    }
-    #direction,
-    .form_input {
-      width: 100%;
-    }
-    #direction {
-      background-position-x: calc(100% - 10px);
+    .collect-tour-section {
+      .collect-tour-section-form {
+        padding: 20px 0 40px;
+        .collect-tour-section-form-block {
+          height: 100%;
+          .collect-tour-section-form-block-label {
+            width: 100%;
+            &__input,
+            .collect-tour-section-form-block-label-select {
+              width: 100%;
+            }
+            .collect-tour-section-form-block-label-select {
+              background-position-x: calc(100% - 10px);
+            }
+          }
+        }
+      }
     }
   }
 }

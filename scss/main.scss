@@ -4,11 +4,7 @@
 @import "./mixins/media_queries";
 @import "./mixins/general_rules";
 @import "./mixins/typography";
-@import "./mixins/color";
 @import "./mixins/animations";
-
-@import "./mixins/effects/gradients";
-@import "./mixins/layout/flexbox";
 
 @import "./blocks/basic/basic_styles";
 @import "./blocks/basic/by_js";
@@ -20,5 +16,3 @@
 @import "./blocks/travel_stories";
 @import "./blocks/travel_with_us";
 @import "./blocks/footer";
-
-

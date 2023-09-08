@@ -1,3 +1,18 @@
-@mixin btnLinkTransition($color, $duration: 0.3s, $easing: ease) {
-  transition: $color $duration $easing, background-color $duration $easing, border-bottom $duration $easing;
+@mixin transition($transitions...) {
+  $default-duration: 0.3s;
+  $default-timing-function: ease;
+  $transition-properties: ();
+
+  @each $transition in $transitions {
+    $property: nth($transition, 1);
+    $duration: if(length($transition) >= 2, nth($transition, 2), $default-duration);
+    $timing-function: if(length($transition) >= 3, nth($transition, 3), $default-timing-function);
+    $transition-properties: append($transition-properties, #{$property} #{$duration} #{$timing-function}, comma);
+  }
+
+  transition: $transition-properties;
+}
+
+@mixin transform($properties) {
+  transform: $properties;
 }

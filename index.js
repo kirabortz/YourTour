@@ -1,7 +1,6 @@
-const header = document.querySelector(".header");
-const logo = document.querySelectorAll("#logo_img path");
-const selectedVariantTour = document.querySelectorAll(".variant_link");
-
+const headerBlock = document.querySelector(".header-block");
+const logo = document.querySelectorAll("#logo-img path");
+const selectedVariantTour = document.querySelectorAll(".your-tour-section-header-menu__link");
 selectedVariantTour.forEach((elem) => {
   elem.addEventListener("click", () => {
     selectedVariantTour.forEach((item) => {
@@ -12,7 +11,7 @@ selectedVariantTour.forEach((elem) => {
 });
 window.addEventListener("scroll", () => {
   const isScrolled = window.scrollY > 450;
-  changeClass(header, "scrolled_container_nav_bar", isScrolled);
+  changeClass(headerBlock, "scrolled-nav", isScrolled);
   logo.forEach((item) => (item.style.fill = isScrolled ? "black" : "white"));
 });
 

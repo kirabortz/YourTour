@@ -1,216 +1,233 @@
-.container_take_your_tour {
+.your-tour-section {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  width: 100%;
-}
-.title_take_your_tour {
-  width: 700px;
-  height: 150px;
-  text-align: center;
-}
-.your_tour_variants {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 35px;
-  height: 28px;
-  list-style-type: none;
-}
-.variant_link {
-  text-decoration: none;
-  border: 2px solid $transparent-color;
-  @include font(700, 23px, 28px, $black-color);
-  cursor: pointer;
-  @include btnLinkTransition(null);
-}
-.variant_link.active {
-  color: $active-color;
-  border-bottom: 2px solid $active-color;
-}
-.variant_link:hover {
-  border-bottom: 2px solid $active-color;
-  color: $active-color;
-}
-.block_tours {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
-  margin-top: 90px;
-  min-width: 1170px;
-}
-.card_tour {
-  position: relative;
-  width: 31%;
-  max-height: 531px;
-  overflow: hidden;
-  border-radius: $border-radius-min-761px;
-}
-.card_tour::before {
-  @include pseudo;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: $border-radius-min-761px;
-  background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
-  z-index: 1;
-}
+  .your-tour-section-header {
+    &__title {
+      width: 700px;
+      text-align: center;
+    }
+    .your-tour-section-header-menu {
+      display: flex;
+      justify-content: space-between;
+      @include blockSize(100%, null, 35px 0 0 0);
+      // width: 100%;
+      // margin-top: 35px;
+      height: 28px;
+      list-style-type: none;
+      &__link {
+        text-decoration: none;
+        border: 2px solid transparent;
+        @include font(700, 23px, 28px, $black-color);
+        cursor: pointer;
+        @include transition(border-bottom, color);
+        &.active {
+          color: $active-color;
+          border-bottom: 2px solid $active-color;
+        }
+        &:hover {
+          border-bottom: 2px solid $active-color;
+          color: $active-color;
+        }
+      }
+    }
+  }
 
-.card_tour_img {
-  width: 100%;
-  height: 531px;
-  border-radius: $border-radius-min-761px;
-  transition: 300ms ease;
-  transform: scale(1);
-  object-fit: cover;
-}
-.card_tour:hover .card_tour_img {
-  transition: 300ms ease;
-  transform: scale(1.2);
-}
-.overlay {
-  position: absolute;
-  display: flex;
-  flex-flow: column nowrap;
-  top: 50px;
-  left: 50px;
-  height: 445px;
-  max-width: 240px;
-  color: $white-color;
-  z-index: 1;
-}
-.overlay .card_tour_title {
-  color: $white-color;
-}
-.overlay .price {
-  margin-top: 16px;
-  @include font(400, 17px, 24px, $white-color);
-}
-.about_tour_btn {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: -20px;
-  width: 199px;
-  border-radius: $border-radius-min-761px;
-  cursor: pointer;
-  border: none;
-  background-color: $transparent-color;
-  @include btnLinkTransition(null);
-}
-.card_tour:hover .about_tour_btn {
-  background-color: #286562;
-}
-.card_tour:hover .about_tour_btn:active {
-  background-color: $active-color;
-}
-.about_tour_btn .more {
-  max-width: 199px;
-  padding: 7px 16px 7px 20px;
-  cursor: pointer;
-  @include font(700, 23px, 28px, $white-color);
+  .your-tour-section-tours {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    @include blockSize(null, 1170px, 90px 0 0 0);
+    // margin-top: 90px;
+    // max-width: 1170px;
+
+    .your-tour-section-tours-card-tour {
+      position: relative;
+      width: 31%;
+      max-height: 531px;
+      overflow: hidden;
+      border-radius: $border-radius-min-761px;
+      &:hover {
+        .your-tour-section-tours-card-tour__img {
+          @include transform(scale(1.2));
+        }
+      }
+      &:hover {
+        .your-tour-section-tours-card-tour-overlay__more-btn {
+          background-color: #286562;
+        }
+        .your-tour-section-tours-card-tour-overlay__more-btn:active {
+          background-color: $active-color;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: $border-radius-min-761px;
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
+        z-index: 1;
+      }
+      &__img {
+        width: 100%;
+        height: 531px;
+        border-radius: $border-radius-min-761px;
+        @include transition(transform);
+        object-fit: cover;
+      }
+      .your-tour-section-tours-card-tour-overlay {
+        position: absolute;
+        display: flex;
+        flex-flow: column nowrap;
+        top: 50px;
+        left: 50px;
+        height: 445px;
+        max-width: 240px;
+        color: $white-color;
+        z-index: 1;
+        &__title {
+          @include font(500, 35px, 43px, $black-color);
+          color: $white-color;
+        }
+        &__price {
+          margin-top: 16px;
+          @include font(400, 17px, 24px, $white-color);
+        }
+        &__more-btn {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          bottom: 0;
+          left: -20px;
+          width: 199px;
+          border-radius: $border-radius-min-761px;
+          cursor: pointer;
+          border: none;
+          background-color: transparent;
+          @include transition(background-color);
+          &-text {
+            max-width: 199px;
+            padding: 7px 16px 7px 20px;
+            cursor: pointer;
+            @include font(700, 23px, 28px, $white-color);
+          }
+        }
+      }
+    }
+  }
 }
 @media (min-width: 761px) and (max-width: 1280px) {
-  .case_size,
-  footer {
-    @include margin-vertical(100%, 1280px, 135px auto 0);
-  }
-  .container_take_your_tour {
+  .your-tour-section {
     padding: 0 53px;
-  }
-  .block_tours {
-    gap: 18px;
-    min-width: initial;
-  }
-  .card_tour {
-    width: 48%;
-  }
-  .card_tour_img {
-    object-fit: cover;
-  }
-  .overlay {
-    right: 50px;
-    max-width: 100%;
+    .your-tour-section-tours {
+      gap: 18px;
+      min-width: initial;
+      .your-tour-section-tours-card-tour {
+        width: 48%;
+        &__img {
+          object-fit: cover;
+        }
+        .your-tour-section-tours-card-tour-overlay {
+          right: 50px;
+          max-width: 100%;
+        }
+      }
+    }
   }
 }
 @media (max-width: 760px) {
-  .title_take_your_tour {
-    width: 100%;
-    min-width: 360px;
-  }
-  .your_tour_variants {
-    flex-flow: row wrap;
-    justify-content: center;
-    @include margin-vertical(100%, 760px, 30px auto 0);
-    padding: 0 20px;
-  }
-  .variant_link {
-    padding: 7px 0 0;
-    margin-right: 12px;
-    @include font(700, 17px, 23px, $black-color);
-  }
-  .block_tours {
-    @include margin-vertical(100%, 100%, 25px auto 0);
-    min-width: 360px;
-    gap: 18px;
-    padding: 0 21px;
-  }
-  .card_tour {
-    border-radius: $border-radius-max-760px;
-    width: calc(48%);
-    height: 318px;
-  }
-  .card_tour_img {
-    height: 100%;
-    border-radius: $border-radius-max-760px;
-    object-fit: cover;
-  }
-  .card_tour::before {
-    width: 100%;
-    border-radius: $border-radius-max-760px;
-  }
-  @media (max-width: 658px) {
-    .your_tour_variants {
-      @include margin-vertical(100%, 360px, 30px auto 0);
+  .your-tour-section {
+    .your-tour-section-header {
+      justify-content: initial;
+      height: initial;
+      &__title {
+        width: 100%;
+        min-width: 360px;
+      }
+      .your-tour-section-header-menu {
+        flex-flow: row wrap;
+        justify-content: center;
+        @include blockSize(100%, 760px, 30px auto 0);
+        padding: 0 20px;
+        &__link {
+          padding: 7px 0 0;
+          margin-right: 12px;
+          @include font(700, 17px, 23px, null);
+        }
+        @media (max-width: 658px) {
+          & {
+            @include blockSize(100%, 360px, 30px auto 0);
+            min-width: 360px;
+            height: 56px;
+          }
+        }
+      }
+    }
+    .your-tour-section-tours {
+      @include blockSize(100%, 100%, 25px auto 0);
       min-width: 360px;
-      height: 56px;
+      gap: 18px;
+      padding: 0 21px;
+      .your-tour-section-tours-card-tour {
+        border-radius: $border-radius-max-760px;
+        width: calc(48%);
+        height: 318px;
+        &::before {
+          width: 100%;
+          border-radius: $border-radius-max-760px;
+        }
+        &__img {
+          height: 100%;
+          border-radius: $border-radius-max-760px;
+          object-fit: cover;
+        }
+        &:hover {
+          .your-tour-section-tours-card-tour-overlay__more-btn {
+            background-color: transparent;
+          }
+        }
+        &:hover {
+          .your-tour-section-tours-card-tour-overlay__more-btn:active {
+            background-color: transparent;
+          }
+        }
+        .your-tour-section-tours-card-tour-overlay {
+          display: flex;
+          top: 27px;
+          left: 25px;
+          right: 24px;
+          height: initial;
+          max-width: 100%;
+          &__title {
+            @include font(700, 22px, 28px, $white-color);
+            letter-spacing: 1px;
+          }
+          &__more-btn {
+            top: 240px;
+            left: 0;
+            &-text {
+              display: flex;
+              align-items: center;
+              width: initial;
+              padding: 0 16px 0 0;
+              @include font(700, 16px, 23px, $white-color);
+            }
+          }
+        }
+      }
+      @media (max-width: 658px) {
+        & {
+          max-width: 420px;
+          flex-flow: column nowrap;
+          .your-tour-section-tours-card-tour {
+            width: 100%;
+          }
+        }
+      }
     }
-    .block_tours {
-      max-width: 420px;
-      flex-flow: column nowrap;
-    }
-    .card_tour {
-      width: 100%;
-    }
-  }
-  .overlay {
-    display: flex;
-    top: 27px;
-    left: 25px;
-    right: 24px;
-    height: initial;
-    max-width: 100%;
-  }
-  .overlay .card_tour_title {
-    letter-spacing: 1px;
-  }
-  .about_tour_btn {
-    top: 240px;
-    left: 0;
-  }
-  .card_tour:hover .about_tour_btn {
-    background-color: $transparent-color;
-  }
-  .card_tour:hover .about_tour_btn:active {
-    background-color: $transparent-color;
-  }
-  .about_tour_btn .more {
-    display: flex;
-    align-items: center;
-    width: initial;
-    padding: 0 16px 0 0;
-    @include font(700, 16px, 23px, $white-color);
   }
 }

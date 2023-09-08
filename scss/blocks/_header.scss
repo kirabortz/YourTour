@@ -1,4 +1,4 @@
-header {
+.header {
   height: 831px;
   background: url(../img/header/header-bg.jpg);
   background-size: cover;
@@ -7,156 +7,164 @@ header {
   margin: 0 auto;
 
   &::before {
-    @include pseudo;
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 80px;
     height: 831px;
-    @include header-gradient();
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
   }
-  .container_nav_bar {
+  .header-block {
     position: absolute;
-    right: 0;
     left: 0;
-    min-width: 360px;
+    right: 0;
     height: 88px;
-    z-index: 2;
-
-    .nav_bar {
+    min-width: 360px;
+    .header-block-nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @include margin-horizontal(100%, 1168px, 0 auto);
-      padding-top: 29px;
+      position: relative;
+      height: 88px;
+      @include blockSize(100%, 1168px, 0 auto);
+      padding-top: 6px;
 
-      .menu_tel {
-        text-decoration: none;
-        @include font(400, 20px, 28px, $white-color);
-      }
-      .menu {
+      .header-block-nav-menu {
         list-style-type: none;
         display: flex;
         justify-content: space-between;
         width: 468px;
         height: 28px;
-        .menu_item {
-          @include btnLinkTransition(null);
+        &__item {
+          @include transition(border-bottom);
           &:hover {
             border-bottom: 1px solid $white-color;
           }
-          .menu_item_link {
+          &-link {
             text-decoration: none;
             @include font(400, 20px, 28px, $white-color);
           }
         }
       }
+      &__tel {
+        text-decoration: none;
+        @include font(400, 20px, 28px, $white-color);
+      }
     }
   }
-  .block_header_preview {
+
+  .header-content {
     position: absolute;
     text-align: center;
-    width: 100%;
+    @include blockSize(100%, 100%, 88px 0 0 0);
+    // width: 100%;
+    height: 743px;
     min-width: 360px;
-    .name_header {
-      @include margin-vertical(100%, 768px, 207px auto 0);
+    // margin-top: 88px;
+    &__title {
+      @include blockSize(100%, 768px, 119px auto 0);
       @include font(700, 96px, 105px, $white-color);
       letter-spacing: 2px;
     }
-  }
-  .description {
-    @include margin-vertical(100%, 562px, 50px auto 0);
-    color: $white-color;
-  }
-  .find_tour_btn {
-    margin-top: 50px;
-    padding: 0;
-    border-radius: 10px;
-    border: none;
-    background-color: $white-color;
-    @include font(400, 17px, 24px, $black-color);
-    cursor: pointer;
 
-    .find_tour_btn_text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 118px;
-      height: 34px;
+    &__subtitle {
+      @include blockSize(100%, 562px, 50px auto 0);
+      color: $white-color;
+    }
+    &__find-tour-btn {
+      margin-top: 50px;
+      padding: 0;
       border-radius: 10px;
-      text-decoration: none;
-      color: $black-color;
-      @include btnLinkTransition(null);
-      &:hover {
-        background-color: $active-color;
-        color: $white-color;
-      }
-      &:active {
-        background-color: #f8e6be;
+      border: none;
+      background-color: $white-color;
+      @include font(400, 17px, 24px, $black-color);
+      cursor: pointer;
+
+      &-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 118px;
+        height: 34px;
+        border-radius: 10px;
+        text-decoration: none;
         color: $black-color;
+        @include transition(background-color, color);
+        &:hover {
+          background-color: $active-color;
+          color: $white-color;
+        }
+        &:active {
+          background-color: #f8e6be;
+          color: $black-color;
+        }
       }
     }
   }
 }
 
 @include laptop() {
-  header {
-    .container_nav_bar {
-      .nav_bar {
-        padding: 29px 53px 0;
-        .menu {
+  .header {
+    .header-block {
+      .header-block-nav {
+        padding: 0 53px 0;
+        .header-block-nav-menu {
           max-width: 408px;
         }
-        @media (min-width: 761px) and (max-width: 920px) {
-          .menu {
+        @include tablet() {
+          .header-block-nav-menu {
             display: none;
           }
         }
       }
     }
-    .block_header_preview {
-      .description {
+    .header-content {
+      &__subtitle {
         width: 442px;
       }
     }
   }
 }
+
 @include phone() {
-  header {
+  .header {
     height: 488px;
     &::before {
       bottom: 0;
       min-width: 360px;
       height: 488px;
     }
-    .container_nav_bar {
-      .nav_bar {
-        @include margin-horizontal(100%, 550px, 0 auto, 320px);
-        padding: 29px 20px 0;
-        #logo_img {
+    .header-block {
+      .header-block-nav {
+        @include blockSize(100%, 550px, 0 auto);
+        min-width: 320px;
+        padding: 0 20px 0;
+        #logo-img {
           width: 133px;
         }
-        .menu {
+        .header-block-nav-menu {
           display: none;
         }
-        .menu_tel {
+        &__tel {
           @include font(400, 16px, 23px, $white-color);
         }
       }
     }
-
-    .block_header_preview {
-      .name_header {
-        @include margin-vertical(360px, 100%, 140px auto 0);
+    .header-content {
+      height: 400px;
+      &__title {
+        @include blockSize(360px, 100%, 52px auto 0);
         @include font(700, 34px, 38px, $white-color);
       }
-      .description {
-        @include margin-vertical(315px, 100%, 41px auto 0, 315px);
+      &__subtitle {
+        @include blockSize(315px, 100%, 41px auto 0);
       }
-      .find_tour_btn {
+      &__find-tour-btn {
         margin-top: 40px;
         @include font(400, 16px, 23px, $black-color);
-        .find_tour_btn_text {
+        &-text {
           width: 114px;
           &:hover {
             background-color: inherit;

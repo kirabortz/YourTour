@@ -3,42 +3,40 @@
 }
 html,
 body {
-  min-width: 359px;
+  min-width: 360px;
   min-height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: $background-color;
-  @include margin-horizontal(100%, 100%, 0 auto);
+  background-color: $main-background-color;
+  @include blockSize(100%, 100%, 0 auto);
 }
 html {
   scroll-behavior: smooth;
 }
-.case_size {
-  @include margin-horizontal(100%, 1170px, 135px auto 0);
+.section--size {
+  @include blockSize(100%, 1170px, 135px auto 0);
 }
-.name_title {
+.title {
   @include font(700, 59px, 73px, $black-color);
 }
-.item_title {
-  @include font(500, 35px, 43px, $black-color);
+.subtitle {
+  width: 418px;
+  height: 56px;
+  margin: 30px auto;
+  text-align: center;
+  @include font(400, 20px, 28px, $subtitle-color);
 }
-.description {
-  @include description();
-  @include font(400, 20px, 28px, $description-color);
-}
+
 @include phone() {
-  .case_size,
-  footer {
-    @include margin-horizontal(100%, 760px, 75px auto 0);
+  .section--size,
+  .footer {
+    @include blockSize(100%, 760px, 75px auto 0);
   }
-  .name_title {
+  .title {
     @include font(700, 34px, 38px, $black-color);
   }
-  .item_title {
-    @include font(700, 23px, 27px, $black-color);
-  }
-  .description {
-    @include description(318px, null, null, null);
-    @include font(400, 16px, 23px, $description-color);
+  .subtitle {
+    width: 318px;
+    @include font(400, 16px, 23px, $subtitle-color);
   }
 }
