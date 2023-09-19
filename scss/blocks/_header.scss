@@ -5,6 +5,9 @@
   background-position: center;
   background-repeat: no-repeat;
   margin: 0 auto;
+  @include phone() {
+    height: 488px;
+  }
 
   &::before {
     content: "";
@@ -15,6 +18,11 @@
     bottom: 80px;
     height: 831px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    @include phone() {
+      bottom: 0;
+      min-width: 360px;
+      height: 488px;
+    }
   }
   .header-block {
     position: absolute;
@@ -22,6 +30,7 @@
     right: 0;
     height: 88px;
     min-width: 360px;
+
     .header-block-nav {
       display: flex;
       justify-content: space-between;
@@ -30,13 +39,34 @@
       height: 88px;
       @include blockSize(100%, 1168px, 0 auto);
       padding-top: 6px;
+      @include laptop() {
+        padding: 0 53px 0;
+      }
+      @include phone() {
+        #logo-img {
+          width: 133px;
+        }
+        @include blockSize(100%, 550px, 0 auto);
+        min-width: 320px;
+        padding: 0 20px 0;
+      }
 
-      .header-block-nav-menu {
+      .nav-menu {
         list-style-type: none;
         display: flex;
         justify-content: space-between;
         width: 468px;
         height: 28px;
+        @include laptop() {
+          max-width: 408px;
+        }
+        @include phone() {
+          display: none;
+        }
+        @include tablet() {
+          display: none;
+        }
+
         &__item {
           @include transition(border-bottom);
           &:hover {
@@ -48,9 +78,13 @@
           }
         }
       }
+
       &__tel {
         text-decoration: none;
         @include font(400, 20px, 28px, $white-color);
+        @include phone() {
+          @include font(400, 16px, 23px, $white-color);
+        }
       }
     }
   }
@@ -59,21 +93,34 @@
     position: absolute;
     text-align: center;
     @include blockSize(100%, 100%, 88px 0 0 0);
-    // width: 100%;
     height: 743px;
     min-width: 360px;
-    // margin-top: 88px;
+    @include phone() {
+      height: 400px;
+    }
+
     &__title {
       @include blockSize(100%, 768px, 119px auto 0);
       @include font(700, 96px, 105px, $white-color);
       letter-spacing: 2px;
+      @include phone() {
+        @include blockSize(360px, 100%, 52px auto 0);
+        @include font(700, 34px, 38px, $white-color);
+      }
     }
 
     &__subtitle {
       @include blockSize(100%, 562px, 50px auto 0);
       color: $white-color;
+      @include laptop() {
+        width: 442px;
+      }
+      @include phone() {
+        @include blockSize(315px, 100%, 41px auto 0);
+      }
     }
-    &__find-tour-btn {
+
+    &__btn {
       margin-top: 50px;
       padding: 0;
       border-radius: 10px;
@@ -81,6 +128,10 @@
       background-color: $white-color;
       @include font(400, 17px, 24px, $black-color);
       cursor: pointer;
+      @include phone() {
+        margin-top: 40px;
+        @include font(400, 16px, 23px, $black-color);
+      }
 
       &-text {
         display: flex;
@@ -92,79 +143,7 @@
         text-decoration: none;
         color: $black-color;
         @include transition(background-color, color);
-        &:hover {
-          background-color: $active-color;
-          color: $white-color;
-        }
-        &:active {
-          background-color: #f8e6be;
-          color: $black-color;
-        }
-      }
-    }
-  }
-}
-
-@include laptop() {
-  .header {
-    .header-block {
-      .header-block-nav {
-        padding: 0 53px 0;
-        .header-block-nav-menu {
-          max-width: 408px;
-        }
-        @include tablet() {
-          .header-block-nav-menu {
-            display: none;
-          }
-        }
-      }
-    }
-    .header-content {
-      &__subtitle {
-        width: 442px;
-      }
-    }
-  }
-}
-
-@include phone() {
-  .header {
-    height: 488px;
-    &::before {
-      bottom: 0;
-      min-width: 360px;
-      height: 488px;
-    }
-    .header-block {
-      .header-block-nav {
-        @include blockSize(100%, 550px, 0 auto);
-        min-width: 320px;
-        padding: 0 20px 0;
-        #logo-img {
-          width: 133px;
-        }
-        .header-block-nav-menu {
-          display: none;
-        }
-        &__tel {
-          @include font(400, 16px, 23px, $white-color);
-        }
-      }
-    }
-    .header-content {
-      height: 400px;
-      &__title {
-        @include blockSize(360px, 100%, 52px auto 0);
-        @include font(700, 34px, 38px, $white-color);
-      }
-      &__subtitle {
-        @include blockSize(315px, 100%, 41px auto 0);
-      }
-      &__find-tour-btn {
-        margin-top: 40px;
-        @include font(400, 16px, 23px, $black-color);
-        &-text {
+        @include phone() {
           width: 114px;
           &:hover {
             background-color: inherit;
@@ -173,6 +152,15 @@
           &:active {
             background-color: inherit;
           }
+        }
+
+        &:hover {
+          background-color: $active-color;
+          color: $white-color;
+        }
+        &:active {
+          background-color: #f8e6be;
+          color: $black-color;
         }
       }
     }

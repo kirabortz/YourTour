@@ -3,6 +3,9 @@
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
+  @include phone() {
+    @include blockSize(100%, null, 75px 0 75px 0);
+  }
 
   .comment-section-header {
     display: flex;
@@ -12,7 +15,11 @@
     max-width: 529px;
     height: 232px;
     text-align: center;
+    @include phone() {
+      height: 152px;
+    }
   }
+
   .comment-section-reviewers {
     display: flex;
     justify-content: center;
@@ -20,7 +27,23 @@
     min-width: 117px;
     margin-top: 100px;
     color: #1b1f2b;
-    .comment-section-reviewers-card {
+    @include laptop() {
+      gap: 18px;
+      padding: 0 53px;
+    }
+    @include tablet() {
+      display: flex;
+      flex-flow: column nowrap;
+    }
+    @include phone() {
+      flex-flow: column nowrap;
+      align-items: center;
+      gap: 18px;
+      @include blockSize(360px, null, 50px 0 0 0);
+      padding: 0 21px;
+    }
+
+    .reviewer-card {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
@@ -28,21 +51,52 @@
       padding: 40px;
       border-radius: 50px;
       background-color: #f4f0e9;
+      @include tablet() {
+        max-width: 450px;
+      }
+      @include phone() {
+        align-items: center;
+        max-width: 318px;
+        padding: 20px;
+        border-radius: 20px;
+      }
+
       &__text {
         @include font(700, 23px, 28px, $black-color);
         margin-bottom: 30px;
+        @include tablet() {
+          max-width: 673px;
+        }
+        @include phone() {
+          @include font(700, 16px, 23px, $black-color);
+        }
       }
-      .comment-section-reviewers-card-info {
+
+      .reviewer-card-info {
         display: flex;
         justify-content: space-between;
         margin-top: 40px;
-        .comment-section-reviewers-card-info-reviewer {
+        @include tablet() {
+          @include blockSize(355px, null, 0 auto);
+          padding: 40px 0 0 0;
+        }
+        @include phone() {
+          flex-wrap: nowrap;
+          width: 100%;
+        }
+
+        .reviewer-card-info-reviewer {
           display: flex;
           flex-flow: column nowrap;
           justify-content: space-between;
           height: 90px;
+
           &__title {
             @include font(500, 35px, 43px, $black-color);
+            @include phone() {
+              @include font(700, 23px, 27px, $black-color);
+              margin-top: 15px;
+            }
           }
           &__subtitle {
             width: initial;
@@ -51,79 +105,12 @@
             color: #a6a6a6;
           }
         }
+
         &__photo {
           width: 75px;
           height: 75px;
           border-radius: 100px;
-        }
-      }
-    }
-  }
-}
-@include laptop() {
-  .comment-section {
-    .comment-section-reviewers {
-      gap: 18px;
-      padding: 0 53px;
-    }
-  }
-
-  @include tablet() {
-    .comment-section {
-      .comment-section-reviewers {
-        display: flex;
-        flex-flow: column nowrap;
-        .comment-section-reviewers-card {
-          max-width: 450px;
-          &__text {
-            max-width: 673px;
-          }
-          .comment-section-reviewers-card-info {
-            @include blockSize(355px, null, 0 auto);
-            // width: 355px;
-            // margin: 0 auto;
-            padding: 40px 0 0 0;
-          }
-        }
-      }
-    }
-  }
-}
-@include phone() {
-  .comment-section {
-    @include blockSize(100%, null, 75px 0 75px 0);
-    // width: 100%;
-    // margin-top: 75px;
-    // margin-bottom: 75px;
-    .comment-section-header {
-      height: 152px;
-    }
-    .comment-section-reviewers {
-      flex-flow: column nowrap;
-      align-items: center;
-      gap: 18px;
-      @include blockSize(360px, null, 50px 0 0 0);
-      // margin-top: 50px;
-      padding: 0 21px;
-      // width: 360px;
-      .comment-section-reviewers-card {
-        align-items: center;
-        max-width: 318px;
-        padding: 20px;
-        border-radius: 20px;
-        &__text {
-          @include font(700, 16px, 23px, $black-color);
-        }
-        .comment-section-reviewers-card-info {
-          flex-wrap: nowrap;
-          width: 100%;
-          .comment-section-reviewers-card-info-reviewer {
-            &__title {
-              @include font(700, 23px, 27px, $black-color);
-              margin-top: 15px;
-            }
-          }
-          &__photo {
+          @include phone() {
             height: 75px;
           }
         }

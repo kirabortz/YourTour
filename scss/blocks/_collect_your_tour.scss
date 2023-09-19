@@ -3,12 +3,24 @@
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
+  @include laptop() {
+    padding: 0 53px;
+  }
+  @include phone() {
+    padding: 0 21px;
+  }
+
   .collect-tour-section-header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     height: 159px;
+    @include phone() {
+      width: 327px;
+      height: 104px;
+      text-align: center;
+    }
   }
 
   .collect-tour-section-form {
@@ -21,7 +33,25 @@
     height: 986px;
     border-radius: $border-radius-min-761px;
     background-color: $white-color;
-    .collect-tour-section-form-block {
+    @include laptop() {
+      width: 100%;
+      min-width: initial;
+    }
+    @include phone() {
+      flex-flow: column nowrap;
+      justify-content: initial;
+      @include blockSize(100%, 100%, 40px auto 0);
+      height: 100%;
+      min-width: initial;
+      padding: 40px 0;
+      gap: 5px;
+      border-radius: 30px;
+    }
+    @include phone-small() {
+      padding: 20px 0 40px;
+    }
+
+    .form-block {
       display: flex;
       flex-flow: column wrap;
       justify-content: space-between;
@@ -30,9 +60,36 @@
       padding: 0 53px;
       height: 104px;
       @include font(400, 20px, 28px, $black-color);
-      .collect-tour-section-form-block-label {
+      @include laptop() {
+        margin: initial;
+        padding: 0 60px;
+        gap: 20px;
+        width: 100%;
+      }
+      @include phone() {
+        justify-content: initial;
+        padding: 0 21px;
+        @include font(400, 16px, 23px, $black-color);
+        gap: 8px;
+        min-width: initial;
+      }
+      @include phone-small() {
+        height: 100%;
+      }
+
+      .form-block-label {
+        @include laptop() {
+          width: 49%;
+        }
+        @include phone() {
+          width: 49%;
+        }
+        @include phone-small() {
+          width: 100%;
+        }
+
         &__input,
-        .collect-tour-section-form-block-label-select {
+        .form-block-label-select {
           display: flex;
           @include blockSize(100%, 100%, 8px auto 0);
           min-width: 500px;
@@ -43,17 +100,45 @@
           background-color: $main-background-color;
           @include font(400, 20px, 28px, $black-color);
           text-indent: 20px;
+          @include laptop() {
+            max-width: 100%;
+            min-width: initial;
+          }
+          @include phone() {
+            @include blockSize(100%, 100%, 8px auto 28px);
+            min-width: initial;
+            height: 43px;
+            cursor: default;
+            @include font(400, 16px, 23px, $black-color);
+          }
+          @include phone-small() {
+            width: 100%;
+          }
         }
-        .collect-tour-section-form-block-label-select {
+
+        .form-block-label-select {
           appearance: none;
           background: url(../../img/main/icons/ic-dropdown.svg) no-repeat right;
           background-color: $main-background-color;
           background-position-x: calc(100% - 20px);
           color: $subtitle-color;
+
           &:valid {
             color: $black-color;
           }
+          @include phone() {
+            @include font(400, 16px, 23px, $subtitle-color);
+            &:focus {
+              outline: none;
+              border: none;
+            }
+          }
+
+          @include phone-small() {
+            background-position-x: calc(100% - 10px);
+          }
         }
+
         #from-date,
         #to-date {
           color: $black-color;
@@ -66,27 +151,51 @@
             opacity: 0;
           }
         }
+
         &__input {
+          @include phone() {
+            &:focus {
+              outline: none;
+              border: none;
+            }
+          }
+
           &::placeholder {
             @include font(400, 20px, 28px, $subtitle-color);
             text-indent: 20px;
+            @include phone() {
+              @include font(400, 16px, 23px, $subtitle-color);
+            }
           }
+
           &:focus {
             outline: none;
             border: 1px solid $subtitle-color;
           }
         }
-        .collect-tour-section-form-block-label-select:focus {
+
+        .form-block-label-select:focus {
           outline: none;
           border: 1px solid $subtitle-color;
         }
       }
     }
 
-    .collect-tour-section-form-block-comment {
+    .form-block-comment {
       padding: 0 53px;
       height: 190px;
       @include font(400, 20px, 28px, $black-color);
+      @include laptop() {
+        margin: initial;
+        width: 100%;
+      }
+      @include phone() {
+        height: 163px;
+        padding: 0 21px;
+        margin: 0 0 25px 0;
+        @include font(400, 16px, 23px, $black-color);
+      }
+
       &__textarea {
         display: flex;
         @include blockSize(100%, 100%, 8px auto 0);
@@ -101,26 +210,58 @@
         text-indent: 10px;
         &:focus {
           outline: none;
+          border: none;
+        }
+        @include laptop() {
+          width: 100%;
+          min-width: initial;
+        }
+        @include phone() {
+          max-width: 100%;
+          min-width: initial;
+          @include font(400, 16px, 23px, $black-color);
+          text-indent: 0;
+        }
+
+        &:focus {
+          outline: none;
           border: 1px solid $subtitle-color;
         }
       }
     }
-    .collect-tour-section-form-block-radio {
+
+    .form-block-radio {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       margin-left: 53px;
       height: 64px;
       @include font(400px, 20px, 28px, $black-color);
-      .collect-tour-section-form-block-radio-btns {
+      @include laptop() {
+        @include blockSize(100%, 170px, 0 0 0 60px);
+      }
+      @include phone() {
+        height: 54px;
+        @include blockSize(100%, 100%, 0 0 25px 0);
+        padding: 0 21px;
+        @include font(400, 16px, 23px, $black-color);
+      }
+
+      .form-block-radio-btns {
         display: flex;
         justify-content: space-between;
         max-width: 166px;
         height: 28px;
-        .collect-tour-section-form-block-radio-btns-btn {
+        @include phone() {
+          width: 139px;
+          height: 23px;
+        }
+
+        .form-block-radio-btns-btn {
           &__input {
             display: none;
           }
+
           &__label {
             display: flex;
             justify-content: space-between;
@@ -134,7 +275,8 @@
               border-radius: 50%;
             }
           }
-          .collect-tour-section-form-block-radio-btns-btn__input:checked + .collect-tour-section-form-block-radio-btns-btn__label::before {
+
+          .form-block-radio-btns-btn__input:checked + .form-block-radio-btns-btn__label::before {
             content: "⬤";
             display: flex;
             align-items: center;
@@ -144,13 +286,24 @@
       }
     }
 
-    .collect-tour-section-form-block-license {
+    .form-block-license {
       display: flex;
       @include blockSize(1030px, 100%, 0 0 0 53px);
       @include font(400px, 17px, 24px, $subtitle-color);
+      @include laptop() {
+        @include blockSize(81%, 100%, 0 0 0 60px);
+      }
+      @include phone() {
+        @include blockSize(100%, 100%, 0 0 25px 0);
+        min-width: 242px;
+        padding: 0 21px;
+        @include font(400, 16px, 23px, $subtitle-color);
+      }
+
       &__checkbox {
         display: none;
       }
+
       &__label {
         display: flex;
         &::before {
@@ -160,8 +313,12 @@
           height: 25px;
           border: 2px solid $black-color;
           border-radius: 5px;
+          @include phone() {
+            margin-right: 9px;
+          }
         }
       }
+
       &__link {
         color: $black-color;
         text-decoration: none;
@@ -174,8 +331,17 @@
           border-bottom: 1px solid #286562;
           color: #286562;
         }
+
+        @include phone() {
+          &:hover,
+          &:active {
+            border: none;
+            cursor: default;
+            color: $black-color;
+          }
+        }
       }
-      .collect-tour-section-form-block-license__checkbox:checked + .collect-tour-section-form-block-license__label::before {
+      .form-block-license__checkbox:checked + .form-block-license__label::before {
         content: "✔";
         text-align: center;
         color: $black-color;
@@ -183,15 +349,29 @@
       }
     }
 
-    .collect-tour-section-form-block-confirm {
+    .form-block-confirm {
       display: flex;
       justify-content: space-between;
       @include blockSize(1030px, 100%, 0 0 0 53px);
       height: 58px;
-      .collect-tour-section-form-block-confirm-btns {
+      @include laptop() {
+        @include blockSize(100%, 500px, 0 0 0 60px);
+      }
+      @include phone() {
+        @include blockSize(280px, 100%, initial);
+        min-width: 280px;
+        padding: 0 21px;
+        height: 47px;
+      }
+
+      .form-block-confirm-btns {
         width: 500px;
         display: flex;
         justify-content: space-between;
+        @include phone() {
+          gap: 10px;
+        }
+
         &__submit,
         &__reset {
           width: 235px;
@@ -202,224 +382,41 @@
           @include font(400, 20px, 28px, $white-color);
           background-color: #286562;
           @include transition(background-color);
+          @include phone() {
+            width: 130px;
+            font-size: 15px;
+            line-height: 23px;
+          }
         }
+
         &__submit {
           &:hover {
             background-color: #3b7e7b;
+            @include phone() {
+              background-color: #286562;
+            }
           }
           &:active {
             background-color: #627f7e;
+            @include phone() {
+              background-color: #286562;
+            }
           }
         }
+
         &__reset {
           background-color: #e0f0e5;
           color: #286562;
           &:hover {
             background-color: #f1f3f2;
-          }
-          &:active {
-            background-color: #d9dfdb;
-          }
-        }
-      }
-    }
-  }
-}
-@media (min-width: 761px) and (max-width: 1280px) {
-  .collect-tour-section {
-    padding: 0 53px;
-
-    .collect-tour-section-form {
-      width: 100%;
-      min-width: initial;
-      .collect-tour-section-form-block {
-        margin: initial;
-        padding: 0 60px;
-        gap: 20px;
-        width: 100%;
-        .collect-tour-section-form-block-label {
-          width: 49%;
-          &__input,
-          .collect-tour-section-form-block-label-select {
-            max-width: 100%;
-            min-width: initial;
-          }
-        }
-      }
-
-      .collect-tour-section-form-block-comment {
-        margin: initial;
-        width: 100%;
-        &__textarea {
-          width: 100%;
-          min-width: initial;
-        }
-      }
-      .collect-tour-section-form-block-radio {
-        @include blockSize(100%, 170px, 0 0 0 60px);
-      }
-      .collect-tour-section-form-block-license {
-        @include blockSize(81%, 100%, 0 0 0 60px);
-      }
-      .collect-tour-section-form-block-confirm {
-        @include blockSize(100%, 500px, 0 0 0 60px);
-      }
-    }
-  }
-}
-@media (max-width: 760px) {
-  .collect-tour-section {
-    padding: 0 21px;
-    .collect-tour-section-header {
-      width: 327px;
-      height: 104px;
-      text-align: center;
-    }
-    .collect-tour-section-form {
-      flex-flow: column nowrap;
-      justify-content: initial;
-      @include blockSize(100%, 100%, 40px auto 0);
-      height: 100%;
-      min-width: initial;
-      padding: 40px 0;
-      gap: 5px;
-      border-radius: 30px;
-
-      .collect-tour-section-form-block {
-        justify-content: initial;
-        padding: 0 21px;
-        @include font(400, 16px, 23px, $black-color);
-        gap: 8px;
-        min-width: initial;
-        .collect-tour-section-form-block-label {
-          width: 49%;
-          &__input,
-          .collect-tour-section-form-block-label-select {
-            @include blockSize(100%, 100%, 8px auto 28px);
-            min-width: initial;
-            height: 43px;
-            cursor: default;
-            @include font(400, 16px, 23px, $black-color);
-          }
-          .collect-tour-section-form-block-label-select {
-            @include font(400, 16px, 23px, $subtitle-color);
-            &:focus {
-              outline: none;
-              border: none;
-            }
-          }
-          &__input {
-            &:focus {
-              outline: none;
-              border: none;
-            }
-            &::placeholder {
-              @include font(400, 16px, 23px, $subtitle-color);
-            }
-          }
-        }
-      }
-
-      .collect-tour-section-form-block-comment {
-        height: 163px;
-        padding: 0 21px;
-        margin: 0 0 25px 0;
-        @include font(400, 16px, 23px, $black-color);
-        &__textarea {
-          max-width: 100%;
-          min-width: initial;
-          @include font(400, 16px, 23px, $black-color);
-          text-indent: 0;
-          &:focus {
-            outline: none;
-            border: none;
-          }
-        }
-      }
-
-      .collect-tour-section-form-block-radio {
-        height: 54px;
-        @include blockSize(100%, 100%, 0 0 25px 0);
-        padding: 0 21px;
-        @include font(400, 16px, 23px, $black-color);
-        .collect-tour-section-form-block-radio-btns {
-          width: 139px;
-          height: 23px;
-          .collect-tour-section-form-block-radio-btns-btn {
-            &__input {
-              width: 20px;
-              height: 20px;
-            }
-          }
-        }
-      }
-
-      .collect-tour-section-form-block-license {
-        @include blockSize(100%, 100%, 0 0 25px 0);
-        min-width: 242px;
-        padding: 0 21px;
-        @include font(400, 16px, 23px, $subtitle-color);
-        &__checkbox {
-          width: 20px;
-          height: 20px;
-        }
-        &__label {
-          &::before {
-            margin-right: 9px;
-          }
-        }
-        &__link {
-          &:hover,
-          &:active {
-            border: none;
-            cursor: default;
-            color: $black-color;
-          }
-        }
-      }
-      .collect-tour-section-form-block-confirm {
-        @include blockSize(280px, 100%, initial);
-        min-width: 280px;
-        padding: 0 21px;
-        height: 47px;
-        .collect-tour-section-form-block-confirm-btns {
-          gap: 10px;
-          &__submit,
-          &__reset {
-            width: 130px;
-            font-size: 15px;
-            line-height: 23px;
-          }
-          &__submit {
-            &:hover,
-            &:active {
-              background-color: #286562;
-            }
-          }
-          &__reset {
-            &:hover,
-            &:active {
+            @include phone() {
               background-color: #e0f0e5;
             }
           }
-        }
-      }
-    }
-  }
-  @media (max-width: 658px) {
-    .collect-tour-section {
-      .collect-tour-section-form {
-        padding: 20px 0 40px;
-        .collect-tour-section-form-block {
-          height: 100%;
-          .collect-tour-section-form-block-label {
-            width: 100%;
-            &__input,
-            .collect-tour-section-form-block-label-select {
-              width: 100%;
-            }
-            .collect-tour-section-form-block-label-select {
-              background-position-x: calc(100% - 10px);
+          &:active {
+            background-color: #d9dfdb;
+            @include phone() {
+              background-color: #e0f0e5;
             }
           }
         }

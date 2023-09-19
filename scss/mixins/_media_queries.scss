@@ -13,3 +13,8 @@
     @content;
   }
 }
+@mixin phone-small() {
+  @media (max-width: 658px) {
+    @content;
+  }
+}

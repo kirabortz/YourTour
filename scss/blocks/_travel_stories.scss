@@ -2,6 +2,13 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  @include laptop() {
+    padding: 0 60px;
+  }
+  @include phone() {
+    margin: 75px 0;
+  }
+
   .story-section-header {
     display: flex;
     flex-flow: column nowrap;
@@ -11,17 +18,32 @@
     padding: 0 20px;
     text-align: center;
   }
+
   .story-section-cards {
     display: flex;
     gap: 50px;
     flex-flow: column wrap;
     margin-top: 100px;
-    .story-section-cards-card {
+    @include phone() {
+      gap: 20px;
+      padding: 0 20px;
+      margin-top: 50px;
+    }
+
+    .card {
       position: relative;
       height: 567px;
       overflow: hidden;
       border-radius: 50px;
       cursor: pointer;
+      @include laptop() {
+        height: 567px;
+      }
+      @include phone() {
+        min-width: 318px;
+        height: 455px;
+        border-radius: 20px;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -32,23 +54,47 @@
         border-radius: 50px;
         background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.2) 100%);
         z-index: 1;
+        @include phone() {
+          height: 455px;
+          border-radius: 20px;
+        }
       }
+
       &__img {
         border-radius: 50px;
         @include transition(transform);
         @include transform(scale(1));
-      }
-      &:hover .story-section-cards-card-overlay-btns .story-section-cards-card-overlay-btns__more-btn {
-        background-color: #286562;
-        &:active {
-          background-color: #efa501;
+        @include laptop() {
+          width: 100%;
+          height: 567px;
+          object-fit: cover;
+        }
+        @include phone() {
+          height: 455px;
+          max-width: 100%;
+          border-radius: 20px;
         }
       }
-      &:hover .story-section-cards-card__img {
+
+      &:hover .card-overlay-btns .card-overlay-btns__btn {
+        background-color: #286562;
+        @include phone() {
+          background-color: transparent;
+        }
+
+        &:active {
+          background-color: #efa501;
+          @include phone() {
+            background-color: transparent;
+          }
+        }
+      }
+
+      &:hover .card__img {
         @include transform(scale(1.2));
       }
 
-      .story-section-cards-card-overlay {
+      .card-overlay {
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
@@ -57,46 +103,86 @@
         left: 60px;
         z-index: 1;
         color: #ffffff;
+        @include laptop() {
+          width: 90%;
+        }
+        @include phone() {
+          top: 30px;
+          left: 30px;
+          min-width: 263px;
+        }
+
         &__title {
           @include font(500, 35px, 43px, $white-color);
+          @include phone() {
+            @include font(700, 23px, 28px, $white-color);
+            max-width: 86%;
+            letter-spacing: 1px;
+          }
         }
+
         &__subtitle {
-          // width: initial;
           @include blockSize(initial, 603px, 37px 0 0 0);
-          // margin-top: 37px;
           padding-right: 50px;
-          // max-width: 603px;
           min-width: 296px;
           height: initial;
           text-align: initial;
           color: #ffffff;
+          @include laptop() {
+            margin: 37px 0 0 0;
+          }
+          @include phone() {
+            margin-top: 20px;
+          }
         }
-        .story-section-cards-card-overlay-list {
+
+        .card-overlay-list {
           display: flex;
           flex-flow: column;
           margin-left: 12px;
           margin-top: 27px;
+
+          @include phone() {
+            margin: 27px 0 0 -7px;
+          }
+
           &__item {
             list-style-type: none;
             font-size: 20px;
             line-height: 28px;
+            @include phone() {
+              margin-left: 8px;
+              list-style-type: none;
+              font-size: 16px;
+              line-height: 23px;
+            }
+
             &::before {
               content: "·";
               padding-right: 13px;
               font-size: 21px;
+              @include phone() {
+                padding-right: 10px;
+              }
             }
           }
         }
-        .story-section-cards-card-overlay-btns {
+
+        .card-overlay-btns {
           display: flex;
           justify-content: space-between;
           align-items: center;
           position: absolute;
           @include blockSize(1070px, null, 412px 0 0 -20px);
-          // margin-top: 412px;
-          // margin-left: -20px;
-          // width: 1070px;
-          &__more-btn {
+          @include laptop() {
+            width: 100%;
+          }
+          @include phone() {
+            @include blockSize(128px, null, 370px 0 0 0);
+            height: 26px;
+          }
+
+          &__btn {
             display: flex;
             align-items: center;
             width: 199px;
@@ -104,27 +190,45 @@
             background-color: transparent;
             border: none;
             @include transition(background-color);
+            @include phone() {
+              height: 26px;
+            }
+
             &-text {
               padding: 7px 15px 7px 20px;
               margin-top: 0;
               cursor: pointer;
               @include font(700, 23px, 28px, $white-color);
+              @include phone() {
+                display: flex;
+                align-items: center;
+                margin-right: 10px;
+                padding: 0;
+                @include font(700, 16px, 23px, $white-color);
+              }
             }
+
             &-img {
               max-width: 22px;
               height: 15px;
             }
           }
-          .story-section-cards-card-overlay-btns-contacts {
+
+          .overlay-contacts {
             display: flex;
             list-style-type: none;
             font-size: 20px;
             line-height: 28px;
+            @include phone() {
+              display: none;
+            }
+
             &__link {
               padding-left: 27px;
               text-decoration: none;
               color: #ffffff;
             }
+
             &__name {
               @include transition(color);
               &:hover {
@@ -134,107 +238,6 @@
                 border-bottom: 1px solid #efa501;
                 color: #efa501;
               }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-@media (min-width: 761px) and (max-width: 1280px) {
-  .story-section {
-    padding: 0 60px;
-    .story-section-cards {
-      .story-section-cards-card {
-        height: 567px;
-        &__img {
-          width: 100%;
-          height: 567px;
-          object-fit: cover;
-        }
-        .story-section-cards-card-overlay {
-          width: 90%;
-          &__subtitle {
-            margin: 37px 0 0 0;
-          }
-          .story-section-cards-card-overlay-btns {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
-}
-@media (max-width: 760px) {
-  .story-section {
-    margin: 75px 0;
-    // margin-top: 75px;
-    // margin-bottom: 75px;
-    .story-section-cards {
-      gap: 20px;
-      padding: 0 20px;
-      margin-top: 50px;
-      .story-section-cards-card {
-        min-width: 318px;
-        height: 455px;
-        border-radius: 20px;
-        &::before {
-          height: 455px;
-          border-radius: 20px;
-        }
-        &:hover .story-section-cards-card-overlay-btns .story-section-cards-card-overlay-btns__more-btn {
-          background-color: transparent;
-          &:active {
-            background-color: transparent;
-          }
-        }
-        &__img {
-          height: 455px;
-          max-width: 100%;
-          border-radius: 20px;
-        }
-        .story-section-cards-card-overlay {
-          top: 30px;
-          left: 30px;
-          min-width: 263px;
-          &__title {
-            @include font(700, 23px, 28px, $white-color);
-            max-width: 86%;
-            letter-spacing: 1px;
-          }
-          &__subtitle {
-            margin-top: 20px;
-          }
-          .story-section-cards-card-overlay-list {
-            margin: 0 0 0 -7px;
-            &__item {
-              margin-left: 8px;
-              list-style-type: none;
-              font-size: 16px;
-              line-height: 23px;
-              &::before {
-                padding-right: 10px;
-              }
-            }
-          }
-          .story-section-cards-card-overlay-btns {
-            @include blockSize(128px, null, 370px 0 0 0);
-            // margin-top: 370px;
-            // width: 128px;
-            height: 26px;
-            // margin-left: 0;
-            &__more-btn {
-              height: 26px;
-              &-text {
-                display: flex;
-                align-items: center;
-                margin-right: 10px;
-                padding: 0;
-                @include font(700, 16px, 23px, $white-color);
-              }
-            }
-            .story-section-cards-card-overlay-btns-contacts {
-              display: none;
             }
           }
         }

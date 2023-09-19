@@ -2,16 +2,23 @@
   display: flex;
   flex-flow: column nowrap;
   @include blockSize(null, 100%, 135px auto);
-  // max-width: 100%;
-  // margin: 135px auto 0;
+  @include laptop() {
+    padding: 0 20px;
+  }
+  @include phone() {
+    margin: 75px auto 0;
+  }
+
   .album-section-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // max-width: 730px;
     text-align: center;
     @include blockSize(null, 730px, 0 auto);
-    // margin: 0 auto;
+    @include phone() {
+      height: 142px;
+      padding: 0 20px;
+    }
   }
 
   .album-section-photos {
@@ -19,100 +26,84 @@
     flex-flow: column wrap;
     margin-top: 100px;
     gap: 30px;
-    .album-section-photos-four,
-    .album-section-photos-five {
+    @include phone() {
+      @include blockSize(100%, null, 50px 0 0 0);
+      gap: 20px;
+    }
+
+    .four-photos,
+    .five-photos {
       display: flex;
       width: 100%;
       margin: 0 auto;
       height: 301px;
       padding: 0 15px;
+      @include laptop() {
+        justify-content: space-between;
+        padding: 0;
+      }
+      @include phone() {
+        justify-content: space-between;
+        gap: 10px;
+        height: 110px;
+      }
     }
-    .album-section-photos-four {
+
+    .four-photos {
+      @include phone() {
+        gap: 20px;
+      }
+
       &__img {
         width: 25%;
         padding: 0 15px;
         border-radius: 50px;
         object-fit: cover;
-      }
-    }
-    .album-section-photos-five {
-      &__img {
-        width: 20%;
-        padding: 0 15px;
-        border-radius: 50px;
-        object-fit: cover;
-      }
-    }
-  }
-}
-@media (min-width: 761px) and (max-width: 1280px) {
-  .album-section {
-    padding: 0 20px;
-    .album-section-photos {
-      .album-section-photos-four,
-      .album-section-photos-five {
-        justify-content: space-between;
-        padding: 0;
-      }
-      .album-section-photos-four {
-        &__img {
+        @include laptop() {
           width: 32%;
           padding: 0;
         }
-      }
-      .album-section-photos-five {
-        &__img {
-          width: 23%;
-          padding: 0;
-        }
-      }
-      .album-section-photos-four:nth-child(1) .album-section-photos-four__img:nth-child(2),
-      .album-section-photos-five .album-section-photos-five__img:nth-child(3),
-      .album-section-photos-four:nth-child(3) .album-section-photos-four__img:nth-child(4) {
-        display: none;
-      }
-    }
-  }
-}
-@media (max-width: 760px) {
-  .album-section {
-    margin: 75px auto 0;
-    .album-section-header {
-      height: 142px;
-      padding: 0 20px;
-    }
-    .album-section-photos {
-      @include blockSize(100%, null, 50px 0 0 0);
-      // margin-top: 50px;
-      // width: 100%;
-      gap: 20px;
-      .album-section-photos-four,
-      .album-section-photos-five {
-        justify-content: space-between;
-        gap: 10px;
-        height: 110px;
-      }
-      .album-section-photos-four {
-        gap: 20px;
-        &__img {
+        @include phone() {
           width: calc(50% - 10px);
           border-radius: 20px;
           padding: 0;
         }
       }
-      .album-section-photos-five {
-        &__img {
+    }
+
+    .five-photos {
+      &__img {
+        width: 20%;
+        padding: 0 15px;
+        border-radius: 50px;
+        object-fit: cover;
+        @include laptop() {
+          width: 23%;
+          padding: 0;
+        }
+        @include phone() {
           width: calc(33.3% - 10px);
           border-radius: 20px;
           padding: 0;
         }
       }
-      .album-section-photos-four:nth-child(1) .album-section-photos-four__img:nth-child(2),
-      .album-section-photos-four:nth-child(1) .album-section-photos-four__img:nth-child(3),
-      .album-section-photos-five .album-section-photos-five__img:nth-child(2),
-      .album-section-photos-five .album-section-photos-five__img:nth-child(3),
-      .album-section-photos-four:nth-child(3) .album-section-photos-four__img:nth-child(3),
-      .album-section-photos-four:nth-child(3) .album-section-photos-four__img:nth-child(4) {
+    }
+
+    @include laptop() {
+      .four-photos:nth-child(1) .four-photos__img:nth-child(2),
+      .five-photos .five-photos__img:nth-child(3),
+      .four-photos:nth-child(3) .four-photos__img:nth-child(4) {
+        display: none;
+      }
+    }
+
+    @include phone() {
+      .four-photos:nth-child(1) .four-photos__img:nth-child(2),
+      .four-photos:nth-child(1) .four-photos__img:nth-child(3),
+      .five-photos .five-photos__img:nth-child(2),
+      .five-photos .five-photos__img:nth-child(3),
+      .four-photos:nth-child(3) .four-photos__img:nth-child(3),
+      .four-photos:nth-child(3) .four-photos__img:nth-child(4) {
         display: none;
       }
     }
