@@ -759,7 +759,7 @@ html {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: url(../../img/main/icons/ic-dropdown.svg) no-repeat right;
+  background: url(../img/main/icons/ic-dropdown.svg) no-repeat right;
   background-color: #f9f7f4;
   background-position-x: calc(100% - 20px);
   color: #a6a6a6;
