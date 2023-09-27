@@ -1,5 +1,5 @@
 .header {
-  .header-block.scrolled-nav {
+  &-block.scrolled-nav {
     position: fixed;
     z-index: 100;
     top: 0;
@@ -9,21 +9,22 @@
     height: 88px;
     background-color: #f3efe899;
     backdrop-filter: blur(54px);
-    .header-block-nav {
-      .nav-menu {
+    .nav {
+      &-menu {
         &__item {
           @include transition(border-bottom);
           &:hover {
             border-bottom: 1px solid $black-color;
           }
-          &-link {
-            color: $black-color;
-          }
+        }
+        &__link {
+          color: $black-color;
         }
       }
-    }
-    .header-block-nav__tel {
-      color: $black-color;
+
+      &__tel {
+        color: $black-color;
+      }
     }
   }
 }

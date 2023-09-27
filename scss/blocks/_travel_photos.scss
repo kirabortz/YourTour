@@ -2,109 +2,80 @@
   display: flex;
   flex-flow: column nowrap;
   @include blockSize(null, 100%, 135px auto);
-  @include laptop() {
+  @include tablet() {
     padding: 0 20px;
   }
   @include phone() {
     margin: 75px auto 0;
   }
 
-  .album-section-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    @include blockSize(null, 730px, 0 auto);
+  &-header {
+    margin: 0 auto;
     @include phone() {
-      height: 142px;
       padding: 0 20px;
     }
   }
 
-  .album-section-photos {
+  .photos {
     display: flex;
-    flex-flow: column wrap;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px;
     margin-top: 100px;
-    gap: 30px;
-    @include phone() {
+    @include tabletPhoneMixin() {
       @include blockSize(100%, null, 50px 0 0 0);
-      gap: 20px;
     }
 
-    .four-photos,
-    .five-photos {
-      display: flex;
-      width: 100%;
-      margin: 0 auto;
-      height: 301px;
+    .photos__img {
+      width: 25%;
+      height: 300px;
       padding: 0 15px;
-      @include laptop() {
-        justify-content: space-between;
-        padding: 0;
+      border-radius: 50px;
+      margin-bottom: 30px;
+      @include tablet() {
+        &:nth-child(2),
+        &:nth-child(7),
+        &:nth-child(13) {
+          display: none;
+        }
+        width: 33.3%;
+        padding: 0 10px;
       }
-      @include phone() {
-        justify-content: space-between;
-        gap: 10px;
+      @include tabletPhoneMixin() {
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(12),
+        &:nth-child(13) {
+          display: none;
+        }
         height: 110px;
-      }
-    }
-
-    .four-photos {
-      @include phone() {
-        gap: 20px;
-      }
-
-      &__img {
-        width: 25%;
-        padding: 0 15px;
-        border-radius: 50px;
+        width: 50%;
+        padding: 0 5px;
+        margin-bottom: 9px;
+        border-radius: 20px;
         object-fit: cover;
-        @include laptop() {
-          width: 32%;
-          padding: 0;
-        }
-        @include phone() {
-          width: calc(50% - 10px);
-          border-radius: 20px;
-          padding: 0;
-        }
       }
-    }
 
-    .five-photos {
-      &__img {
+      &:nth-child(5),
+      &:nth-child(6),
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9) {
         width: 20%;
-        padding: 0 15px;
         border-radius: 50px;
         object-fit: cover;
-        @include laptop() {
-          width: 23%;
-          padding: 0;
+        @include tablet() {
+          width: 25%;
+          padding: 0 9px;
         }
-        @include phone() {
-          width: calc(33.3% - 10px);
+        @include tabletPhoneMixin() {
+          width: 33%;
+          padding: 0 5px;
           border-radius: 20px;
-          padding: 0;
+          object-fit: cover;
         }
-      }
-    }
-
-    @include laptop() {
-      .four-photos:nth-child(1) .four-photos__img:nth-child(2),
-      .five-photos .five-photos__img:nth-child(3),
-      .four-photos:nth-child(3) .four-photos__img:nth-child(4) {
-        display: none;
-      }
-    }
-
-    @include phone() {
-      .four-photos:nth-child(1) .four-photos__img:nth-child(2),
-      .four-photos:nth-child(1) .four-photos__img:nth-child(3),
-      .five-photos .five-photos__img:nth-child(2),
-      .five-photos .five-photos__img:nth-child(3),
-      .four-photos:nth-child(3) .four-photos__img:nth-child(3),
-      .four-photos:nth-child(3) .four-photos__img:nth-child(4) {
-        display: none;
       }
     }
   }

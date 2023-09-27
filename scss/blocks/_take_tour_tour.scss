@@ -2,38 +2,56 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  @include laptop() {
-    padding: 0 53px;
+  padding: 0 53px;
+  @include phone() {
+    padding: 0;
   }
 
-  .your-tour-section-header {
+  &-header {
     @include phone() {
       justify-content: initial;
       height: initial;
     }
 
     &__title {
-      width: 700px;
-      text-align: center;
+      min-width: 598px;
       @include phone() {
         width: 100%;
-        min-width: 360px;
+        min-width: 380px;
       }
     }
 
     .header-menu {
       display: flex;
+      flex-flow: row wrap;
       justify-content: space-between;
+      padding: 0 53px;
       @include blockSize(100%, null, 35px 0 0 0);
       height: 28px;
       list-style-type: none;
+      @include tablet() {
+        flex-flow: row nowrap;
+        margin: 35px auto 0;
+      }
+      @include tabletPhoneMixin() {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 500px;
+      }
       @include phone() {
         flex-flow: row wrap;
         justify-content: center;
-        @include blockSize(100%, 760px, 30px auto 0);
+        @include blockSize(100%, 380px, 30px auto 0);
         padding: 0 20px;
       }
-
+      &__item {
+        padding: 0 13px 10px 0;
+        @include phone() {
+          display: flex;
+          padding: 0 4px 4px 0;
+        }
+      }
       &__link {
         text-decoration: none;
         border: 2px solid transparent;
@@ -57,28 +75,34 @@
         }
       }
 
-      @include phone-small() {
-        & {
-          @include blockSize(100%, 360px, 30px auto 0);
-          min-width: 360px;
-          height: 56px;
-        }
-      }
+      // @include phone-small() {
+      //   & {
+      //     @include blockSize(100%, 360px, 30px auto 0);
+      //     min-width: 360px;
+      //     height: 56px;
+      //   }
+      // }
     }
   }
 
-  .your-tour-section-tours {
+  &-tours {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
     @include blockSize(null, 1170px, 90px 0 0 0);
-    @include laptop() {
+    @include tablet() {
       gap: 18px;
       min-width: initial;
     }
+    @include tabletPhoneMixin() {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      width: 100%;
+    }
     @include phone() {
-      @include blockSize(100%, 100%, 25px auto 0);
+      @include blockSize(100%, 100%, 60px auto 0);
       min-width: 360px;
       gap: 18px;
       padding: 0 21px;
@@ -87,15 +111,19 @@
     .card-tour {
       position: relative;
       width: 31%;
-      max-height: 531px;
+      height: 531px;
       overflow: hidden;
       border-radius: $border-radius-min-761px;
-      @include laptop() {
+      @include tablet() {
         width: 48%;
+      }
+      @include tabletPhoneMixin() {
+        max-width: 390px;
+        width: 100%;
       }
       @include phone() {
         border-radius: $border-radius-max-760px;
-        width: calc(48%);
+        width: 100%;
         height: 318px;
       }
 
@@ -137,7 +165,7 @@
 
       &__img {
         width: 100%;
-        height: 531px;
+        height: 100%;
         border-radius: $border-radius-min-761px;
         @include transition(transform);
         object-fit: cover;
@@ -147,7 +175,7 @@
           object-fit: cover;
         }
       }
-      .card-tour-overlay {
+      &-overlay {
         position: absolute;
         display: flex;
         flex-flow: column nowrap;
@@ -157,7 +185,7 @@
         max-width: 240px;
         color: $white-color;
         z-index: 1;
-        @include laptop() {
+        @include tablet() {
           right: 50px;
           max-width: 100%;
         }
@@ -217,14 +245,14 @@
         }
       }
     }
-    @include phone-small() {
-      & {
-        max-width: 420px;
-        flex-flow: column nowrap;
-        .card-tour {
-          width: 100%;
-        }
-      }
-    }
+    // @include phone-small() {
+    //   & {
+    //     max-width: 420px;
+    //     flex-flow: column nowrap;
+    //     .card-tour {
+    //       width: 100%;
+    //     }
+    //   }
+    // }
   }
 }

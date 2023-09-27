@@ -17,26 +17,35 @@ html {
   @include blockSize(100%, 1170px, 135px auto 0);
 }
 .title {
-  @include font(700, 59px, 73px, $black-color);
+  text-align: center;
+  @include font(700, 55px, 73px, $black-color);
 }
 .subtitle {
   width: 418px;
-  height: 56px;
-  margin: 30px auto;
+  margin: 30px auto 0;
   text-align: center;
   @include font(400, 20px, 28px, $subtitle-color);
+}
+
+@include tablet() {
+  .section--size,
+  .footer {
+    @include blockSize(100%, null, 135px auto 0);
+  }
 }
 
 @include phone() {
   .section--size,
   .footer {
-    @include blockSize(100%, 760px, 75px auto 0);
+    @include blockSize(100%, 550px, 75px auto 0);
   }
   .title {
+    width: 330px;
+    margin: 0 auto;
     @include font(700, 34px, 38px, $black-color);
   }
   .subtitle {
-    width: 318px;
+    width: 320px;
     @include font(400, 16px, 23px, $subtitle-color);
   }
 }

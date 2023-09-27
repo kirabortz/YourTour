@@ -3,53 +3,49 @@
   flex-flow: column nowrap;
   align-items: center;
   width: 100%;
-  @include laptop() {
-    padding: 0 53px;
-  }
+  padding: 0 53px;
   @include phone() {
     padding: 0 21px;
   }
 
-  .collect-tour-section-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 159px;
+  &-header {
     @include phone() {
-      width: 327px;
-      height: 104px;
-      text-align: center;
+      @include blockSize(327px, 100%, null);
     }
   }
 
-  .collect-tour-section-form {
+  &-form {
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: column nowrap;
     justify-content: center;
     gap: 32px;
     @include blockSize(100%, 100%, 100px auto 0);
-    min-width: 1170px;
+    min-width: 918px;
     height: 986px;
     border-radius: $border-radius-min-761px;
     background-color: $white-color;
-    @include laptop() {
+    @include tablet() {
       width: 100%;
       min-width: initial;
     }
-    @include phone() {
+    @include tabletPhoneMixin() {
+      height: initial;
+      padding: 20px 0;
       flex-flow: column nowrap;
-      justify-content: initial;
+    }
+    @include phone() {
+      // flex-flow: column nowrap;
+      // justify-content: initial;
       @include blockSize(100%, 100%, 40px auto 0);
-      height: 100%;
+      // height: 100%;
       min-width: initial;
       padding: 40px 0;
       gap: 5px;
       border-radius: 30px;
     }
-    @include phone-small() {
-      padding: 20px 0 40px;
-    }
+    // @include phone-small() {
+    //   padding: 20px 0 40px;
+    // }
 
     .form-block {
       display: flex;
@@ -60,112 +56,174 @@
       padding: 0 53px;
       height: 104px;
       @include font(400, 20px, 28px, $black-color);
-      @include laptop() {
+      @include tablet() {
         margin: initial;
         padding: 0 60px;
         gap: 20px;
         width: 100%;
       }
+      @include tabletPhoneMixin() {
+        height: initial;
+      }
       @include phone() {
-        justify-content: initial;
+        // justify-content: initial;
         padding: 0 21px;
         @include font(400, 16px, 23px, $black-color);
         gap: 8px;
         min-width: initial;
       }
-      @include phone-small() {
-        height: 100%;
-      }
+      // @include phone-small() {
+      //   height: 100%;
+      // }
 
-      .form-block-label {
-        @include laptop() {
+      &__label {
+        @include tablet() {
           width: 49%;
         }
-        @include phone() {
-          width: 49%;
-        }
-        @include phone-small() {
+        @include tabletPhoneMixin() {
           width: 100%;
         }
+        // @include phone-small() {
+        //   width: 100%;
+        // }
+      }
+      &__input,
+      &-select {
+        display: flex;
+        @include blockSize(100%, 100%, 8px auto 0);
+        min-width: 389px;
+        height: 68px;
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        cursor: pointer;
+        background-color: $main-background-color;
+        @include font(400, 20px, 28px, $black-color);
+        text-indent: 20px;
+        @include tablet() {
+          max-width: 100%;
+          min-width: initial;
+        }
+        @include tabletPhoneMixin() {
+          width: 100%;
+          // min-width: initial;
+        }
+        @include phone() {
+          @include blockSize(100%, 100%, 8px auto 28px);
+          min-width: initial;
+          height: 43px;
+          cursor: default;
+          @include font(400, 16px, 23px, $black-color);
+        }
+        // @include phone-small() {
+        //   width: 100%;
+        // }
+      }
 
-        &__input,
-        .form-block-label-select {
-          display: flex;
-          @include blockSize(100%, 100%, 8px auto 0);
-          min-width: 500px;
-          height: 68px;
-          border: 1px solid $border-color;
-          border-radius: 10px;
-          cursor: pointer;
-          background-color: $main-background-color;
-          @include font(400, 20px, 28px, $black-color);
-          text-indent: 20px;
-          @include laptop() {
-            max-width: 100%;
-            min-width: initial;
-          }
-          @include phone() {
-            @include blockSize(100%, 100%, 8px auto 28px);
-            min-width: initial;
-            height: 43px;
-            cursor: default;
-            @include font(400, 16px, 23px, $black-color);
-          }
-          @include phone-small() {
-            width: 100%;
+      &-select {
+        appearance: none;
+        background: url(./../img/main/icons/ic-dropdown.svg) no-repeat right;
+        background-color: $main-background-color;
+        background-position-x: calc(100% - 20px);
+        color: $subtitle-color;
+
+        &:valid {
+          color: $black-color;
+        }
+        @include phone() {
+          @include font(400, 16px, 23px, $subtitle-color);
+          &:focus {
+            outline: none;
+            border: none;
           }
         }
 
-        .form-block-label-select {
-          appearance: none;
-          background: url(../img/main/icons/ic-dropdown.svg) no-repeat right;
-          background-color: $main-background-color;
-          background-position-x: calc(100% - 20px);
-          color: $subtitle-color;
+        // @include phone-small() {
+        //   background-position-x: calc(100% - 10px);
+        // }
+      }
 
-          &:valid {
-            color: $black-color;
+      #from-date,
+      #to-date {
+        color: $black-color;
+        text-indent: 10px;
+        &:invalid {
+          text-transform: uppercase;
+          color: $subtitle-color;
+        }
+        &::-webkit-calendar-picker-indicator {
+          opacity: 0;
+        }
+      }
+
+      &__input {
+        @include phone() {
+          &:focus {
+            outline: none;
+            border: none;
           }
+        }
+
+        &::placeholder {
+          @include font(400, 20px, 28px, $subtitle-color);
+          text-indent: 20px;
           @include phone() {
             @include font(400, 16px, 23px, $subtitle-color);
-            &:focus {
-              outline: none;
-              border: none;
-            }
-          }
-
-          @include phone-small() {
-            background-position-x: calc(100% - 10px);
           }
         }
 
-        #from-date,
-        #to-date {
-          color: $black-color;
+        &:focus {
+          outline: none;
+          border: 1px solid $subtitle-color;
+        }
+      }
+
+      &-select:focus {
+        outline: none;
+        border: 1px solid $subtitle-color;
+      }
+
+      &-comment {
+        padding: 0 60px;
+        height: 190px;
+        width: 100%;
+        max-width: 1070px;
+        @include font(400, 20px, 28px, $black-color);
+        @include tablet() {
+          margin: initial;
+          width: 100%;
+        }
+        @include phone() {
+          height: 163px;
+          padding: 0 21px;
+          margin: 0 0 25px 0;
+          @include font(400, 16px, 23px, $black-color);
+        }
+
+        &__textarea {
+          display: flex;
+          @include blockSize(100%, 100%, 8px auto 0);
+          min-width: 798px;
+          height: 132px;
+          padding: 10px;
+          border: 1px solid $border-color;
+          border-radius: 10px;
+          resize: none;
+          background-color: $main-background-color;
+          @include font(400px, 20px, 28px, $black-color);
           text-indent: 10px;
-          &:invalid {
-            text-transform: uppercase;
-            color: $subtitle-color;
+          &:focus {
+            outline: none;
+            border: none;
           }
-          &::-webkit-calendar-picker-indicator {
-            opacity: 0;
+          @include tablet() {
+            width: 100%;
+            min-width: initial;
           }
-        }
-
-        &__input {
           @include phone() {
-            &:focus {
-              outline: none;
-              border: none;
-            }
-          }
-
-          &::placeholder {
-            @include font(400, 20px, 28px, $subtitle-color);
-            text-indent: 20px;
-            @include phone() {
-              @include font(400, 16px, 23px, $subtitle-color);
-            }
+            max-width: 100%;
+            min-width: initial;
+            @include font(400, 16px, 23px, $black-color);
+            text-indent: 0;
           }
 
           &:focus {
@@ -173,250 +231,203 @@
             border: 1px solid $subtitle-color;
           }
         }
-
-        .form-block-label-select:focus {
-          outline: none;
-          border: 1px solid $subtitle-color;
-        }
-      }
-    }
-
-    .form-block-comment {
-      padding: 0 53px;
-      height: 190px;
-      @include font(400, 20px, 28px, $black-color);
-      @include laptop() {
-        margin: initial;
-        width: 100%;
-      }
-      @include phone() {
-        height: 163px;
-        padding: 0 21px;
-        margin: 0 0 25px 0;
-        @include font(400, 16px, 23px, $black-color);
       }
 
-      &__textarea {
+      &-radio {
         display: flex;
-        @include blockSize(100%, 100%, 8px auto 0);
-        min-width: 1030px;
-        height: 132px;
-        padding: 10px;
-        border: 1px solid $border-color;
-        border-radius: 10px;
-        resize: none;
-        background-color: $main-background-color;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 53px;
+        height: 64px;
         @include font(400px, 20px, 28px, $black-color);
-        text-indent: 10px;
-        &:focus {
-          outline: none;
-          border: none;
-        }
-        @include laptop() {
-          width: 100%;
-          min-width: initial;
+        @include tablet() {
+          @include blockSize(100%, 170px, 0 0 0 60px);
         }
         @include phone() {
-          max-width: 100%;
-          min-width: initial;
+          height: 54px;
+          @include blockSize(100%, 100%, 0 0 25px 0);
+          padding: 0 21px;
           @include font(400, 16px, 23px, $black-color);
-          text-indent: 0;
         }
 
-        &:focus {
-          outline: none;
-          border: 1px solid $subtitle-color;
-        }
-      }
-    }
-
-    .form-block-radio {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-left: 53px;
-      height: 64px;
-      @include font(400px, 20px, 28px, $black-color);
-      @include laptop() {
-        @include blockSize(100%, 170px, 0 0 0 60px);
-      }
-      @include phone() {
-        height: 54px;
-        @include blockSize(100%, 100%, 0 0 25px 0);
-        padding: 0 21px;
-        @include font(400, 16px, 23px, $black-color);
-      }
-
-      .form-block-radio-btns {
-        display: flex;
-        justify-content: space-between;
-        max-width: 166px;
-        height: 28px;
-        @include phone() {
-          width: 139px;
-          height: 23px;
-        }
-
-        .form-block-radio-btns-btn {
-          &__input {
-            display: none;
+        &-btns {
+          display: flex;
+          justify-content: space-between;
+          max-width: 166px;
+          height: 28px;
+          @include phone() {
+            width: 139px;
+            height: 23px;
           }
 
-          &__label {
-            display: flex;
-            justify-content: space-between;
+          &-btn {
+            &__input {
+              display: none;
+            }
+
+            &__label {
+              display: flex;
+              justify-content: space-between;
+              cursor: pointer;
+              &::before {
+                content: "";
+                margin-right: 12px;
+                width: 26px;
+                height: 26px;
+                border: 2px solid $black-color;
+                border-radius: 50%;
+              }
+            }
+
+            .form-block-radio-btns-btn__input:checked + .form-block-radio-btns-btn__label::before {
+              content: "●";
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 30px;
+              padding-bottom: 2px;
+            }
+          }
+        }
+      }
+      &-license {
+        display: flex;
+        @include blockSize(1030px, 100%, 0 0 0 53px);
+        @include font(400px, 17px, 24px, $subtitle-color);
+        @include tablet() {
+          @include blockSize(73%, 100%, 0 0 0 60px);
+        }
+        @include phone() {
+          @include blockSize(100%, 100%, 0 0 25px 0);
+          min-width: 242px;
+          padding: 0 21px;
+          @include font(400, 16px, 23px, $subtitle-color);
+        }
+
+        &__checkbox {
+          display: none;
+        }
+
+        &__label {
+          display: flex;
+          &::before {
+            content: "";
+            margin-right: 19px;
+            min-width: 25px;
+            height: 25px;
+            border: 2px solid $black-color;
+            border-radius: 5px;
+            @include phone() {
+              margin-right: 9px;
+            }
+          }
+        }
+
+        &__link {
+          color: $black-color;
+          text-decoration: none;
+          @include transition(border-bottom);
+          &:hover {
+            border-bottom: 1px solid $black-color;
             cursor: pointer;
-            &::before {
-              content: "";
-              margin-right: 12px;
-              width: 26px;
-              height: 26px;
-              border: 2px solid $black-color;
-              border-radius: 50%;
+          }
+          &:active {
+            border-bottom: 1px solid #286562;
+            color: #286562;
+          }
+
+          @include phone() {
+            &:hover,
+            &:active {
+              border: none;
+              cursor: default;
+              color: $black-color;
             }
           }
-
-          .form-block-radio-btns-btn__input:checked + .form-block-radio-btns-btn__label::before {
-            content: "⬤";
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
         }
-      }
-    }
-
-    .form-block-license {
-      display: flex;
-      @include blockSize(1030px, 100%, 0 0 0 53px);
-      @include font(400px, 17px, 24px, $subtitle-color);
-      @include laptop() {
-        @include blockSize(81%, 100%, 0 0 0 60px);
-      }
-      @include phone() {
-        @include blockSize(100%, 100%, 0 0 25px 0);
-        min-width: 242px;
-        padding: 0 21px;
-        @include font(400, 16px, 23px, $subtitle-color);
-      }
-
-      &__checkbox {
-        display: none;
-      }
-
-      &__label {
-        display: flex;
-        &::before {
-          content: "";
-          margin-right: 19px;
-          min-width: 25px;
-          height: 25px;
-          border: 2px solid $black-color;
-          border-radius: 5px;
-          @include phone() {
-            margin-right: 9px;
-          }
+        .form-block-license__checkbox:checked + .form-block-license__label::before {
+          content: "✔";
+          text-align: center;
+          color: $black-color;
+          font-size: 18px;
         }
       }
 
-      &__link {
-        color: $black-color;
-        text-decoration: none;
-        @include transition(border-bottom);
-        &:hover {
-          border-bottom: 1px solid $black-color;
-          cursor: pointer;
-        }
-        &:active {
-          border-bottom: 1px solid #286562;
-          color: #286562;
-        }
-
-        @include phone() {
-          &:hover,
-          &:active {
-            border: none;
-            cursor: default;
-            color: $black-color;
-          }
-        }
-      }
-      .form-block-license__checkbox:checked + .form-block-license__label::before {
-        content: "✔";
-        text-align: center;
-        color: $black-color;
-        font-size: 18px;
-      }
-    }
-
-    .form-block-confirm {
-      display: flex;
-      justify-content: space-between;
-      @include blockSize(1030px, 100%, 0 0 0 53px);
-      height: 58px;
-      @include laptop() {
-        @include blockSize(100%, 500px, 0 0 0 60px);
-      }
-      @include phone() {
-        @include blockSize(280px, 100%, initial);
-        min-width: 280px;
-        padding: 0 21px;
-        height: 47px;
-      }
-
-      .form-block-confirm-btns {
-        width: 500px;
+      &-confirm {
         display: flex;
         justify-content: space-between;
+        @include blockSize(1030px, 100%, 0 0 0 53px);
+        height: 58px;
+        @include tablet() {
+          @include blockSize(100%, 500px, 0 0 0 60px);
+        }
         @include phone() {
-          gap: 10px;
+          @include blockSize(280px, 100%, initial);
+          min-width: 280px;
+          padding: 0 21px;
+          height: 47px;
         }
 
-        &__submit,
-        &__reset {
-          width: 235px;
-          border: none;
-          border-radius: 10px;
-          cursor: pointer;
-          padding: 15px 30px;
-          @include font(400, 20px, 28px, $white-color);
-          background-color: #286562;
-          @include transition(background-color);
+        &-btns {
+          width: 500px;
+          display: flex;
+          justify-content: space-between;
+          @include tabletPhoneMixin() {
+            width: 315px;
+          }
           @include phone() {
-            width: 130px;
-            font-size: 15px;
-            line-height: 23px;
+            gap: 10px;
           }
-        }
 
-        &__submit {
-          &:hover {
-            background-color: #3b7e7b;
+          &__submit,
+          &__reset {
+            width: 235px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 15px 30px;
+            @include font(400, 20px, 28px, $white-color);
+            background-color: #286562;
+            @include transition(background-color);
+            @include tabletPhoneMixin() {
+              width: 154px;
+            }
             @include phone() {
-              background-color: #286562;
+              width: 130px;
+              font-size: 15px;
+              line-height: 23px;
             }
           }
-          &:active {
-            background-color: #627f7e;
-            @include phone() {
-              background-color: #286562;
-            }
-          }
-        }
 
-        &__reset {
-          background-color: #e0f0e5;
-          color: #286562;
-          &:hover {
-            background-color: #f1f3f2;
-            @include phone() {
-              background-color: #e0f0e5;
+          &__submit {
+            &:hover {
+              background-color: #3b7e7b;
+              @include phone() {
+                background-color: #286562;
+              }
+            }
+            &:active {
+              background-color: #627f7e;
+              @include phone() {
+                background-color: #286562;
+              }
             }
           }
-          &:active {
-            background-color: #d9dfdb;
-            @include phone() {
-              background-color: #e0f0e5;
+
+          &__reset {
+            background-color: #e0f0e5;
+            color: #286562;
+            &:hover {
+              background-color: #f1f3f2;
+              @include phone() {
+                background-color: #e0f0e5;
+              }
+            }
+            &:active {
+              background-color: #d9dfdb;
+              @include phone() {
+                background-color: #e0f0e5;
+              }
             }
           }
         }

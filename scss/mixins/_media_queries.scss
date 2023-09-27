@@ -1,20 +1,15 @@
-@mixin laptop() {
-  @media (min-width: 761px) and (max-width: 1280px) {
+@mixin tablet() {
+  @media (min-width: 551px) and (max-width: 1024px) {
     @content;
   }
 }
-@mixin tablet() {
-  @media (max-width: 940px) {
+@mixin tabletPhoneMixin() {
+  @media (max-width: 780px) {
     @content;
   }
 }
 @mixin phone() {
-  @media (max-width: 760px) {
-    @content;
-  }
-}
-@mixin phone-small() {
-  @media (max-width: 658px) {
+  @media (max-width: 550px) {
     @content;
   }
 }

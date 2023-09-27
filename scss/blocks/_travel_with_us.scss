@@ -1,97 +1,75 @@
 .invite-section {
-  @include phone() {
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 880px) {
+    width: 100%;
+    flex-flow: column nowrap;
   }
 
-  .invite-section-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @include laptop() {
-      width: 100%;
-      height: 370px;
-      padding: 0 60px;
-    }
-    @include tablet() {
-      flex-flow: column nowrap;
+  &__img {
+    @include blockSize(370px, null, 0 20px 0 0);
+    border-radius: 50px;
+
+    @media (max-width: 880px) {
+      width: 200px;
+      border-radius: 20px;
     }
     @include phone() {
-      width: 100%;
-      flex-flow: column nowrap;
+      @include blockSize(130px, null, 0);
+      height: 133px;
+    }
+  }
+
+  &-header {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 371px;
+    height: 169px;
+
+    &__title {
+      @include font(500, 35px, 43px, $black-color);
+      @media (max-width: 880px) {
+        @include blockSize(291px, null, 25px 0 0 0);
+        @include font(700, 29px, 28px, $black-color);
+        text-align: center;
+      }
     }
 
-    &__img {
-      @include blockSize(370px, null, 0 20px 0 0);
-      border-radius: 50px;
-      @include tablet() {
-        @include blockSize(200px, null, 0);
-        border-radius: 20px;
-      }
-      @include phone() {
-        @include blockSize(130px, null, 0);
-        height: 133px;
-        border-radius: 20px;
+    &__subtitle {
+      @include blockSize(371px, null, 0);
+      margin-bottom: 0;
+      padding-right: 0;
+      text-align: initial;
+
+      @media (max-width: 880px) {
+        @include blockSize(null, null, 25px 0 0 0);
+        text-align: center;
       }
     }
 
-    .invite-section-block-header {
-      display: flex;
-      flex-flow: column;
-      justify-content: space-between;
-      max-width: 371px;
-      min-height: 162px;
-
-      &__title {
-        @include font(500, 35px, 43px, $black-color);
-        @include tablet() {
-          margin-top: 25px;
-          text-align: center;
-        }
-        @include phone() {
-          @include blockSize(291px, null, 25px 0 0 0);
-          @include font(700, 23px, 28px, $black-color);
-          text-align: center;
-        }
-      }
-
-      &__subtitle {
-        @include blockSize(371px, null, 0);
-        width: 371px;
-        margin-bottom: 0;
-        padding-right: 0;
-        text-align: initial;
-        @include tablet() {
-          margin-top: 25px;
-          text-align: center;
-        }
-        @include phone() {
-          @include blockSize(291px, null, 25px 0 0 0);
-          text-align: center;
-        }
-      }
-
-      &__link {
+    &__link {
+      text-decoration: none;
+      color: #1b1f2b;
+      @include transition(null);
+      @media (max-width: 880px) {
         text-decoration: none;
-        color: #1b1f2b;
-        @include transition(null);
-        @include phone() {
-          text-decoration: none;
-        }
-
-        &:hover {
-          border-bottom: 1px solid #1b1f2b;
-          cursor: pointer;
-          @include phone() {
-            border-bottom: none;
-            color: #1b1f2b;
-          }
-        }
       }
 
+      &:hover {
+        border-bottom: 1px solid #1b1f2b;
+        cursor: pointer;
+        @media (max-width: 880px) {
+          border-bottom: none;
+          color: #1b1f2b;
+        }
+      }
       &:active {
         border-bottom: 1px solid #286562;
         color: #286562;
-        @include phone() {
+        @media (max-width: 880px) {
           border-bottom: none;
           color: #1b1f2b;
         }

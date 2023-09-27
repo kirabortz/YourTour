@@ -24,24 +24,21 @@
       height: 488px;
     }
   }
-  .header-block {
+  &-block {
     position: absolute;
     left: 0;
     right: 0;
     height: 88px;
     min-width: 360px;
 
-    .header-block-nav {
+    .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
       height: 88px;
       @include blockSize(100%, 1168px, 0 auto);
-      padding-top: 6px;
-      @include laptop() {
-        padding: 0 53px 0;
-      }
+      padding: 6px 53px 0;
       @include phone() {
         #logo-img {
           width: 133px;
@@ -51,31 +48,25 @@
         padding: 0 20px 0;
       }
 
-      .nav-menu {
+      &-menu {
         list-style-type: none;
         display: flex;
         justify-content: space-between;
         width: 468px;
         height: 28px;
-        @include laptop() {
-          max-width: 408px;
-        }
-        @include phone() {
+        @media (max-width: 950px) {
           display: none;
         }
-        @include tablet() {
-          display: none;
-        }
-
         &__item {
+          border-bottom: 1px solid transparent;
           @include transition(border-bottom);
           &:hover {
             border-bottom: 1px solid $white-color;
           }
-          &-link {
-            text-decoration: none;
-            @include font(400, 20px, 28px, $white-color);
-          }
+        }
+        &__link {
+          text-decoration: none;
+          @include font(400, 20px, 28px, $white-color);
         }
       }
 
@@ -89,7 +80,7 @@
     }
   }
 
-  .header-content {
+  &-content {
     position: absolute;
     text-align: center;
     @include blockSize(100%, 100%, 88px 0 0 0);
@@ -103,6 +94,10 @@
       @include blockSize(100%, 768px, 119px auto 0);
       @include font(700, 96px, 105px, $white-color);
       letter-spacing: 2px;
+      @media (max-width: 720px) {
+        @include blockSize(null, 100%, 135px auto 0);
+        @include font(700, 76px, 90px, $white-color);
+      }
       @include phone() {
         @include blockSize(360px, 100%, 52px auto 0);
         @include font(700, 34px, 38px, $white-color);
@@ -112,7 +107,7 @@
     &__subtitle {
       @include blockSize(100%, 562px, 50px auto 0);
       color: $white-color;
-      @include laptop() {
+      @include tablet() {
         width: 442px;
       }
       @include phone() {
