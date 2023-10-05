@@ -1,4 +1,4 @@
-.header {
+.h {
   height: 831px;
   background: url(../img/header/header-bg.jpg);
   background-size: cover;
@@ -61,21 +61,19 @@
           border-bottom: 1px solid transparent;
           @include transition(border-bottom);
           &:hover {
-            border-bottom: 1px solid $white-color;
+            border-bottom: 1px solid $white;
           }
         }
         &__link {
           text-decoration: none;
-          @include font(400, 20px, 28px, $white-color);
+
+          @include link-font(null, 20px);
         }
       }
 
       &__tel {
         text-decoration: none;
-        @include font(400, 20px, 28px, $white-color);
-        @include phone() {
-          @include font(400, 16px, 23px, $white-color);
-        }
+        @include link-font(null, 20px);
       }
     }
   }
@@ -92,22 +90,22 @@
 
     &__title {
       @include blockSize(100%, 768px, 119px auto 0);
-      @include font(700, 96px, 105px, $white-color);
+      @include font(700, 96px, 105px, $white);
       letter-spacing: 2px;
       @media (max-width: 720px) {
         @include blockSize(null, 100%, 135px auto 0);
-        @include font(700, 76px, 90px, $white-color);
+        @include font(700, 76px, 90px, $white);
       }
       @include phone() {
         @include blockSize(360px, 100%, 52px auto 0);
-        @include font(700, 34px, 38px, $white-color);
+        @include font(700, 34px, 38px, $white);
       }
     }
 
     &__subtitle {
       @include blockSize(100%, 562px, 50px auto 0);
-      color: $white-color;
-      @include tablet() {
+      color: $white;
+      @include tabletPhoneMixin() {
         width: 442px;
       }
       @include phone() {
@@ -116,17 +114,14 @@
     }
 
     &__btn {
-      margin-top: 50px;
+      margin-top: 40px;
       padding: 0;
       border-radius: 10px;
       border: none;
-      background-color: $white-color;
-      @include font(400, 17px, 24px, $black-color);
+      background-color: $white;
+
+      @include paragraph(null, 17px, 24px, $black);
       cursor: pointer;
-      @include phone() {
-        margin-top: 40px;
-        @include font(400, 16px, 23px, $black-color);
-      }
 
       &-text {
         display: flex;
@@ -136,13 +131,13 @@
         height: 34px;
         border-radius: 10px;
         text-decoration: none;
-        color: $black-color;
+        color: $black;
         @include transition(background-color, color);
         @include phone() {
           width: 114px;
           &:hover {
             background-color: inherit;
-            color: $black-color;
+            color: $black;
           }
           &:active {
             background-color: inherit;
@@ -150,12 +145,12 @@
         }
 
         &:hover {
-          background-color: $active-color;
-          color: $white-color;
+          background-color: $gold;
+          color: $white;
         }
         &:active {
           background-color: #f8e6be;
-          color: $black-color;
+          color: $black;
         }
       }
     }

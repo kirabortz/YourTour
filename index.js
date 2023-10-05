@@ -1,6 +1,6 @@
-const headerBlock = document.querySelector(".header-block");
+const headerBlock = document.querySelector(".h-block");
 const logo = document.querySelectorAll("#logo-img path");
-const selectedVariantTour = document.querySelectorAll(".header-menu__link");
+const selectedVariantTour = document.querySelectorAll(".h-menu__link");
 selectedVariantTour.forEach((elem) => {
   elem.addEventListener("click", () => {
     selectedVariantTour.forEach((item) => {

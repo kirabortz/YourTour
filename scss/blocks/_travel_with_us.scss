@@ -1,4 +1,4 @@
-.invite-section {
+.invite-sect {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +21,7 @@
     }
   }
 
-  &-header {
+  &-h {
     display: flex;
     flex-flow: column;
     justify-content: space-between;
@@ -30,10 +30,10 @@
     height: 169px;
 
     &__title {
-      @include font(500, 35px, 43px, $black-color);
+      @include content-title-font($black);
       @media (max-width: 880px) {
         @include blockSize(291px, null, 25px 0 0 0);
-        @include font(700, 29px, 28px, $black-color);
+        @include font(700, 29px, 28px, $black);
         text-align: center;
       }
     }
@@ -52,18 +52,18 @@
 
     &__link {
       text-decoration: none;
-      color: #1b1f2b;
+      color: $black;
       @include transition(null);
       @media (max-width: 880px) {
         text-decoration: none;
       }
 
       &:hover {
-        border-bottom: 1px solid #1b1f2b;
+        border-bottom: 1px solid $black;
         cursor: pointer;
         @media (max-width: 880px) {
           border-bottom: none;
-          color: #1b1f2b;
+          color: $black;
         }
       }
       &:active {
@@ -71,7 +71,7 @@
         color: #286562;
         @media (max-width: 880px) {
           border-bottom: none;
-          color: #1b1f2b;
+          color: $black;
         }
       }
     }

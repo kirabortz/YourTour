@@ -7,45 +7,42 @@ body {
   min-height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: $main-background-color;
+  background-color: $antiquewhite;
   @include blockSize(100%, 100%, 0 auto);
 }
 html {
   scroll-behavior: smooth;
 }
-.section--size {
+.sect--size {
   @include blockSize(100%, 1170px, 135px auto 0);
 }
 .title {
+  padding: 0 21px;
   text-align: center;
-  @include font(700, 55px, 73px, $black-color);
+  @include section-title-font();
 }
 .subtitle {
-  width: 418px;
-  margin: 30px auto 0;
   text-align: center;
-  @include font(400, 20px, 28px, $subtitle-color);
+  @include blockSize(418px, 100%, 30px auto 0);
+  @include paragraph();
 }
 
 @include tablet() {
-  .section--size,
+  .sect--size,
   .footer {
     @include blockSize(100%, null, 135px auto 0);
   }
 }
 
 @include phone() {
-  .section--size,
+  .sect--size,
   .footer {
     @include blockSize(100%, 550px, 75px auto 0);
   }
   .title {
-    width: 330px;
-    margin: 0 auto;
-    @include font(700, 34px, 38px, $black-color);
+    @include blockSize(330px, 100%, 0 auto);
   }
   .subtitle {
     width: 320px;
-    @include font(400, 16px, 23px, $subtitle-color);
   }
 }

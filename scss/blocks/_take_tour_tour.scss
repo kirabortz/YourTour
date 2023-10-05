@@ -1,4 +1,4 @@
-.your-tour-section {
+.yt-sect {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -7,10 +7,11 @@
     padding: 0;
   }
 
-  &-header {
-    @include phone() {
-      justify-content: initial;
-      height: initial;
+  &-h {
+    @include tabletPhoneMixin() {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     &__title {
@@ -21,7 +22,7 @@
       }
     }
 
-    .header-menu {
+    .h-menu {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
@@ -55,33 +56,24 @@
       &__link {
         text-decoration: none;
         border: 2px solid transparent;
-        @include font(700, 23px, 28px, $black-color);
+        @include link-font(700, 23px, $black);
         cursor: pointer;
         @include transition(border-bottom, color);
         @include phone() {
           padding: 7px 0 0;
           margin-right: 12px;
-          @include font(700, 17px, 23px, null);
         }
 
         &.active {
-          color: $active-color;
-          border-bottom: 2px solid $active-color;
+          color: $gold;
+          border-bottom: 2px solid $gold;
         }
 
         &:hover {
-          border-bottom: 2px solid $active-color;
-          color: $active-color;
+          border-bottom: 2px solid $gold;
+          color: $gold;
         }
       }
-
-      // @include phone-small() {
-      //   & {
-      //     @include blockSize(100%, 360px, 30px auto 0);
-      //     min-width: 360px;
-      //     height: 56px;
-      //   }
-      // }
     }
   }
 
@@ -102,18 +94,19 @@
       width: 100%;
     }
     @include phone() {
+      justify-content: center;
       @include blockSize(100%, 100%, 60px auto 0);
       min-width: 360px;
       gap: 18px;
       padding: 0 21px;
     }
 
-    .card-tour {
+    .card {
       position: relative;
       width: 31%;
       height: 531px;
       overflow: hidden;
-      border-radius: $border-radius-min-761px;
+      border-radius: $border-radius-max-551px;
       @include tablet() {
         width: 48%;
       }
@@ -122,25 +115,26 @@
         width: 100%;
       }
       @include phone() {
-        border-radius: $border-radius-max-760px;
-        width: 100%;
+        border-radius: $border-radius-max-550px;
+
+        min-width: 318px;
         height: 318px;
       }
 
       &:hover {
-        .card-tour__img {
+        .card__img {
           @include transform(scale(1.2));
         }
       }
       &:hover {
-        .card-tour-overlay__btn {
+        .card-ovrl__btn {
           background-color: #286562;
           @include phone() {
             background-color: transparent;
           }
         }
-        .card-tour-overlay__btn:active {
-          background-color: $active-color;
+        .card-ovrl__btn:active {
+          background-color: $gold;
           @include phone() {
             background-color: transparent;
           }
@@ -154,28 +148,28 @@
         left: 0;
         right: 0;
         bottom: 0;
-        border-radius: $border-radius-min-761px;
+        border-radius: $border-radius-max-551px;
         background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
         z-index: 1;
         @include phone() {
           width: 100%;
-          border-radius: $border-radius-max-760px;
+          border-radius: $border-radius-max-550px;
         }
       }
 
       &__img {
         width: 100%;
         height: 100%;
-        border-radius: $border-radius-min-761px;
+        border-radius: $border-radius-max-551px;
         @include transition(transform);
         object-fit: cover;
         @include phone() {
           height: 100%;
-          border-radius: $border-radius-max-760px;
+          border-radius: $border-radius-max-550px;
           object-fit: cover;
         }
       }
-      &-overlay {
+      &-ovrl {
         position: absolute;
         display: flex;
         flex-flow: column nowrap;
@@ -183,7 +177,7 @@
         left: 50px;
         height: 445px;
         max-width: 240px;
-        color: $white-color;
+        color: $white;
         z-index: 1;
         @include tablet() {
           right: 50px;
@@ -199,17 +193,16 @@
         }
 
         &__title {
-          @include font(500, 35px, 43px, $black-color);
-          color: $white-color;
+          @include content-title-font();
           @include phone() {
-            @include font(700, 22px, 28px, $white-color);
+            @include font(700, 22px, 28px, $white);
             letter-spacing: 1px;
           }
         }
 
         &__price {
           margin-top: 16px;
-          @include font(400, 17px, 24px, $white-color);
+          @include paragraph(null, 17px, 24px, $white);
         }
 
         &__btn {
@@ -219,7 +212,7 @@
           bottom: 0;
           left: -20px;
           width: 199px;
-          border-radius: $border-radius-min-761px;
+          border-radius: $border-radius-max-551px;
           cursor: pointer;
           border: none;
           background-color: transparent;
@@ -233,26 +226,16 @@
             max-width: 199px;
             padding: 7px 16px 7px 20px;
             cursor: pointer;
-            @include font(700, 23px, 28px, $white-color);
+            @include btn-more-font();
             @include phone() {
               display: flex;
               align-items: center;
               width: initial;
               padding: 0 16px 0 0;
-              @include font(700, 16px, 23px, $white-color);
             }
           }
         }
       }
     }
-    // @include phone-small() {
-    //   & {
-    //     max-width: 420px;
-    //     flex-flow: column nowrap;
-    //     .card-tour {
-    //       width: 100%;
-    //     }
-    //   }
-    // }
   }
 }

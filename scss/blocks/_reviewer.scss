@@ -1,4 +1,4 @@
-.comment-section {
+.cmnt-sect {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
@@ -7,19 +7,19 @@
     @include blockSize(100%, null, 75px 0 75px 0);
   }
 
-  &-header {
+  &-h {
     @include blockSize(100%, 529px, null);
   }
 
-  &-reviewers {
+  &-revs {
     display: flex;
     justify-content: center;
     gap: 30px;
     min-width: 117px;
     margin-top: 100px;
     padding: 0 53px;
-    color: #1b1f2b;
-    @include tablet() {
+    color: $black;
+    @include tabletPhoneMixin() {
       gap: 18px;
     }
     @media (max-width: 950px) {
@@ -32,16 +32,19 @@
       padding: 0 21px;
     }
 
-    .reviewer-card {
+    .revr-card {
       display: flex;
       flex-flow: column nowrap;
       justify-content: space-between;
       width: 100%;
       padding: 40px;
       border-radius: 50px;
-      background-color: #f4f0e9;
+      background-color: $beigegray;
       @include tablet() {
-        max-width: 450px;
+        width: 400px;
+      }
+      @include tabletPhoneMixin() {
+        width: 400px;
       }
       @include phone() {
         align-items: center;
@@ -51,48 +54,45 @@
       }
 
       &__text {
-        @include font(700, 23px, 28px, $black-color);
+        @include paragraph(700, 23px, 28px, $black);
         margin-bottom: 30px;
         @include tablet() {
           max-width: 673px;
         }
-        @include phone() {
-          @include font(700, 16px, 23px, $black-color);
-        }
       }
 
-      &-info {
+      .revr-info {
         display: flex;
         justify-content: space-between;
         margin-top: 40px;
         @include tablet() {
           @include blockSize(355px, null, 0 auto);
-          padding: 40px 0 0 0;
+          padding: 40px 40px 0 0;
         }
         @include phone() {
           flex-wrap: nowrap;
           width: 100%;
         }
 
-        &-reviewer {
+        &-revr {
           display: flex;
           flex-flow: column nowrap;
           justify-content: space-between;
           height: 90px;
-
-          &__title {
-            @include font(500, 35px, 43px, $black-color);
-            @include phone() {
-              @include font(700, 23px, 27px, $black-color);
-              margin-top: 15px;
-            }
+        }
+        &__title {
+          @include content-title-font($black);
+          @include phone() {
+            @include font(700, 23px, 27px, $black);
+            margin-top: 15px;
           }
-          &__subtitle {
-            width: initial;
-            font-size: 16px;
-            line-height: 24px;
-            color: #a6a6a6;
-          }
+        }
+        &__subtitle {
+          @include paragraph();
+          width: initial;
+          // font-size: 16px;
+          // line-height: 24px;
+          color: $light-gray;
         }
 
         &__photo {

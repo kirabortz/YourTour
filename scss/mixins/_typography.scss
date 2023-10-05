@@ -1,6 +1,65 @@
 @mixin font($font-weight, $font-size, $line-height, $color) {
-    font-weight: $font-weight;
-    font-size: $font-size;
-    line-height: $line-height;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin section-title-font() {
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 73px;
+  color: $black;
+  @include phone() {
+    font-size: 34px;
+    line-height: 38px;
+    color: black;
+  }
+}
+
+@mixin paragraph($font-weight: 400, $font-size: 20px, $line-height: 28px, $color: $light-gray) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
+  @include phone() {
+    font-size: 16px;
+    line-height: 23px;
     color: $color;
+  }
+}
+
+@mixin content-title-font($color: $white) {
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 43px;
+  color: $color;
+  @include phone() {
+    font-size: 16px;
+    line-height: 23px;
+    color: $color;
+  }
+}
+
+@mixin btn-more-font() {
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 28px;
+  color: $white;
+  @include phone() {
+    font-size: 16px;
+    line-height: 23px;
+  }
+}
+
+@mixin link-font($font-weight: 400, $font-size: 23px, $color: $white) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: 28px;
+  color: $color;
+  @include phone() {
+    font-size: 16px;
+    line-height: 23px;
+    color: $color;
+  }
 }

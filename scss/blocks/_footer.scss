@@ -1,16 +1,16 @@
-.footer {
+.f {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 135px auto 0;
   height: 88px;
-  background-color: #f4f0e9;
-  font-size: 20px;
-  line-height: 28px;
+  background-color: $beigegray;
+  @include link-font($font-size: 20px);
   @include phone() {
     height: 95px;
     font-size: 16px;
     line-height: 23px;
+    margin: 75px auto 0;
     padding: 0;
   }
 
@@ -26,79 +26,81 @@
       height: 88px;
     }
     @include phone() {
+      flex-flow: column wrap;
       height: 53px;
       justify-content: space-between;
       padding: 0;
     }
 
     &__subtitle {
-      color: #a6a6a6;
+      color: $light-gray;
       @include tabletPhoneMixin() {
+        text-align: center;
+      }
+      @include phone() {
         text-align: center;
       }
     }
 
-    .footer-contacts {
+    .f-contacts {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      // width: 410px;
       height: 28px;
       @include tabletPhoneMixin() {
         width: 420px;
         margin: 0 auto;
-
-        // padding: 0 21px;
       }
       @include phone() {
         width: 320px;
         height: 23px;
+        margin: 0 auto;
       }
       &__link {
         display: flex;
         cursor: pointer;
         text-decoration: none;
-        color: #1b1f2b;
+        color: $black;
         @include tabletPhoneMixin() {
           cursor: default;
         }
+      }
 
-        &-img {
-          @include blockSize(38px, null, 0 12px 0 0);
-          height: 26px;
-          @include phone() {
-            width: 20px;
-            height: 20px;
+      &__img {
+        @include blockSize(38px, null, 0 12px 0 0);
+        height: 26px;
+        @include phone() {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      &__name {
+        @include transition(color);
+        border-bottom: 1px solid transparent;
+        text-decoration: none;
+        &:hover {
+          border-bottom: 1px solid $black;
+          @include tablet() {
+            border-bottom: 1px solid transparent;
+          }
+          @include tabletPhoneMixin() {
+            border-bottom: 1px solid transparent;
+            cursor: default;
+            color: $black;
           }
         }
 
-        &-name {
-          @include transition(color);
-          border-bottom: 1px solid transparent;
-          text-decoration: none;
-          &:hover {
-            border-bottom: 1px solid #1b1f2b;
-            @include tablet() {
-              border-bottom: 1px solid transparent;
-            }
-            @include tabletPhoneMixin() {
-              border-bottom: 1px solid transparent;
-              cursor: default;
-              color: #1b1f2b;
-            }
+        &:active {
+          border-bottom: 1px solid $gold;
+          color: $gold;
+          @include tabletPhoneMixin() {
+            border-bottom: 1px solid transparent;
+            cursor: default;
+            color: $black;
           }
-
-          &:active {
-            border-bottom: 1px solid #efa501;
-            color: #efa501;
-            @include tabletPhoneMixin() {
-              border-bottom: 1px solid transparent;
-              cursor: default;
-              color: #1b1f2b;
-            }
-            @include tabletPhoneMixin() {
-              @include transition(null);
-            }
+          @include tabletPhoneMixin() {
+            @include transition(null);
           }
         }
       }
