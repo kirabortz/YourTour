@@ -1,18 +1,4 @@
-.story-sect {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  padding: 0 53px;
-  @include phone() {
-    margin: 75px 0;
-    padding: 0;
-  }
-
-  &-h {
-    padding: 0 20px;
-    text-align: center;
-  }
-
+.traveler-stories {
   &-cards {
     display: flex;
     gap: 50px;
@@ -22,11 +8,9 @@
 
     @include tabletPhoneMixin() {
       gap: 20px;
-      padding: 0 21px;
     }
     @include phone() {
       margin-top: 50px;
-      padding: 0 21px;
     }
     .card {
       display: flex;
@@ -79,7 +63,7 @@
       }
 
       &:hover .card-btns .card-btns__btn {
-        background-color: #286562;
+        background-color: $darkgreen;
         @include phone() {
           background-color: transparent;
         }
@@ -96,7 +80,7 @@
         @include transform(scale(1.2));
       }
 
-      &-ovrl {
+      &-content {
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
@@ -121,7 +105,7 @@
           }
         }
 
-        &__subtitle {
+        &__text {
           @include blockSize(initial, 603px, 37px 0 0 0);
           padding-right: 50px;
           min-width: 296px;
@@ -136,7 +120,7 @@
           }
         }
 
-        .ovrl-list {
+        .content-list {
           display: flex;
           flex-flow: column;
           margin-left: 12px;
@@ -209,7 +193,7 @@
           }
         }
 
-        .ovrl-contacts {
+        .card-contacts {
           display: flex;
           list-style-type: none;
           @include link-font(null, 20px);

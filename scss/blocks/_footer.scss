@@ -1,4 +1,4 @@
-.f {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,19 +7,15 @@
   background-color: $beigegray;
   @include link-font($font-size: 20px);
   @include phone() {
-    height: 95px;
-    font-size: 16px;
-    line-height: 23px;
-    margin: 75px auto 0;
-    padding: 0;
+    @include blockSize(100%, 550px, 75px auto 0);
   }
 
   &-content {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1168px;
     padding: 0 53px;
+    max-width: 1168px;
     @include tabletPhoneMixin() {
       flex-flow: column wrap;
       justify-content: space-evenly;
@@ -28,8 +24,8 @@
     @include phone() {
       flex-flow: column wrap;
       height: 53px;
+      padding: 0 21px;
       justify-content: space-between;
-      padding: 0;
     }
 
     &__subtitle {
@@ -42,7 +38,7 @@
       }
     }
 
-    .f-contacts {
+    .footer-contacts {
       display: flex;
       justify-content: space-between;
       align-items: center;

@@ -1,402 +1,264 @@
-.ct-sect {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  width: 100%;
-  padding: 0 53px;
-  @include phone() {
-    padding: 0 21px;
-  }
-
-  &-header {
-    @include phone() {
-      @include blockSize(327px, 100%, null);
-    }
-    &__title {
-      @include tabletPhoneMixin() {
-        padding: 0;
-      }
-    }
-  }
-
-  &-form {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    gap: 32px;
-    @include blockSize(100%, 100%, 100px auto 0);
-    // min-width: 918px;
-    height: 986px;
-    border-radius: $border-radius-max-551px;
+.tour-build {
+  .grid-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
     background-color: $white;
+    border-radius: 50px;
+    padding: 70px;
+    margin-top: 100px;
+    @include paragraph($color: $black);
     @include tablet() {
-      width: 100%;
-      min-width: initial;
+      padding: 60px;
     }
     @include tabletPhoneMixin() {
-      height: initial;
-      padding: 20px 0;
-      flex-flow: column nowrap;
+      grid-template-columns: 1fr;
+      padding: 40px;
     }
     @include phone() {
-      flex-flow: column wrap;
-      justify-content: initial;
-      @include blockSize(100%, 100%, 40px auto 0);
-      height: initial;
-      padding: 20px 0 40px;
-      gap: 5px;
+      margin-top: 40px;
+      padding: 20px 20px 40px;
       border-radius: 30px;
     }
-
-    .fb {
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-between;
-      gap: 30px;
-      width: 100%;
-      padding: 0 53px;
-      height: 104px;
-      @include paragraph($color: $black);
-      @include tablet() {
-        margin: initial;
-        padding: 0 60px;
-        gap: 20px;
-        width: 100%;
-      }
+    &__field {
       @include tabletPhoneMixin() {
-        height: initial;
+        grid-column: 1/3;
       }
       @include phone() {
-        height: initial;
-        padding: 0 21px;
-        gap: 8px;
-        min-width: initial;
+        grid-column: 1/3;
+      }
+    }
+    &__input,
+    &__select {
+      @include blockSize(100%, 100%, 8px auto 0);
+      height: 68px;
+      border: 1px solid $beigegray;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: $antiquewhite;
+      text-indent: 20px;
+
+      &::placeholder {
+        @include paragraph();
+        text-indent: 20px;
       }
 
-      &__label {
-        @include tablet() {
-          width: 49%;
-        }
-        @include tabletPhoneMixin() {
-          width: 100%;
+      &:focus {
+        outline: none;
+        border: 1px solid $light-gray;
+      }
+      @include phone() {
+        height: 46px;
+      }
+    }
+
+    &__select {
+      appearance: none;
+      background: url(./../img/main/icons/ic-dropdown.svg) no-repeat right;
+      background-color: $antiquewhite;
+      background-position-x: calc(100% - 20px);
+      color: $light-gray;
+
+      &:valid {
+        color: $black;
+      }
+      &:focus {
+        outline: none;
+        border: 1px solid $light-gray;
+      }
+    }
+
+    #from-date,
+    #to-date {
+      color: $black;
+      text-indent: 10px;
+      &:invalid {
+        text-transform: uppercase;
+        color: $light-gray;
+      }
+      &::-webkit-calendar-picker-indicator {
+        opacity: 0;
+      }
+    }
+
+    &__comment,
+    &__age,
+    &__license,
+    &__confirm {
+      grid-column: 1 / 3;
+      width: 100%;
+    }
+
+    &__textarea {
+      display: flex;
+      @include blockSize(100%, 100%, 8px auto 0);
+      height: 132px;
+      padding: 10px;
+      border: 1px solid $beigegray;
+      border-radius: 10px;
+      resize: none;
+      background-color: $antiquewhite;
+      text-indent: 10px;
+      &:focus {
+        outline: none;
+        border: none;
+      }
+      &:focus {
+        outline: none;
+        border: 1px solid $light-gray;
+      }
+    }
+
+    &__age {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 64px;
+      &-btns {
+        display: flex;
+        justify-content: space-between;
+        max-width: 166px;
+        height: 28px;
+      }
+
+      &-input {
+        display: none;
+      }
+
+      &-label {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        &::before {
+          content: "";
+          margin-right: 12px;
+          width: 26px;
+          height: 26px;
+          border: 2px solid $black;
+          border-radius: 50%;
         }
       }
-      &__input,
-      &__sel {
+
+      .grid-form__age-input:checked + .grid-form__age-label::before {
+        content: "●";
         display: flex;
-        @include blockSize(100%, 100%, 8px auto 0);
-        min-width: 320px;
-        height: 68px;
-        border: 1px solid $beigegray;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        padding-bottom: 2px;
+      }
+    }
+
+    &__license {
+      display: flex;
+      @include paragraph(400, 17px, 24px);
+
+      &-checkbox {
+        display: none;
+      }
+
+      &-label {
+        display: flex;
+        &::before {
+          content: "";
+          margin-right: 21px;
+          min-width: 25px;
+          height: 25px;
+          border: 2px solid $black;
+          border-radius: 5px;
+        }
+      }
+
+      &-link {
+        color: $black;
+        text-decoration: none;
+        word-spacing: 3px;
+        @include transition(border-bottom);
+        &:hover {
+          border-bottom: 1px solid $black;
+          cursor: pointer;
+        }
+        &:active {
+          border-bottom: 1px solid $darkgreen;
+          color: $darkgreen;
+        }
+
+        @include phone() {
+          &:hover,
+          &:active {
+            border: none;
+            cursor: default;
+            color: $black;
+          }
+        }
+      }
+      .grid-form__license-checkbox:checked + .grid-form__license-label::before {
+        content: "✔";
+        text-align: center;
+        color: $black;
+        font-size: 18px;
+      }
+    }
+
+    &__confirm {
+      display: flex;
+      justify-content: space-between;
+      height: 58px;
+      @include phone() {
+        height: 47px;
+      }
+
+      &-btns {
+        max-width: 500px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        @include phone() {
+          gap: 10px;
+        }
+      }
+      &-submit,
+      &-reset {
+        width: 235px;
+        border: none;
         border-radius: 10px;
         cursor: pointer;
-        background-color: $antiquewhite;
-
-        text-indent: 20px;
-        @include tablet() {
-          max-width: 100%;
-          min-width: initial;
-        }
-        @include tabletPhoneMixin() {
-          width: 100%;
-        }
-        @include phone() {
-          @include blockSize(100%, 100%, 8px auto 28px);
-          min-width: initial;
-          height: 43px;
-          cursor: default;
-        }
+        @include paragraph($color: $white);
+        background-color: $darkgreen;
+        @include transition(background-color);
       }
 
-      &__sel {
-        appearance: none;
-        background: url(./../img/main/icons/ic-dropdown.svg) no-repeat right;
-        background-color: $antiquewhite;
-        background-position-x: calc(100% - 20px);
-        color: $light-gray;
-
-        &:valid {
-          color: $black;
-        }
-        &:focus {
-          outline: none;
-          border: 1px solid $light-gray;
-        }
-        @include phone() {
-          &:focus {
-            outline: none;
-            border: none;
-          }
-        }
-      }
-
-      #from-date,
-      #to-date {
-        color: $black;
-        text-indent: 10px;
-        &:invalid {
-          text-transform: uppercase;
-          color: $light-gray;
-        }
-        &::-webkit-calendar-picker-indicator {
-          opacity: 0;
-        }
-      }
-
-      &__input {
-        @include phone() {
-          &:focus {
-            outline: none;
-            border: none;
-          }
-        }
-
-        &::placeholder {
-          @include paragraph();
-          text-indent: 20px;
-        }
-
-        &:focus {
-          outline: none;
-          border: 1px solid $light-gray;
-        }
-      }
-
-      &-comment {
-        padding: 0 53px;
-        height: 190px;
-        width: 100%;
-        max-width: 1070px;
-        @include paragraph($color: $black);
-        @include tablet() {
-          margin: initial;
-          width: 100%;
-        }
-        @include phone() {
-          height: 163px;
-          padding: 0 21px;
-          margin: 0 0 25px 0;
-        }
-
-        &__tarea {
-          display: flex;
-          @include blockSize(100%, 100%, 8px auto 0);
-          height: 132px;
-          padding: 10px;
-          border: 1px solid $beigegray;
-          border-radius: 10px;
-          resize: none;
-          background-color: $antiquewhite;
-          text-indent: 10px;
-          &:focus {
-            outline: none;
-            border: none;
-          }
-          @include tablet() {
-            width: 100%;
-          }
+      &-submit {
+        &:hover {
+          background-color: $teal;
           @include phone() {
-            max-width: 100%;
-            text-indent: 0;
+            background-color: $darkgreen;
           }
-
-          &:focus {
-            outline: none;
-            border: 1px solid $light-gray;
+        }
+        &:active {
+          background-color: $steelteal;
+          @include phone() {
+            background-color: $darkgreen;
           }
         }
       }
 
-      &-radio {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin-left: 53px;
-        height: 64px;
-        @include paragraph($color: $black);
-        @include tablet() {
-          @include blockSize(100%, 170px, 0 0 0 53px);
-        }
-        @include tabletPhoneMixin() {
-          margin: 0 0 0 53px;
-        }
-        @include phone() {
-          height: 54px;
-          @include blockSize(100%, 100%, 0 0 25px 0);
-          padding: 0 21px;
-        }
-
-        &__btns {
-          display: flex;
-          justify-content: space-between;
-          max-width: 166px;
-          height: 28px;
+      &-reset {
+        background-color: $mintcream;
+        color: $darkgreen;
+        &:hover {
+          background-color: $whitesmoke;
           @include phone() {
-            width: 139px;
-            height: 23px;
+            background-color: $mintcream;
           }
         }
-
-        &__input {
-          display: none;
-        }
-
-        &__label {
-          display: flex;
-          justify-content: space-between;
-          cursor: pointer;
-          &::before {
-            content: "";
-            margin-right: 12px;
-            width: 26px;
-            height: 26px;
-            border: 2px solid $black;
-            border-radius: 50%;
-          }
-        }
-
-        .fb-radio__input:checked + .fb-radio__label::before {
-          content: "●";
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 30px;
-          padding-bottom: 2px;
-        }
-      }
-      &-license {
-        display: flex;
-        padding: 0 53px;
-        @include paragraph(400, 17px, 24px);
-        @include phone() {
-          @include blockSize(100%, 100%, 0 0 25px 0);
-          min-width: 242px;
-          padding: 0 21px;
-        }
-
-        &__chbox {
-          display: none;
-        }
-
-        &__label {
-          display: flex;
-          &::before {
-            content: "";
-            margin-right: 21px;
-            min-width: 25px;
-            height: 25px;
-            border: 2px solid $black;
-            border-radius: 5px;
-            @include phone() {
-              margin-right: 9px;
-            }
-          }
-        }
-
-        &__link {
-          color: $black;
-          text-decoration: none;
-          word-spacing: 3px;
-          @include transition(border-bottom);
-          &:hover {
-            border-bottom: 1px solid $black;
-            cursor: pointer;
-          }
-          &:active {
-            border-bottom: 1px solid #286562;
-            color: #286562;
-          }
-
+        &:active {
+          background-color: $timberwolf;
           @include phone() {
-            &:hover,
-            &:active {
-              border: none;
-              cursor: default;
-              color: $black;
-            }
-          }
-        }
-        .fb-license__chbox:checked + .fb-license__label::before {
-          content: "✔";
-          text-align: center;
-          color: $black;
-          font-size: 18px;
-        }
-      }
-
-      &-confirm {
-        display: flex;
-        justify-content: space-between;
-        @include blockSize(1030px, 100%, 0 0 0 53px);
-        height: 58px;
-        @include tablet() {
-          @include blockSize(100%, 500px, null);
-        }
-        @include phone() {
-          @include blockSize(280px, 100%, initial);
-          min-width: 280px;
-          padding: 0 21px;
-          height: 47px;
-        }
-
-        &__btns {
-          width: 500px;
-          display: flex;
-          justify-content: space-between;
-          @include tabletPhoneMixin() {
-            width: 315px;
-          }
-          @include phone() {
-            gap: 10px;
-          }
-        }
-        &__submit,
-        &__reset {
-          width: 235px;
-          border: none;
-          border-radius: 10px;
-          cursor: pointer;
-          padding: 15px 30px;
-          @include paragraph($color: $white);
-          background-color: #286562;
-          @include transition(background-color);
-          @include tabletPhoneMixin() {
-            width: 154px;
-          }
-          @include phone() {
-            width: 130px;
-          }
-        }
-
-        &__submit {
-          &:hover {
-            background-color: #3b7e7b;
-            @include phone() {
-              background-color: #286562;
-            }
-          }
-          &:active {
-            background-color: #627f7e;
-            @include phone() {
-              background-color: #286562;
-            }
-          }
-        }
-
-        &__reset {
-          background-color: #e0f0e5;
-          color: #286562;
-          &:hover {
-            background-color: #f1f3f2;
-            @include phone() {
-              background-color: #e0f0e5;
-            }
-          }
-          &:active {
-            background-color: #d9dfdb;
-            @include phone() {
-              background-color: #e0f0e5;
-            }
+            background-color: $mintcream;
           }
         }
       }

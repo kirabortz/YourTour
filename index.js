@@ -1,4 +1,4 @@
-const headerBlock = document.querySelector(".h-block");
+const headerBlock = document.querySelector(".header-block");
 const logo = document.querySelectorAll("#logo-img path");
 const selectedVariantTour = document.querySelectorAll(".h-menu__link");
 selectedVariantTour.forEach((elem) => {

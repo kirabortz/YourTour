@@ -14,35 +14,37 @@ html {
   scroll-behavior: smooth;
 }
 .sect--size {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   @include blockSize(100%, 1170px, 135px auto 0);
+  padding: 0 53px;
+  @include phone() {
+    @include blockSize(100%, 550px, 75px auto 0);
+    padding: 0 21px;
+  }
+}
+.section-name {
+  text-align: center;
+  max-width: 723px;
+  min-width: 320px;
 }
 .title {
-  padding: 0 21px;
-  text-align: center;
   @include section-title-font();
-}
-.subtitle {
-  text-align: center;
-  @include blockSize(418px, 100%, 30px auto 0);
-  @include paragraph();
-}
-
-@include tablet() {
-  .sect--size,
-  .footer {
-    @include blockSize(100%, null, 135px auto 0);
-  }
-}
-
-@include phone() {
-  .sect--size,
-  .footer {
-    @include blockSize(100%, 550px, 75px auto 0);
-  }
-  .title {
+  @include phone() {
     @include blockSize(330px, 100%, 0 auto);
   }
-  .subtitle {
+}
+.subtitle {
+  @include blockSize(418px, 100%, 30px auto 0);
+  @include paragraph();
+  @include phone() {
     width: 320px;
   }
+}
+.card-content__title {
+  @include content-title-font();
+}
+.card-content__text {
+  @include paragraph($color: $white);
 }

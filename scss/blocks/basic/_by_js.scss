@@ -1,4 +1,4 @@
-.h {
+.header {
   &-block.scrolled-nav {
     position: fixed;
     z-index: 100;
@@ -7,7 +7,7 @@
     right: 0;
     @include blockSize(100%, 100%, 0 auto);
     height: 88px;
-    background-color: #f3efe899;
+    background-color: $transparentbeige;
     backdrop-filter: blur(54px);
     .nav {
       &-menu {

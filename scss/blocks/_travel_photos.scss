@@ -1,19 +1,16 @@
-.album-sect {
+.travel-photos {
   display: flex;
   flex-flow: column nowrap;
   @include blockSize(null, 100%, 135px auto 0);
   @include tablet() {
-    padding: 0 20px;
   }
   @include phone() {
     margin: 75px auto 0;
   }
 
-  &-h {
+  .section-name {
     margin: 0 auto;
-    @include phone() {
-      padding: 0 20px;
-    }
+    padding: 0 21px;
   }
 
   .photos {
