@@ -4,30 +4,43 @@
   align-items: center;
   margin: 135px auto;
 
-  @media (min-width: 551px) and (max-width: 930px) {
-    flex-flow: column nowrap;
-    width: 100%;
-  }
-
   @include phone() {
-    flex-flow: column nowrap;
     min-width: 320px;
+    height: 285px;
     margin: 75px auto;
   }
 
+  .block {
+    display: flex;
+    align-items: center;
+    width: 771px;
+    height: 370px;
+    margin: 0 53px;
+
+    @include tabletPhoneMixin() {
+      flex-flow: column nowrap;
+      height: 100%;
+    }
+
+    @include phone() {
+      flex-flow: column nowrap;
+      height: 100%;
+    }
+  }
+
   &__img {
-    @include blockSize(370px, null, 0 20px 0 0);
+    @include blockSize(100%, 370px, 0 30px 0 0);
+    min-width: 130px;
     border-radius: 50px;
 
-    @media (min-width: 551px) and (max-width: 930px) {
-      width: 300px;
-      margin: 0;
+    @include tabletPhoneMixin() {
+      width: 257px;
+      margin: 0 0 30px 0;
       border-radius: 20px;
     }
 
     @include phone() {
-      @include blockSize(130px, null, 0);
-      height: 133px;
+      @include blockSize(130px, null, 0 0 30px 0);
       border-radius: 20px;
     }
   }
@@ -37,28 +50,28 @@
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
-    width: 371px;
+    min-width: 371px;
     height: 169px;
 
-    @media (min-width: 551px) and (max-width: 930px) {
-      margin: 25px 0;
+    @include tabletPhoneMixin() {
+      width: 291px;
     }
 
     @include phone() {
-      margin: 25px 0;
+      width: 291px;
       height: 122px;
     }
 
     &__title {
       @include content-title-font($black);
 
-      @media (min-width: 551px) and (max-width: 930px) {
-        margin: 25px 0;
+      @include tabletPhoneMixin() {
         text-align: center;
       }
 
       @include phone() {
         width: 291px;
+        min-width: initial;
         text-align: center;
         @include font(700, 23px, 28px, $black);
       }
@@ -68,8 +81,7 @@
       text-align: start;
       @include paragraph($color: $light-gray);
 
-      @media (min-width: 551px) and (max-width: 930px) {
-        @include blockSize(null, null, 25px 0 0 0);
+      @include tabletPhoneMixin() {
         text-align: center;
       }
 
@@ -84,7 +96,7 @@
       @include transition(null);
       color: $black;
 
-      @media (min-width: 551px) and (max-width: 930px) {
+      @include tabletPhoneMixin() {
         text-decoration: none;
       }
 
@@ -92,7 +104,7 @@
         border-bottom: 1px solid $black;
         cursor: pointer;
 
-        @media (min-width: 551px) and (max-width: 930px) {
+        @include tabletPhoneMixin() {
           border-bottom: none;
           color: $black;
         }
@@ -102,7 +114,7 @@
         border-bottom: 1px solid $darkgreen;
         color: $darkgreen;
 
-        @media (min-width: 551px) and (max-width: 930px) {
+        @include tabletPhoneMixin() {
           border-bottom: none;
           color: $black;
         }
