@@ -1523,7 +1523,7 @@ body {
     margin: 75px auto;
   }
 }
-.travel-with-us .block {
+.travel-with-us .card {
   display: flex;
   align-items: center;
   width: 771px;
@@ -1531,18 +1531,18 @@ body {
   margin: 0 53px;
 }
 @media (min-width: 551px) and (max-width: 780px) {
-  .travel-with-us .block {
+  .travel-with-us .card {
     flex-flow: column nowrap;
     height: 100%;
   }
 }
 @media (max-width: 550px) {
-  .travel-with-us .block {
+  .travel-with-us .card {
     flex-flow: column nowrap;
     height: 100%;
   }
 }
-.travel-with-us__img {
+.travel-with-us .card__img {
   width: 100%;
   max-width: 370px;
   margin: 0 30px 0 0;
@@ -1550,14 +1550,14 @@ body {
   border-radius: 50px;
 }
 @media (min-width: 551px) and (max-width: 780px) {
-  .travel-with-us__img {
+  .travel-with-us .card__img {
     width: 257px;
     margin: 0 0 30px 0;
     border-radius: 20px;
   }
 }
 @media (max-width: 550px) {
-  .travel-with-us__img {
+  .travel-with-us .card__img {
     width: 130px;
     margin: 0 0 30px 0;
     border-radius: 20px;

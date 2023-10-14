@@ -10,7 +10,7 @@
     margin: 75px auto;
   }
 
-  .block {
+  .card {
     display: flex;
     align-items: center;
     width: 771px;
@@ -26,97 +26,96 @@
       flex-flow: column nowrap;
       height: 100%;
     }
-  }
 
-  &__img {
-    @include blockSize(100%, 370px, 0 30px 0 0);
-    min-width: 130px;
-    border-radius: 50px;
-
-    @include tabletPhoneMixin() {
-      width: 257px;
-      margin: 0 0 30px 0;
-      border-radius: 20px;
-    }
-
-    @include phone() {
-      @include blockSize(130px, null, 0 0 30px 0);
-      border-radius: 20px;
-    }
-  }
-
-  .card-content {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 371px;
-    height: 169px;
-
-    @include tabletPhoneMixin() {
-      width: 291px;
-    }
-
-    @include phone() {
-      width: 291px;
-      height: 122px;
-    }
-
-    &__title {
-      @include content-title-font($black);
+    &__img {
+      @include blockSize(100%, 370px, 0 30px 0 0);
+      min-width: 130px;
+      border-radius: 50px;
 
       @include tabletPhoneMixin() {
-        text-align: center;
+        @include blockSize(257px, null, 0 0 30px 0);
+        border-radius: 20px;
+      }
+
+      @include phone() {
+        @include blockSize(130px, null, 0 0 30px 0);
+        border-radius: 20px;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 371px;
+      height: 169px;
+
+      @include tabletPhoneMixin() {
+        width: 291px;
       }
 
       @include phone() {
         width: 291px;
-        min-width: initial;
-        text-align: center;
-        @include font(700, 23px, 28px, $black);
-      }
-    }
-
-    &__text {
-      text-align: start;
-      @include paragraph($color: $light-gray);
-
-      @include tabletPhoneMixin() {
-        text-align: center;
+        height: 122px;
       }
 
-      @include phone() {
-        text-align: center;
-        @include paragraph($color: $light-gray);
-      }
-    }
-
-    &__link {
-      text-decoration: none;
-      @include transition(null);
-      color: $black;
-
-      @include tabletPhoneMixin() {
-        text-decoration: none;
-      }
-
-      &:hover {
-        border-bottom: 1px solid $black;
-        cursor: pointer;
+      &__title {
+        @include content-title-font($black);
 
         @include tabletPhoneMixin() {
-          border-bottom: none;
-          color: $black;
+          text-align: center;
+        }
+
+        @include phone() {
+          width: 291px;
+          min-width: initial;
+          text-align: center;
+          @include font(700, 23px, 28px, $black);
         }
       }
 
-      &:active {
-        border-bottom: 1px solid $darkgreen;
-        color: $darkgreen;
+      &__text {
+        text-align: start;
+        @include paragraph($color: $light-gray);
 
         @include tabletPhoneMixin() {
-          border-bottom: none;
-          color: $black;
+          text-align: center;
+        }
+
+        @include phone() {
+          text-align: center;
+          @include paragraph($color: $light-gray);
+        }
+      }
+
+      &__link {
+        text-decoration: none;
+        @include transition(null);
+        color: $black;
+
+        @include tabletPhoneMixin() {
+          text-decoration: none;
+        }
+
+        &:hover {
+          border-bottom: 1px solid $black;
+          cursor: pointer;
+
+          @include tabletPhoneMixin() {
+            border-bottom: none;
+            color: $black;
+          }
+        }
+
+        &:active {
+          border-bottom: 1px solid $darkgreen;
+          color: $darkgreen;
+
+          @include tabletPhoneMixin() {
+            border-bottom: none;
+            color: $black;
+          }
         }
       }
     }
