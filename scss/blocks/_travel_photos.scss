@@ -2,8 +2,7 @@
   display: flex;
   flex-flow: column nowrap;
   @include blockSize(null, 100%, 135px auto 0);
-  @include tablet() {
-  }
+
   @include phone() {
     margin: 75px auto 0;
   }
@@ -19,6 +18,7 @@
     justify-content: flex-start;
     padding: 10px;
     margin-top: 100px;
+
     @include phone() {
       @include blockSize(100%, null, 50px 0 0 0);
     }
@@ -27,27 +27,38 @@
       width: 25%;
       height: 300px;
       padding: 0 15px;
-      border-radius: 50px;
       margin-bottom: 30px;
+      border-radius: 50px;
+      object-fit: cover;
+
       @include tablet() {
+        width: 33.3%;
+        padding: 0 10px;
         &:nth-child(2),
         &:nth-child(7),
         &:nth-child(13) {
           display: none;
         }
-        width: 33.3%;
-        padding: 0 10px;
       }
+
       @include tabletPhoneMixin() {
+        width: 33.3%;
+        padding: 0 10px;
         &:nth-child(2),
         &:nth-child(7),
         &:nth-child(13) {
           display: none;
         }
-        width: 33.3%;
-        padding: 0 10px;
       }
+
       @include phone() {
+        height: 110px;
+        width: 50%;
+        padding: 0 5px;
+        margin-bottom: 9px;
+        border-radius: 20px;
+        object-fit: cover;
+
         &:nth-child(2),
         &:nth-child(3),
         &:nth-child(6),
@@ -56,12 +67,6 @@
         &:nth-child(13) {
           display: none;
         }
-        height: 110px;
-        width: 50%;
-        padding: 0 5px;
-        margin-bottom: 9px;
-        border-radius: 20px;
-        object-fit: cover;
       }
 
       &:nth-child(5),
@@ -72,17 +77,17 @@
         width: 20%;
         border-radius: 50px;
         object-fit: cover;
+
         @include tablet() {
           width: 25%;
-          padding: 0 9px;
         }
+
         @include tabletPhoneMixin() {
           width: 25%;
-          padding: 0 9px;
         }
+
         @include phone() {
           width: 33%;
-          padding: 0 5px;
           border-radius: 20px;
           object-fit: cover;
         }

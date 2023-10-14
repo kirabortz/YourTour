@@ -1,8 +1,4 @@
 .traveler-reviews {
-  // &-h {
-  //   @include blockSize(100%, 529px, null);
-  // }
-
   .reviewer-cards {
     display: flex;
     justify-content: center;
@@ -10,13 +6,16 @@
     min-width: 117px;
     margin-top: 100px;
     color: $black;
+
     @include tabletPhoneMixin() {
       gap: 18px;
     }
+
     @media (max-width: 950px) {
       display: flex;
       flex-flow: column nowrap;
     }
+
     @include phone() {
       align-items: center;
       @include blockSize(360px, null, 50px 0 0 0);
@@ -30,12 +29,15 @@
       padding: 40px;
       border-radius: 50px;
       background-color: $beigegray;
+
       @include tablet() {
         width: 400px;
       }
+
       @include tabletPhoneMixin() {
         width: 400px;
       }
+
       @include phone() {
         align-items: center;
         max-width: 318px;
@@ -44,8 +46,9 @@
       }
 
       &__text {
-        @include paragraph(700, 23px, 28px, $black);
         margin-bottom: 30px;
+        @include paragraph(700, 23px, 28px, $black);
+
         @include tablet() {
           max-width: 673px;
         }
@@ -56,11 +59,13 @@
         justify-content: space-between;
         height: 90px;
         margin-top: 40px;
+
         @include tablet() {
           @include blockSize(355px, null, 0 auto);
           height: initial;
           padding: 40px 40px 0 0;
         }
+
         @include phone() {
           flex-wrap: nowrap;
           width: 100%;
@@ -72,28 +77,30 @@
           justify-content: space-between;
           height: 90px;
           min-width: 233px;
+
           @include phone() {
             min-width: initial;
           }
         }
+
         &__title {
           @include content-title-font($black);
+
           @include phone() {
-            @include font(700, 23px, 27px, $black);
             margin-top: 15px;
+            @include font(700, 23px, 27px, $black);
           }
         }
+
         &__text {
-          @include paragraph();
           width: initial;
-          // font-size: 16px;
-          // line-height: 24px;
-          color: $light-gray;
+          @include paragraph();
         }
         &__photo {
           width: 75px;
           height: 75px;
           border-radius: 100px;
+
           @include phone() {
             height: 75px;
           }

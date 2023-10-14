@@ -9,14 +9,17 @@
     height: 88px;
     background-color: $transparentbeige;
     backdrop-filter: blur(54px);
+
     .nav {
       &-menu {
         &__item {
           @include transition(border-bottom);
+
           &:hover {
             border-bottom: 1px solid $black;
           }
         }
+
         &__link {
           color: $black;
         }

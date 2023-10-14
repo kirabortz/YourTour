@@ -1,10 +1,11 @@
 .header {
   height: 831px;
+  margin: 0 auto;
   background: url(../img/header/header-bg.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 0 auto;
+
   @include phone() {
     height: 488px;
   }
@@ -18,6 +19,7 @@
     bottom: 80px;
     height: 831px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+
     @include phone() {
       bottom: 0;
       min-width: 360px;
@@ -28,17 +30,18 @@
     position: absolute;
     left: 0;
     right: 0;
-    height: 88px;
     min-width: 360px;
+    height: 88px;
 
     .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
-      height: 88px;
       @include blockSize(100%, 1168px, 0 auto);
+      height: 88px;
       padding: 6px 53px 0;
+
       @include phone() {
         #logo-img {
           width: 133px;
@@ -49,14 +52,16 @@
       }
 
       &-menu {
-        list-style-type: none;
         display: flex;
         justify-content: space-between;
         width: 468px;
         height: 28px;
+        list-style-type: none;
+
         @media (max-width: 950px) {
           display: none;
         }
+
         &__item {
           border-bottom: 1px solid transparent;
           @include transition(border-bottom);
@@ -66,7 +71,6 @@
         }
         &__link {
           text-decoration: none;
-
           @include link-font(null, 20px);
         }
       }
@@ -82,8 +86,9 @@
     position: absolute;
     text-align: center;
     @include blockSize(100%, 100%, 88px 0 0 0);
-    height: 743px;
     min-width: 360px;
+    height: 743px;
+
     @include phone() {
       height: 400px;
     }
@@ -92,10 +97,12 @@
       @include blockSize(100%, 768px, 119px auto 0);
       @include font(700, 96px, 105px, $white);
       letter-spacing: 2px;
+
       @media (max-width: 720px) {
         @include blockSize(null, 100%, 135px auto 0);
         @include font(700, 76px, 90px, $white);
       }
+
       @include phone() {
         @include blockSize(360px, 100%, 52px auto 0);
         @include font(700, 34px, 38px, $white);
@@ -105,9 +112,11 @@
     &__subtitle {
       @include blockSize(100%, 562px, 50px auto 0);
       color: $white;
+
       @include tabletPhoneMixin() {
         width: 442px;
       }
+
       @include phone() {
         @include blockSize(315px, 100%, 41px auto 0);
       }
@@ -118,10 +127,9 @@
       padding: 0;
       border-radius: 10px;
       border: none;
-      background-color: $white;
-
-      @include paragraph(null, 17px, 24px, $black);
       cursor: pointer;
+      background-color: $white;
+      @include paragraph(null, 17px, 24px, $black);
 
       &-text {
         display: flex;
@@ -133,6 +141,7 @@
         text-decoration: none;
         color: $black;
         @include transition(background-color, color);
+
         @include phone() {
           width: 114px;
           &:hover {

@@ -13,22 +13,26 @@
       @include blockSize(100%, null, 35px 0 0 0);
       height: 28px;
       list-style-type: none;
+
       @include tablet() {
         flex-flow: row nowrap;
         margin: 35px auto 0;
       }
+
       @include tabletPhoneMixin() {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
         width: 390px;
       }
+
       @include phone() {
         flex-flow: row wrap;
         justify-content: center;
         @include blockSize(100%, 380px, 30px auto 0);
         max-width: 320px;
       }
+
       &__item {
         padding: 0 13px 10px 0;
         @include phone() {
@@ -36,20 +40,22 @@
           padding: 0 4px 4px 0;
         }
       }
+
       &__link {
-        text-decoration: none;
         border: 2px solid transparent;
-        @include link-font(700, 23px, $black);
+        text-decoration: none;
         cursor: pointer;
         @include transition(border-bottom, color);
+        @include link-font(700, 23px, $black);
+
         @include phone() {
           padding: 7px 0 0;
           margin-right: 12px;
         }
 
         &.active {
-          color: $gold;
           border-bottom: 2px solid $gold;
+          color: $gold;
         }
 
         &:hover {
@@ -66,6 +72,7 @@
     justify-content: space-between;
     gap: 30px;
     @include blockSize(null, 1170px, 90px 0 0 0);
+
     @include tablet() {
       gap: 18px;
       min-width: initial;
@@ -76,11 +83,11 @@
       align-items: center;
       width: 100%;
     }
+
     @include phone() {
       justify-content: center;
-      @include blockSize(100%, 100%, 60px auto 0);
-      // min-width: 360px;
       gap: 18px;
+      @include blockSize(100%, 100%, 60px auto 0);
     }
 
     .card {
@@ -89,34 +96,38 @@
       height: 531px;
       overflow: hidden;
       border-radius: 50px;
+
       @include tablet() {
         width: 48%;
       }
+
       @include tabletPhoneMixin() {
         max-width: 390px;
         width: 100%;
       }
-      @include phone() {
-        border-radius: 20px;
 
+      @include phone() {
         min-width: 318px;
         height: 318px;
+        border-radius: 20px;
       }
 
       &:hover {
         .card__img {
-          @include transform(scale(1.2));
+          transform: scale(1.2);
         }
       }
       &:hover {
         .card-content__btn {
           background-color: $darkgreen;
+
           @include phone() {
             background-color: transparent;
           }
         }
         .card-content__btn:active {
           background-color: $gold;
+
           @include phone() {
             background-color: transparent;
           }
@@ -130,9 +141,10 @@
         left: 0;
         right: 0;
         bottom: 0;
+        z-index: 1;
         border-radius: 50px;
         background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
-        z-index: 1;
+
         @include phone() {
           width: 100%;
           border-radius: 20px;
@@ -145,6 +157,7 @@
         border-radius: 50px;
         @include transition(transform);
         object-fit: cover;
+
         @include phone() {
           height: 100%;
           border-radius: 20px;
@@ -157,14 +170,16 @@
         flex-flow: column nowrap;
         top: 50px;
         left: 50px;
+        z-index: 1;
         height: 445px;
         max-width: 240px;
         color: $white;
-        z-index: 1;
+
         @include tablet() {
           right: 50px;
           max-width: 100%;
         }
+
         @include phone() {
           display: flex;
           top: 27px;
@@ -176,6 +191,7 @@
 
         &__title {
           @include content-title-font();
+
           @include phone() {
             @include font(700, 22px, 28px, $white);
             letter-spacing: 1px;
@@ -194,11 +210,12 @@
           bottom: 0;
           left: -20px;
           width: 199px;
+          border: none;
           border-radius: 50px;
           cursor: pointer;
-          border: none;
           background-color: transparent;
           @include transition(background-color);
+
           @include phone() {
             top: 240px;
             left: 0;
@@ -209,6 +226,7 @@
             padding: 7px 16px 7px 20px;
             cursor: pointer;
             @include btn-more-font();
+
             @include phone() {
               display: flex;
               align-items: center;

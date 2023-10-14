@@ -5,14 +5,10 @@
 
   @each $transition in $transitions {
     $property: nth($transition, 1);
-    $duration: if(length($transition) >= 2, nth($transition, 2), $default-duration);
-    $timing-function: if(length($transition) >= 3, nth($transition, 3), $default-timing-function);
+    $duration: if(length($transition) >=2, nth($transition, 2), $default-duration);
+    $timing-function: if(length($transition) >=3, nth($transition, 3), $default-timing-function);
     $transition-properties: append($transition-properties, #{$property} #{$duration} #{$timing-function}, comma);
   }
 
   transition: $transition-properties;
-}
-
-@mixin transform($properties) {
-  transform: $properties;
 }

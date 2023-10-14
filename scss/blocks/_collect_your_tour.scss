@@ -1,35 +1,41 @@
 .tour-build {
   .grid-form {
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-gap: 30px;
-    background-color: $white;
-    border-radius: 50px;
+    width: 100%;
     padding: 70px;
     margin-top: 100px;
+    border-radius: 50px;
+    background-color: $white;
     @include paragraph($color: $black);
+
     @include tablet() {
       padding: 60px;
     }
+
     @include tabletPhoneMixin() {
       grid-template-columns: 1fr;
       padding: 40px;
     }
+
     @include phone() {
       margin-top: 40px;
       padding: 20px 20px 40px;
       border-radius: 30px;
     }
+
     &__field {
       @include tabletPhoneMixin() {
         grid-column: 1/3;
       }
+
       @include phone() {
         grid-column: 1/3;
       }
     }
+
     &__input,
     &__select {
       @include blockSize(100%, 100%, 8px auto 0);
@@ -37,17 +43,17 @@
       border: 1px solid $beigegray;
       border-radius: 10px;
       cursor: pointer;
-      background-color: $antiquewhite;
       text-indent: 20px;
+      background-color: $antiquewhite;
 
       &::placeholder {
-        @include paragraph();
         text-indent: 20px;
+        @include paragraph();
       }
 
       &:focus {
-        outline: none;
         border: 1px solid $light-gray;
+        outline: none;
       }
       @include phone() {
         height: 46px;
@@ -65,15 +71,15 @@
         color: $black;
       }
       &:focus {
-        outline: none;
         border: 1px solid $light-gray;
+        outline: none;
       }
     }
 
     #from-date,
     #to-date {
-      color: $black;
       text-indent: 10px;
+      color: $black;
       &:invalid {
         text-transform: uppercase;
         color: $light-gray;
@@ -99,15 +105,16 @@
       border: 1px solid $beigegray;
       border-radius: 10px;
       resize: none;
-      background-color: $antiquewhite;
       text-indent: 10px;
+      background-color: $antiquewhite;
+
       &:focus {
-        outline: none;
         border: none;
+        outline: none;
       }
       &:focus {
-        outline: none;
         border: 1px solid $light-gray;
+        outline: none;
       }
     }
 
@@ -116,11 +123,16 @@
       flex-direction: column;
       justify-content: space-between;
       height: 64px;
+
       &-btns {
         display: flex;
         justify-content: space-between;
-        max-width: 166px;
+        width: 166px;
         height: 28px;
+
+        @include phone() {
+          width: 139px;
+        }
       }
 
       &-input {
@@ -131,11 +143,12 @@
         display: flex;
         justify-content: space-between;
         cursor: pointer;
+
         &::before {
           content: "";
-          margin-right: 12px;
           width: 26px;
           height: 26px;
+          margin-right: 12px;
           border: 2px solid $black;
           border-radius: 50%;
         }
@@ -146,8 +159,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 30px;
         padding-bottom: 2px;
+        font-size: 30px;
       }
     }
 
@@ -161,21 +174,23 @@
 
       &-label {
         display: flex;
+
         &::before {
           content: "";
-          margin-right: 21px;
           min-width: 25px;
           height: 25px;
+          margin-right: 21px;
           border: 2px solid $black;
           border-radius: 5px;
         }
       }
 
       &-link {
-        color: $black;
+        @include transition(border-bottom);
         text-decoration: none;
         word-spacing: 3px;
-        @include transition(border-bottom);
+        color: $black;
+
         &:hover {
           border-bottom: 1px solid $black;
           cursor: pointer;
@@ -197,8 +212,8 @@
       .grid-form__license-checkbox:checked + .grid-form__license-label::before {
         content: "✔";
         text-align: center;
-        color: $black;
         font-size: 18px;
+        color: $black;
       }
     }
 
@@ -206,40 +221,45 @@
       display: flex;
       justify-content: space-between;
       height: 58px;
+
       @include phone() {
         height: 47px;
       }
 
       &-btns {
-        max-width: 500px;
-        width: 100%;
         display: flex;
         justify-content: space-between;
         gap: 30px;
+        max-width: 500px;
+        width: 100%;
+
         @include phone() {
           gap: 10px;
         }
       }
+
       &-submit,
       &-reset {
         width: 235px;
         border: none;
         border-radius: 10px;
         cursor: pointer;
+        @include transition(background-color);
         @include paragraph($color: $white);
         background-color: $darkgreen;
-        @include transition(background-color);
       }
 
       &-submit {
         &:hover {
           background-color: $teal;
+
           @include phone() {
             background-color: $darkgreen;
           }
         }
         &:active {
           background-color: $steelteal;
+
           @include phone() {
             background-color: $darkgreen;
           }
@@ -251,12 +271,14 @@
         color: $darkgreen;
         &:hover {
           background-color: $whitesmoke;
+
           @include phone() {
             background-color: $mintcream;
           }
         }
         &:active {
           background-color: $timberwolf;
+
           @include phone() {
             background-color: $mintcream;
           }
