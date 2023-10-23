@@ -41,16 +41,6 @@
         }
       }
 
-      @include tabletPhoneMixin() {
-        width: 33.3%;
-        padding: 0 10px;
-        &:nth-child(2),
-        &:nth-child(7),
-        &:nth-child(13) {
-          display: none;
-        }
-      }
-
       @include phone() {
         height: 110px;
         width: 50%;
@@ -79,10 +69,6 @@
         object-fit: cover;
 
         @include tablet() {
-          width: 25%;
-        }
-
-        @include tabletPhoneMixin() {
           width: 25%;
         }
 

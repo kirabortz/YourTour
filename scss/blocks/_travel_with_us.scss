@@ -12,15 +12,10 @@
 
   .card {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
-    width: 771px;
-    height: 370px;
     margin: 0 53px;
-
-    @include tabletPhoneMixin() {
-      flex-flow: column nowrap;
-      height: 100%;
-    }
 
     @include phone() {
       flex-flow: column nowrap;
@@ -28,14 +23,9 @@
     }
 
     &__img {
-      @include blockSize(100%, 370px, 0 30px 0 0);
+      @include blockSize(100%, 370px, 0 10px 10px 0);
       min-width: 130px;
       border-radius: 50px;
-
-      @include tabletPhoneMixin() {
-        @include blockSize(257px, null, 0 0 30px 0);
-        border-radius: 20px;
-      }
 
       @include phone() {
         @include blockSize(130px, null, 0 0 30px 0);
@@ -48,12 +38,9 @@
       flex-flow: column;
       justify-content: space-between;
       align-items: center;
-      min-width: 371px;
+      width: 371px;
       height: 169px;
-
-      @include tabletPhoneMixin() {
-        width: 291px;
-      }
+      margin: 10px 0 0 10px;
 
       @include phone() {
         width: 291px;
@@ -62,10 +49,6 @@
 
       &__title {
         @include content-title-font($black);
-
-        @include tabletPhoneMixin() {
-          text-align: center;
-        }
 
         @include phone() {
           width: 291px;
@@ -79,10 +62,6 @@
         text-align: start;
         @include paragraph($color: $light-gray);
 
-        @include tabletPhoneMixin() {
-          text-align: center;
-        }
-
         @include phone() {
           text-align: center;
           @include paragraph($color: $light-gray);
@@ -94,28 +73,14 @@
         @include transition(null);
         color: $black;
 
-        @include tabletPhoneMixin() {
-          text-decoration: none;
-        }
-
         &:hover {
           border-bottom: 1px solid $black;
           cursor: pointer;
-
-          @include tabletPhoneMixin() {
-            border-bottom: none;
-            color: $black;
-          }
         }
 
         &:active {
           border-bottom: 1px solid $darkgreen;
           color: $darkgreen;
-
-          @include tabletPhoneMixin() {
-            border-bottom: none;
-            color: $black;
-          }
         }
       }
     }

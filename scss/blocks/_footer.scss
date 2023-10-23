@@ -13,30 +13,23 @@
 
   &-content {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1168px;
     width: 100%;
     padding: 0 53px;
 
-    @include tabletPhoneMixin() {
-      flex-flow: column wrap;
-      justify-content: space-evenly;
-      height: 88px;
+    @media (max-width: 760px) {
+      justify-content: center;
     }
 
     @include phone() {
-      flex-flow: column wrap;
-      justify-content: space-between;
       height: 53px;
       padding: 0 21px;
     }
 
     &__subtitle {
       color: $light-gray;
-
-      @include tabletPhoneMixin() {
-        text-align: center;
-      }
 
       @include phone() {
         text-align: center;
@@ -49,11 +42,6 @@
       align-items: center;
       height: 28px;
 
-      @include tabletPhoneMixin() {
-        width: 420px;
-        margin: 0 auto;
-      }
-
       @include phone() {
         width: 320px;
         height: 23px;
@@ -65,10 +53,6 @@
         cursor: pointer;
         text-decoration: none;
         color: $black;
-
-        @include tabletPhoneMixin() {
-          cursor: default;
-        }
       }
 
       &__img {
@@ -92,12 +76,6 @@
             border-bottom: 1px solid transparent;
           }
 
-          @include tabletPhoneMixin() {
-            border-bottom: 1px solid transparent;
-            cursor: default;
-            color: $black;
-          }
-
           @include phone() {
             border-bottom: 1px solid transparent;
           }
@@ -106,16 +84,6 @@
         &:active {
           border-bottom: 1px solid $gold;
           color: $gold;
-
-          @include tabletPhoneMixin() {
-            border-bottom: 1px solid transparent;
-            cursor: default;
-            color: $black;
-          }
-
-          @include tabletPhoneMixin() {
-            @include transition(null);
-          }
         }
       }
     }

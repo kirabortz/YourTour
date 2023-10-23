@@ -1,44 +1,20 @@
 .tour-select {
   .section-name {
-    @include tabletPhoneMixin() {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
     .h-menu {
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-between;
+      justify-content: center;
       @include blockSize(100%, null, 35px 0 0 0);
       height: 28px;
       list-style-type: none;
 
-      @include tablet() {
-        flex-flow: row nowrap;
-        margin: 35px auto 0;
-      }
-
-      @include tabletPhoneMixin() {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        width: 390px;
-      }
-
       @include phone() {
-        flex-flow: row wrap;
-        justify-content: center;
         @include blockSize(100%, 380px, 30px auto 0);
         max-width: 320px;
       }
 
       &__item {
-        padding: 0 13px 10px 0;
-        @include phone() {
-          display: flex;
-          padding: 0 4px 4px 0;
-        }
+        padding: 0 10px 10px 0;
       }
 
       &__link {
@@ -47,11 +23,6 @@
         cursor: pointer;
         @include transition(border-bottom, color);
         @include link-font(700, 23px, $black);
-
-        @include phone() {
-          padding: 7px 0 0;
-          margin-right: 12px;
-        }
 
         &.active {
           border-bottom: 2px solid $gold;
@@ -69,19 +40,13 @@
   .tour-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     gap: 30px;
     @include blockSize(null, 1170px, 90px 0 0 0);
 
     @include tablet() {
       gap: 18px;
       min-width: initial;
-    }
-    @include tabletPhoneMixin() {
-      display: flex;
-      flex-flow: column wrap;
-      align-items: center;
-      width: 100%;
     }
 
     @include phone() {
@@ -99,11 +64,7 @@
 
       @include tablet() {
         width: 48%;
-      }
-
-      @include tabletPhoneMixin() {
-        max-width: 390px;
-        width: 100%;
+        min-width: 318px;
       }
 
       @include phone() {
@@ -170,13 +131,13 @@
         flex-flow: column nowrap;
         top: 50px;
         left: 50px;
+        right: 50px;
         z-index: 1;
         height: 445px;
         max-width: 240px;
         color: $white;
 
         @include tablet() {
-          right: 50px;
           max-width: 100%;
         }
 
@@ -190,8 +151,8 @@
         }
 
         &__title {
-          @include content-title-font();
-
+          display: flex;
+          align-items: center;
           @include phone() {
             @include font(700, 22px, 28px, $white);
             letter-spacing: 1px;
