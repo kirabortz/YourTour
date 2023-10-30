@@ -30,35 +30,36 @@
     position: absolute;
     left: 0;
     right: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     min-width: 360px;
     height: 88px;
 
     .nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       position: relative;
-      @include blockSize(100%, 1168px, 0 auto);
-      height: 88px;
-      padding: 6px 53px 0;
+      @include blockSize(100%, 1168px, 29px 57px 0);
 
       @include phone() {
         #logo-img {
           width: 133px;
+          height: 23px;
         }
-        @include blockSize(100%, 550px, 0 auto);
+        @include blockSize(100%, 550px, 32.5px 20px 0);
         min-width: 320px;
-        padding: 0 20px 0;
       }
 
       &-menu {
         display: flex;
-        justify-content: space-between;
-        width: 468px;
+        gap: 50px;
         height: 28px;
         list-style-type: none;
-
-        @media (max-width: 950px) {
+        @include tablet() {
+          gap: 30px;
+        }
+        @media (max-width: 900px) {
           display: none;
         }
 
@@ -105,7 +106,7 @@
 
       @include phone() {
         @include blockSize(360px, 100%, 52px auto 0);
-        @include font(700, 34px, 38px, $white);
+        @include font(700, 32px, 38px, $white);
       }
     }
 
@@ -118,19 +119,21 @@
       }
 
       @include phone() {
-        @include blockSize(315px, 100%, 41px auto 0);
+        @include blockSize(315px, 100%, 40px auto 0);
       }
     }
 
     &__btn {
-      margin-top: 40px;
+      margin-top: 50px;
       padding: 0;
       border-radius: 10px;
       border: none;
       cursor: pointer;
       background-color: $white;
       @include paragraph(null, 17px, 24px, $black);
-
+      @include phone() {
+        margin-top: 40px;
+      }
       &-text {
         display: flex;
         align-items: center;

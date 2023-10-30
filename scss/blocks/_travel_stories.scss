@@ -8,6 +8,7 @@
 
     @include phone() {
       margin-top: 50px;
+      gap: 20px;
     }
 
     .card {
@@ -105,7 +106,7 @@
         }
 
         &__text {
-          @include blockSize(initial, 603px, 37px 0 0 0);
+          @include blockSize(null, 554px, 37px 0 0 0);
           min-width: 296px;
           height: initial;
           text-align: initial;
@@ -124,10 +125,10 @@
           display: flex;
           flex-flow: column;
           margin-left: 12px;
-          margin-top: 27px;
+          margin-top: 28px;
 
           @include phone() {
-            margin: 27px 0 0 -7px;
+            margin: 20px 0 0;
           }
 
           &__item {
@@ -155,13 +156,13 @@
         justify-content: space-between;
         align-items: center;
         position: absolute;
-        bottom: 60px;
+        bottom: 52px;
         z-index: 1;
         width: 100%;
-        padding: 0 60px 0 40px;
+        padding: 0 61px 0 37px;
 
         @include phone() {
-          bottom: 30px;
+          bottom: 26px;
           padding: 0 30px 0 20px;
         }
 
@@ -188,13 +189,14 @@
           @include phone() {
             display: flex;
             align-items: center;
-            margin-right: 6px;
+            margin-right: 12px;
             padding: 4px;
           }
         }
 
         .card-contacts {
           display: flex;
+          gap: 35px;
           list-style-type: none;
           @include link-font(null, 20px);
 
@@ -203,7 +205,6 @@
           }
 
           &__link {
-            padding-left: 27px;
             text-decoration: none;
             color: $white;
           }

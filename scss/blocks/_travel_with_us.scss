@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 370px;
   margin: 135px auto;
 
   @include phone() {
@@ -12,10 +13,10 @@
 
   .card {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 30px;
+    flex-wrap: nowrap;
     align-items: center;
-    margin: 0 53px;
+    padding: 0 53px;
 
     @include phone() {
       flex-flow: column nowrap;
@@ -23,27 +24,26 @@
     }
 
     &__img {
-      @include blockSize(100%, 370px, 0 10px 10px 0);
       min-width: 130px;
       border-radius: 50px;
 
       @include phone() {
-        @include blockSize(130px, null, 0 0 30px 0);
+        width: 130px;
+        height: 133px;
         border-radius: 20px;
       }
     }
 
     &-content {
       display: flex;
+      gap: 20px;
       flex-flow: column;
-      justify-content: space-between;
-      align-items: center;
-      width: 371px;
-      height: 169px;
-      margin: 10px 0 0 10px;
+      min-width: 371px;
+      max-width: 371px;
 
       @include phone() {
-        width: 291px;
+        align-items: center;
+        min-width: 291px;
         height: 122px;
       }
 
@@ -54,12 +54,11 @@
           width: 291px;
           min-width: initial;
           text-align: center;
-          @include font(700, 23px, 28px, $black);
+          @include font(700, 25px, 28px, $black);
         }
       }
 
       &__text {
-        text-align: start;
         @include paragraph($color: $light-gray);
 
         @include phone() {

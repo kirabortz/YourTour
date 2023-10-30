@@ -7,11 +7,11 @@
 
 @mixin section-title-font() {
   font-weight: 700;
-  font-size: 55px;
+  font-size: 59px;
   line-height: 73px;
   color: $black;
   @include phone() {
-    font-size: 34px;
+    font-size: 35px;
     line-height: 38px;
     color: black;
   }

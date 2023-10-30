@@ -13,18 +13,23 @@
 
     @include phone() {
       align-items: center;
+      gap: 18px;
       @include blockSize(360px, null, 50px 0 0 0);
     }
 
     .card {
       display: flex;
-      flex-flow: column nowrap;
+      flex-flow: column wrap;
       justify-content: space-between;
-      width: 48%;
-      min-width: 370px;
+      max-width: 570px;
+      min-width: 360px;
+      width: calc(50% - 15px);
       padding: 40px;
       border-radius: 50px;
       background-color: $beigegray;
+      @include tablet() {
+        width: calc(50% - 9px);
+      }
 
       @include phone() {
         align-items: center;
@@ -36,12 +41,15 @@
       &__text {
         margin-bottom: 30px;
         @include paragraph(700, 23px, 28px, $black);
+
+        @include phone() {
+          margin-bottom: 19px;
+        }
       }
 
       &-content {
         display: flex;
         justify-content: space-between;
-        height: 90px;
         min-width: 310px;
         margin-top: 40px;
 
@@ -53,13 +61,13 @@
         @include phone() {
           flex-wrap: nowrap;
           min-width: 278px;
+          margin-top: 22px;
         }
 
         .user-info {
           display: flex;
           flex-flow: column nowrap;
           justify-content: space-between;
-          height: 90px;
           white-space: nowrap;
 
           @include phone() {
@@ -72,12 +80,12 @@
 
           @include phone() {
             margin-top: 15px;
-            @include font(700, 23px, 27px, $black);
+            @include font(700, 24px, 27px, $black);
           }
         }
 
         &__text {
-          @include paragraph();
+          @include paragraph(400, 17px, 24px);
         }
         &__photo {
           width: 75px;

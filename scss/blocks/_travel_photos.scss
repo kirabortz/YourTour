@@ -10,26 +10,41 @@
   .section-name {
     margin: 0 auto;
     padding: 0 21px;
+    @include phone() {
+      padding: 0;
+    }
   }
 
   .photos {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    padding: 10px;
+    padding: 0 15px;
     margin-top: 100px;
 
+    @include tablet() {
+      padding: 0 10px;
+    }
+
     @include phone() {
+      justify-content: space-between;
+      row-gap: 18px;
+      column-gap: 10px;
       @include blockSize(100%, null, 50px 0 0 0);
+      padding: 0 21px;
     }
 
     .photos__img {
       width: 25%;
-      height: 300px;
+      height: 301px;
       padding: 0 15px;
       margin-bottom: 30px;
-      border-radius: 50px;
+      border-radius: 60px;
       object-fit: cover;
+
+      &:nth-last-child(-n + 4) {
+        margin-bottom: 0;
+      }
 
       @include tablet() {
         width: 33.3%;
@@ -43,9 +58,9 @@
 
       @include phone() {
         height: 110px;
-        width: 50%;
-        padding: 0 5px;
-        margin-bottom: 9px;
+        width: calc(50% - 9px);
+        padding: 0;
+        margin-bottom: 0;
         border-radius: 20px;
         object-fit: cover;
 
@@ -65,7 +80,7 @@
       &:nth-child(8),
       &:nth-child(9) {
         width: 20%;
-        border-radius: 50px;
+        border-radius: 60px;
         object-fit: cover;
 
         @include tablet() {
@@ -73,9 +88,15 @@
         }
 
         @include phone() {
-          width: 33%;
+          width: calc(33.3% - 7px);
           border-radius: 20px;
           object-fit: cover;
+        }
+      }
+      &:nth-child(10),
+      &:nth-child(11) {
+        @include phone() {
+          min-width: 154px;
         }
       }
     }

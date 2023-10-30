@@ -9,21 +9,24 @@
 
   @include phone() {
     @include blockSize(100%, 550px, 75px auto 0);
+    height: 95px;
   }
 
   &-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 1168px;
+    max-width: 1272px;
     width: 100%;
     padding: 0 53px;
 
-    @media (max-width: 760px) {
+    @media (max-width: 750px) {
       justify-content: center;
     }
 
     @include phone() {
+      flex-flow: column nowrap;
+      align-items: center;
       height: 53px;
       padding: 0 21px;
     }
@@ -38,30 +41,35 @@
 
     .footer-contacts {
       display: flex;
-      justify-content: space-between;
+      gap: 25px;
       align-items: center;
       height: 28px;
 
       @include phone() {
-        width: 320px;
-        height: 23px;
-        margin: 0 auto;
+        align-items: end;
+        gap: 15px;
+        height: 31px;
       }
 
       &__link {
         display: flex;
+        align-items: center;
+        gap: 10px;
         cursor: pointer;
         text-decoration: none;
         color: $black;
+
+        @include phone() {
+          gap: 4px;
+        }
       }
 
       &__img {
-        @include blockSize(38px, null, 0 12px 0 0);
         height: 26px;
 
         @include phone() {
-          width: 20px;
-          height: 20px;
+          width: 22px;
+          height: 22px;
         }
       }
 

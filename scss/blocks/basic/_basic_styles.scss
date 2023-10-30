@@ -15,7 +15,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  @include blockSize(100%, 1170px, 135px auto 0);
+  @include blockSize(100%, 1276px, 135px auto 0);
   padding: 0 53px;
 
   @include phone() {
@@ -24,7 +24,7 @@ body {
   }
 }
 .section-name {
-  max-width: 723px;
+  max-width: 765px;
   min-width: 320px;
   text-align: center;
 }
@@ -42,6 +42,7 @@ body {
 
   @include phone() {
     width: 320px;
+    margin-top: 20px;
   }
 }
 .card-content__title {
