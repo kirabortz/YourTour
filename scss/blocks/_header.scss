@@ -1,7 +1,7 @@
 .header {
   height: 831px;
   margin: 0 auto;
-  background: url(../img/header/header-bg.jpg);
+  background: url(../img/header/header-bg.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,7 +18,7 @@
     right: 0;
     bottom: 80px;
     height: 831px;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 39.9%), linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
 
     @include phone() {
       bottom: 0;
@@ -97,7 +97,7 @@
     &__title {
       @include blockSize(100%, 768px, 119px auto 0);
       @include font(700, 96px, 105px, $white);
-      letter-spacing: 2px;
+      letter-spacing: 1.92px;
 
       @media (max-width: 720px) {
         @include blockSize(null, 100%, 135px auto 0);

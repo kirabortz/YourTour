@@ -43,7 +43,6 @@
         height: 100%;
         border-radius: 50px;
         background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0.01%, rgba(0, 0, 0, 0.2) 100%);
-
         @include phone() {
           height: 100%;
           border-radius: 20px;
@@ -51,7 +50,6 @@
       }
 
       &__img {
-        position: absolute;
         height: 100%;
         border-radius: 50px;
         object-fit: cover;
@@ -136,7 +134,7 @@
             @include paragraph(null, 20px, 28px, $white);
 
             @include phone() {
-              margin-left: 8px;
+              margin: 0 0 -1px 8px;
             }
 
             &::before {
