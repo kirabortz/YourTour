@@ -1,209 +1,205 @@
-.tour-select {
-  .section-name {
-    .h-menu {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      gap: 27px;
-      @include blockSize(100%, null, 35px 0 0 0);
-      height: 34px;
-      list-style-type: none;
+.h-menu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 27px;
+  @include blockSize(100%, null, 35px 0 0 0);
+  height: 34px;
+  list-style-type: none;
 
-      @include phone() {
-        gap: 10px;
-        height: 100%;
-        @include blockSize(100%, 380px, 30px auto 0);
-      }
-
-      &__link {
-        border: 2px solid transparent;
-        text-decoration: none;
-        cursor: pointer;
-        @include transition(border-bottom, color);
-        @include link-font(700, 23px, $black);
-
-        &.active {
-          border-bottom: 2px solid $gold;
-          padding-bottom: 5px;
-          color: $gold;
-          @include phone() {
-            padding-bottom: 0;
-          }
-        }
-
-        &:hover {
-          border-bottom: 2px solid $gold;
-          color: $gold;
-        }
-      }
-    }
+  @include phone() {
+    gap: 10px;
+    height: 100%;
+    @include blockSize(100%, 380px, 30px auto 0);
   }
 
-  .tour-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-    margin: 100px 0 0 0;
+  &__link {
+    border: 2px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    @include transition(border-bottom, color);
+    @include link-font(700, 23px, $black);
 
-    @include desktop() {
-      justify-content: space-between;
-      gap: 30px;
+    &.active {
+      border-bottom: 2px solid $gold;
+      padding-bottom: 5px;
+      color: $gold;
+      @include phone() {
+        padding-bottom: 0;
+      }
     }
 
+    &:hover {
+      border-bottom: 2px solid $gold;
+      color: $gold;
+    }
+  }
+}
+
+.tour-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin: 100px 0 0 0;
+
+  @include desktop() {
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  @include tablet() {
+    min-width: initial;
+  }
+
+  @include phone() {
+    @include blockSize(100%, 100%, 50px auto 0);
+  }
+
+  .card {
+    position: relative;
+    width: calc(33.3% - 20px);
+    height: 531px;
+    overflow: hidden;
+    border-radius: 50px;
+
     @include tablet() {
-      min-width: initial;
+      width: 100%;
+      width: calc(50% - 9px);
+      min-width: 318px;
+      max-width: 450px;
+      min-width: 318px;
     }
 
     @include phone() {
-      @include blockSize(100%, 100%, 50px auto 0);
+      width: 318px;
+      height: 318px;
+      border-radius: 20px;
     }
 
-    .card {
-      position: relative;
-      width: calc(33.3% - 20px);
-      height: 531px;
-      overflow: hidden;
+    &:hover {
+      .card__img {
+        transform: scale(1.2);
+      }
+    }
+    &:hover {
+      .card-content__btn {
+        background-color: $darkgreen;
+
+        @include phone() {
+          background-color: transparent;
+        }
+      }
+      .card-content__btn:active {
+        background-color: $gold;
+
+        @include phone() {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
       border-radius: 50px;
+      background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
+
+      @include phone() {
+        width: 100%;
+        border-radius: 20px;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      @include transition(transform);
+      object-fit: cover;
+
+      @include phone() {
+        height: 100%;
+        border-radius: 20px;
+        object-fit: cover;
+      }
+    }
+    &-content {
+      position: absolute;
+      display: flex;
+      flex-flow: column nowrap;
+      top: 50px;
+      left: 50px;
+      right: 50px;
+      z-index: 1;
+      height: 440px;
+      max-width: 240px;
+      color: $white;
 
       @include tablet() {
-        width: 100%;
-        width: calc(50% - 9px);
-        min-width: 318px;
-        max-width: 450px;
-        min-width: 318px;
+        max-width: 100%;
       }
 
       @include phone() {
-        width: 318px;
-        height: 318px;
-        border-radius: 20px;
-      }
-
-      &:hover {
-        .card__img {
-          transform: scale(1.2);
-        }
-      }
-      &:hover {
-        .card-content__btn {
-          background-color: $darkgreen;
-
-          @include phone() {
-            background-color: transparent;
-          }
-        }
-        .card-content__btn:active {
-          background-color: $gold;
-
-          @include phone() {
-            background-color: transparent;
-          }
-        }
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
-        border-radius: 50px;
-        background: linear-gradient(360deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.06) 48.44%, rgba(0, 0, 0, 0.5) 100%);
-
-        @include phone() {
-          width: 100%;
-          border-radius: 20px;
-        }
-      }
-
-      &__img {
-        width: 100%;
-        height: 100%;
-        border-radius: 50px;
-        @include transition(transform);
-        object-fit: cover;
-
-        @include phone() {
-          height: 100%;
-          border-radius: 20px;
-          object-fit: cover;
-        }
-      }
-      &-content {
-        position: absolute;
         display: flex;
-        flex-flow: column nowrap;
-        top: 50px;
-        left: 50px;
-        right: 50px;
-        z-index: 1;
-        height: 440px;
-        max-width: 240px;
-        color: $white;
+        top: 27px;
+        left: 25px;
+        right: 24px;
+        height: initial;
+        max-width: 100%;
+      }
 
-        @include tablet() {
-          max-width: 100%;
+      &__title {
+        display: flex;
+        align-items: center;
+        @include phone() {
+          @include font(700, 23px, 28px, $white);
+          letter-spacing: 1px;
         }
+      }
+
+      &__price {
+        margin-top: 17px;
+        @include phone() {
+          margin-top: 12px;
+        }
+        @include paragraph(null, 17px, 24px, $white);
+      }
+
+      &__btn {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: -26px;
+        width: 199px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        background-color: transparent;
+        @include transition(background-color);
 
         @include phone() {
-          display: flex;
-          top: 27px;
-          left: 25px;
-          right: 24px;
-          height: initial;
-          max-width: 100%;
+          top: 251px;
+          left: -6px;
         }
 
-        &__title {
-          display: flex;
-          align-items: center;
-          @include phone() {
-            @include font(700, 23px, 28px, $white);
-            letter-spacing: 1px;
-          }
-        }
-
-        &__price {
-          margin-top: 17px;
-          @include phone() {
-            margin-top: 12px;
-          }
-          @include paragraph(null, 17px, 24px, $white);
-        }
-
-        &__btn {
-          display: flex;
-          align-items: center;
-          position: absolute;
-          bottom: 0;
-          left: -26px;
-          width: 199px;
-          border: none;
-          border-radius: 50px;
+        &-text {
+          max-width: 199px;
+          padding: 7px 16px 7px 20px;
           cursor: pointer;
-          background-color: transparent;
-          @include transition(background-color);
+          @include btn-more-font();
 
           @include phone() {
-            top: 251px;
-            left: -6px;
-          }
-
-          &-text {
-            max-width: 199px;
-            padding: 7px 16px 7px 20px;
-            cursor: pointer;
-            @include btn-more-font();
-
-            @include phone() {
-              display: flex;
-              align-items: center;
-              width: initial;
-              padding: 0 16px 0 0;
-            }
+            display: flex;
+            align-items: center;
+            width: initial;
+            padding: 0 16px 0 0;
           }
         }
       }

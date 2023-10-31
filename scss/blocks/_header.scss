@@ -1,4 +1,4 @@
-.header {
+.intro {
   height: 831px;
   margin: 0 auto;
   background: url(../img/header/header-bg.png);
@@ -36,7 +36,7 @@
     min-width: 360px;
     height: 88px;
 
-    .nav {
+    .nav-menu {
       display: flex;
       justify-content: space-between;
       position: relative;
@@ -51,7 +51,7 @@
         min-width: 320px;
       }
 
-      &-menu {
+      &__list {
         display: flex;
         gap: 50px;
         height: 28px;
@@ -63,14 +63,14 @@
           display: none;
         }
 
-        &__item {
+        &-item {
           border-bottom: 1px solid transparent;
           @include transition(border-bottom);
           &:hover {
             border-bottom: 1px solid $white;
           }
         }
-        &__link {
+        &-link {
           text-decoration: none;
           @include link-font(null, 20px);
         }

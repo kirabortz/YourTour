@@ -1,100 +1,98 @@
-.traveler-reviews {
-  .reviewer-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 100px;
-    color: $black;
+.reviewer-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 100px;
+  color: $black;
 
+  @include tablet() {
+    gap: 18px;
+  }
+
+  @include phone() {
+    align-items: center;
+    gap: 18px;
+    @include blockSize(360px, null, 50px 0 0 0);
+  }
+
+  .card {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    max-width: 570px;
+    min-width: 360px;
+    width: calc(50% - 15px);
+    padding: 40px;
+    border-radius: 50px;
+    background-color: $beigegray;
     @include tablet() {
-      gap: 18px;
+      width: calc(50% - 9px);
     }
 
     @include phone() {
       align-items: center;
-      gap: 18px;
-      @include blockSize(360px, null, 50px 0 0 0);
+      min-width: 318px;
+      padding: 20px;
+      border-radius: 20px;
     }
 
-    .card {
+    &__text {
+      margin-bottom: 30px;
+      @include paragraph(700, 23px, 28px, $black);
+
+      @include phone() {
+        margin-bottom: 19px;
+      }
+    }
+
+    &-content {
       display: flex;
-      flex-flow: column wrap;
       justify-content: space-between;
-      max-width: 570px;
-      min-width: 360px;
-      width: calc(50% - 15px);
-      padding: 40px;
-      border-radius: 50px;
-      background-color: $beigegray;
+      min-width: 310px;
+      margin-top: 40px;
+
       @include tablet() {
-        width: calc(50% - 9px);
+        width: 100%;
+        height: initial;
       }
 
       @include phone() {
-        align-items: center;
-        min-width: 318px;
-        padding: 20px;
-        border-radius: 20px;
+        flex-wrap: nowrap;
+        min-width: 278px;
+        margin-top: 22px;
+      }
+
+      .user-info {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        white-space: nowrap;
+
+        @include phone() {
+          min-width: initial;
+        }
+      }
+
+      &__title {
+        @include content-title-font($black);
+
+        @include phone() {
+          margin-top: 15px;
+          @include font(700, 24px, 27px, $black);
+        }
       }
 
       &__text {
-        margin-bottom: 30px;
-        @include paragraph(700, 23px, 28px, $black);
-
-        @include phone() {
-          margin-bottom: 19px;
-        }
+        @include paragraph(400, 17px, 24px);
       }
-
-      &-content {
-        display: flex;
-        justify-content: space-between;
-        min-width: 310px;
-        margin-top: 40px;
-
-        @include tablet() {
-          width: 100%;
-          height: initial;
-        }
+      &__photo {
+        width: 75px;
+        height: 75px;
+        border-radius: 100px;
 
         @include phone() {
-          flex-wrap: nowrap;
-          min-width: 278px;
-          margin-top: 22px;
-        }
-
-        .user-info {
-          display: flex;
-          flex-flow: column nowrap;
-          justify-content: space-between;
-          white-space: nowrap;
-
-          @include phone() {
-            min-width: initial;
-          }
-        }
-
-        &__title {
-          @include content-title-font($black);
-
-          @include phone() {
-            margin-top: 15px;
-            @include font(700, 24px, 27px, $black);
-          }
-        }
-
-        &__text {
-          @include paragraph(400, 17px, 24px);
-        }
-        &__photo {
-          width: 75px;
           height: 75px;
-          border-radius: 100px;
-
-          @include phone() {
-            height: 75px;
-          }
         }
       }
     }

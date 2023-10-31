@@ -1,321 +1,319 @@
-.tour-build {
-  .grid-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    row-gap: 33px;
-    column-gap: 30px;
-    width: 100%;
-    padding: 70px;
-    margin-top: 100px;
-    border-radius: 50px;
-    background-color: $white;
-    @include paragraph($color: $black);
+.grid-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 33px;
+  column-gap: 30px;
+  width: 100%;
+  padding: 70px;
+  margin-top: 100px;
+  border-radius: 50px;
+  background-color: $white;
+  @include paragraph($color: $black);
 
-    @include tablet() {
-      column-gap: 20px;
-      padding: 60px;
+  @include tablet() {
+    column-gap: 20px;
+    padding: 60px;
+  }
+
+  @include phone() {
+    row-gap: 30px;
+    column-gap: 0;
+    margin-top: 40px;
+    padding: 20px 20px 40px;
+    border-radius: 30px;
+  }
+  &__label {
+    display: grid;
+    row-gap: 8px;
+  }
+  &__field {
+    @include phone() {
+      grid-column: 1/3;
     }
+  }
+
+  &__input,
+  &__select {
+    @include blockSize(100%, 100%, null);
+    height: 68px;
+    border: 1px solid $beigegray;
+    border-radius: 10px;
+    cursor: pointer;
+    text-indent: 20px;
+    background-color: $antiquewhite;
+
+    &::placeholder {
+      text-indent: 20px;
+      @include paragraph();
+
+      @include phone() {
+        text-indent: 8px;
+      }
+    }
+
+    &:focus {
+      border: 1px solid $light-gray;
+      outline: none;
+    }
+    @include phone() {
+      height: 43px;
+    }
+  }
+
+  &__select {
+    appearance: none;
+    background: url(./../img/main/icons/ic-dropdown.svg) no-repeat right;
+    background-color: $antiquewhite;
+    background-position-x: calc(100% - 20px);
+    color: $light-gray;
 
     @include phone() {
-      row-gap: 30px;
-      column-gap: 0;
-      margin-top: 40px;
-      padding: 20px 20px 40px;
-      border-radius: 30px;
-    }
-    &__label {
-      display: grid;
-      row-gap: 8px;
-    }
-    &__field {
-      @include phone() {
-        grid-column: 1/3;
-      }
-    }
-
-    &__input,
-    &__select {
-      @include blockSize(100%, 100%, null);
-      height: 68px;
-      border: 1px solid $beigegray;
-      border-radius: 10px;
-      cursor: pointer;
-      text-indent: 20px;
-      background-color: $antiquewhite;
-
-      &::placeholder {
-        text-indent: 20px;
-        @include paragraph();
-
-        @include phone() {
-          text-indent: 8px;
-        }
-      }
-
-      &:focus {
-        border: 1px solid $light-gray;
-        outline: none;
-      }
-      @include phone() {
-        height: 43px;
-      }
-    }
-
-    &__select {
-      appearance: none;
-      background: url(./../img/main/icons/ic-dropdown.svg) no-repeat right;
-      background-color: $antiquewhite;
-      background-position-x: calc(100% - 20px);
-      color: $light-gray;
-
-      @include phone() {
-        background-position-x: calc(100% - 9px);
-        text-indent: 10px;
-      }
-
-      &:valid {
-        color: $black;
-      }
-      &:focus {
-        border: 1px solid $light-gray;
-        outline: none;
-      }
-    }
-
-    #from-date,
-    #to-date {
+      background-position-x: calc(100% - 9px);
       text-indent: 10px;
+    }
+
+    &:valid {
       color: $black;
-      &:invalid {
-        text-transform: uppercase;
-        color: $light-gray;
-      }
-      &::-webkit-calendar-picker-indicator {
-        opacity: 0;
-      }
-      @include phone() {
-        text-indent: 5px;
-      }
+    }
+    &:focus {
+      border: 1px solid $light-gray;
+      outline: none;
+    }
+  }
+
+  #from-date,
+  #to-date {
+    text-indent: 10px;
+    color: $black;
+    &:invalid {
+      text-transform: uppercase;
+      color: $light-gray;
+    }
+    &::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+    @include phone() {
+      text-indent: 5px;
+    }
+  }
+
+  &--wide {
+    display: grid;
+    grid-column: 1 / 3;
+    row-gap: 8px;
+    width: 100%;
+  }
+
+  &__textarea {
+    display: flex;
+    @include blockSize(100%, 100%, null);
+    height: 152px;
+    padding: 10px;
+    border: 1px solid $beigegray;
+    border-radius: 10px;
+    resize: none;
+    text-indent: 10px;
+    background-color: $antiquewhite;
+    @include phone() {
+      height: 132px;
+      text-indent: 5px;
+    }
+    &:focus {
+      border: none;
+      outline: none;
+    }
+    &:focus {
+      border: 1px solid $light-gray;
+      outline: none;
+    }
+  }
+
+  &__age {
+    display: flex;
+    flex-direction: column;
+
+    @include phone() {
+      margin-top: 5px;
     }
 
-    &--wide {
-      display: grid;
-      grid-column: 1 / 3;
-      row-gap: 8px;
-      width: 100%;
-    }
-
-    &__textarea {
-      display: flex;
-      @include blockSize(100%, 100%, null);
-      height: 152px;
-      padding: 10px;
-      border: 1px solid $beigegray;
-      border-radius: 10px;
-      resize: none;
-      text-indent: 10px;
-      background-color: $antiquewhite;
-      @include phone() {
-        height: 132px;
-        text-indent: 5px;
-      }
-      &:focus {
-        border: none;
-        outline: none;
-      }
-      &:focus {
-        border: 1px solid $light-gray;
-        outline: none;
-      }
-    }
-
-    &__age {
-      display: flex;
-      flex-direction: column;
-
-      @include phone() {
-        margin-top: 5px;
-      }
-
-      &-btns {
-        display: flex;
-        justify-content: space-between;
-        width: 166px;
-
-        @include phone() {
-          align-items: end;
-          width: 139px;
-        }
-      }
-
-      &-input {
-        display: none;
-      }
-
-      &-label {
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
-
-        &::before {
-          content: "";
-          width: 26px;
-          height: 26px;
-          margin-right: 12px;
-          border: 2px solid $black;
-          border-radius: 50%;
-
-          @include phone() {
-            width: 20px;
-            height: 20px;
-          }
-        }
-      }
-
-      .grid-form__age-input:checked + .grid-form__age-label::before {
-        content: "●";
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 2px;
-        font-size: 30px;
-
-        @include phone() {
-          font-size: 20px;
-        }
-      }
-    }
-
-    &__license {
-      display: flex;
-      letter-spacing: -0.25px;
-      @include paragraph(400, 17px, 24px);
-
-      &-checkbox {
-        display: none;
-      }
-
-      &-label {
-        display: flex;
-
-        &::before {
-          content: "";
-          width: 25px;
-          height: 25px;
-          margin-right: 21px;
-          border: 2px solid $black;
-          border-radius: 5px;
-
-          @include tablet() {
-            margin-right: 12px;
-          }
-
-          @include phone() {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-          }
-        }
-      }
-
-      &-link {
-        @include transition(border-bottom);
-        text-decoration: none;
-        word-spacing: 3px;
-        color: $black;
-
-        &:hover {
-          border-bottom: 1px solid $black;
-          cursor: pointer;
-        }
-        &:active {
-          border-bottom: 1px solid $darkgreen;
-          color: $darkgreen;
-        }
-
-        @include phone() {
-          &:hover,
-          &:active {
-            border: none;
-            cursor: default;
-            color: $black;
-          }
-        }
-      }
-      .grid-form__license-checkbox:checked + .grid-form__license-label::before {
-        content: "✔";
-        text-align: center;
-        font-size: 18px;
-        color: $black;
-      }
-    }
-
-    &__confirm {
+    &-btns {
       display: flex;
       justify-content: space-between;
-      height: 58px;
+      width: 166px;
 
       @include phone() {
-        height: 47px;
+        align-items: end;
+        width: 139px;
       }
+    }
 
-      &-btns {
-        display: flex;
-        justify-content: space-between;
-        gap: 30px;
-        max-width: 500px;
-        width: 100%;
+    &-input {
+      display: none;
+    }
+
+    &-label {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        width: 26px;
+        height: 26px;
+        margin-right: 12px;
+        border: 2px solid $black;
+        border-radius: 50%;
 
         @include phone() {
-          gap: 10px;
+          width: 20px;
+          height: 20px;
         }
       }
+    }
 
-      &-submit,
-      &-reset {
-        width: 235px;
-        border: none;
-        border-radius: 10px;
+    .grid-form__age-input:checked + .grid-form__age-label::before {
+      content: "●";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 2px;
+      font-size: 30px;
+
+      @include phone() {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__license {
+    display: flex;
+    letter-spacing: -0.25px;
+    @include paragraph(400, 17px, 24px);
+
+    &-checkbox {
+      display: none;
+    }
+
+    &-label {
+      display: flex;
+
+      &::before {
+        content: "";
+        width: 25px;
+        height: 25px;
+        margin-right: 21px;
+        border: 2px solid $black;
+        border-radius: 5px;
+
+        @include tablet() {
+          margin-right: 12px;
+        }
+
+        @include phone() {
+          width: 20px;
+          height: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    &-link {
+      @include transition(border-bottom);
+      text-decoration: none;
+      word-spacing: 3px;
+      color: $black;
+
+      &:hover {
+        border-bottom: 1px solid $black;
         cursor: pointer;
-        @include transition(background-color);
-        @include paragraph($color: $white);
-        background-color: $darkgreen;
       }
-
-      &-submit {
-        &:hover {
-          background-color: $teal;
-
-          @include phone() {
-            background-color: $darkgreen;
-          }
-        }
-        &:active {
-          background-color: $steelteal;
-
-          @include phone() {
-            background-color: $darkgreen;
-          }
-        }
-      }
-
-      &-reset {
-        background-color: $mintcream;
+      &:active {
+        border-bottom: 1px solid $darkgreen;
         color: $darkgreen;
-        &:hover {
-          background-color: $whitesmoke;
+      }
 
-          @include phone() {
-            background-color: $mintcream;
-          }
-        }
+      @include phone() {
+        &:hover,
         &:active {
-          background-color: $timberwolf;
+          border: none;
+          cursor: default;
+          color: $black;
+        }
+      }
+    }
+    .grid-form__license-checkbox:checked + .grid-form__license-label::before {
+      content: "✔";
+      text-align: center;
+      font-size: 18px;
+      color: $black;
+    }
+  }
 
-          @include phone() {
-            background-color: $mintcream;
-          }
+  &__confirm {
+    display: flex;
+    justify-content: space-between;
+    height: 58px;
+
+    @include phone() {
+      height: 47px;
+    }
+
+    &-btns {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      max-width: 500px;
+      width: 100%;
+
+      @include phone() {
+        gap: 10px;
+      }
+    }
+
+    &-submit,
+    &-reset {
+      width: 235px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      @include transition(background-color);
+      @include paragraph($color: $white);
+      background-color: $darkgreen;
+    }
+
+    &-submit {
+      &:hover {
+        background-color: $teal;
+
+        @include phone() {
+          background-color: $darkgreen;
+        }
+      }
+      &:active {
+        background-color: $steelteal;
+
+        @include phone() {
+          background-color: $darkgreen;
+        }
+      }
+    }
+
+    &-reset {
+      background-color: $mintcream;
+      color: $darkgreen;
+      &:hover {
+        background-color: $whitesmoke;
+
+        @include phone() {
+          background-color: $mintcream;
+        }
+      }
+      &:active {
+        background-color: $timberwolf;
+
+        @include phone() {
+          background-color: $mintcream;
         }
       }
     }
