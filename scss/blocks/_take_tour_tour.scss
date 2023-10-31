@@ -43,17 +43,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 18px;
     margin: 100px 0 0 0;
 
+    @include desktop() {
+      justify-content: space-between;
+      gap: 30px;
+    }
+
     @include tablet() {
-      gap: 18px;
       min-width: initial;
     }
 
     @include phone() {
-      justify-content: center;
-      gap: 18px;
       @include blockSize(100%, 100%, 50px auto 0);
     }
 
