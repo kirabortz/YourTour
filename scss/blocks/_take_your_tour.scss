@@ -64,9 +64,7 @@
     border-radius: 50px;
 
     @include tablet() {
-      width: 100%;
       width: calc(50% - 9px);
-      min-width: 318px;
       max-width: 450px;
       min-width: 318px;
     }
@@ -81,8 +79,7 @@
       .card__img {
         transform: scale(1.2);
       }
-    }
-    &:hover {
+
       .card-content__btn {
         background-color: $darkgreen;
 
@@ -90,6 +87,7 @@
           background-color: transparent;
         }
       }
+
       .card-content__btn:active {
         background-color: $gold;
 

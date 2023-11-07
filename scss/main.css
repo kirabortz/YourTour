@@ -451,9 +451,7 @@ body {
 }
 @media (min-width: 551px) and (max-width: 1024px) {
   .tour-cards .card {
-    width: 100%;
     width: calc(50% - 9px);
-    min-width: 318px;
     max-width: 450px;
     min-width: 318px;
   }
@@ -618,7 +616,7 @@ body {
   }
 }
 
-.tour-build .grid-form {
+.grid-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -636,21 +634,21 @@ body {
   color: #1b1f2b;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form {
+  .grid-form {
     font-size: 16px;
     line-height: 23px;
     color: #1b1f2b;
   }
 }
 @media (min-width: 551px) and (max-width: 1024px) {
-  .tour-build .grid-form {
+  .grid-form {
     -moz-column-gap: 20px;
          column-gap: 20px;
     padding: 60px;
   }
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form {
+  .grid-form {
     row-gap: 30px;
     -moz-column-gap: 0;
          column-gap: 0;
@@ -659,16 +657,16 @@ body {
     border-radius: 30px;
   }
 }
-.tour-build .grid-form__label {
+.grid-form__label {
   display: grid;
   row-gap: 8px;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__field {
+  .grid-form__field {
     grid-column: 1/3;
   }
 }
-.tour-build .grid-form__input, .tour-build .grid-form__select {
+.grid-form__input, .grid-form__select {
   width: 100%;
   max-width: 100%;
   height: 68px;
@@ -678,14 +676,14 @@ body {
   text-indent: 20px;
   background-color: #f9f7f4;
 }
-.tour-build .grid-form__input::-moz-placeholder, .tour-build .grid-form__select::-moz-placeholder {
+.grid-form__input::-moz-placeholder, .grid-form__select::-moz-placeholder {
   text-indent: 20px;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
   color: #a6a6a6;
 }
-.tour-build .grid-form__input::placeholder, .tour-build .grid-form__select::placeholder {
+.grid-form__input::placeholder, .grid-form__select::placeholder {
   text-indent: 20px;
   font-weight: 400;
   font-size: 20px;
@@ -693,35 +691,35 @@ body {
   color: #a6a6a6;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__input::-moz-placeholder, .tour-build .grid-form__select::-moz-placeholder {
+  .grid-form__input::-moz-placeholder, .grid-form__select::-moz-placeholder {
     font-size: 16px;
     line-height: 23px;
     color: #a6a6a6;
   }
-  .tour-build .grid-form__input::placeholder, .tour-build .grid-form__select::placeholder {
+  .grid-form__input::placeholder, .grid-form__select::placeholder {
     font-size: 16px;
     line-height: 23px;
     color: #a6a6a6;
   }
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__input::-moz-placeholder, .tour-build .grid-form__select::-moz-placeholder {
+  .grid-form__input::-moz-placeholder, .grid-form__select::-moz-placeholder {
     text-indent: 8px;
   }
-  .tour-build .grid-form__input::placeholder, .tour-build .grid-form__select::placeholder {
+  .grid-form__input::placeholder, .grid-form__select::placeholder {
     text-indent: 8px;
   }
 }
-.tour-build .grid-form__input:focus, .tour-build .grid-form__select:focus {
+.grid-form__input:focus, .grid-form__select:focus {
   border: 1px solid #a6a6a6;
   outline: none;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__input, .tour-build .grid-form__select {
+  .grid-form__input, .grid-form__select {
     height: 43px;
   }
 }
-.tour-build .grid-form__select {
+.grid-form__select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -731,45 +729,45 @@ body {
   color: #a6a6a6;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__select {
+  .grid-form__select {
     background-position-x: calc(100% - 9px);
     text-indent: 10px;
   }
 }
-.tour-build .grid-form__select:valid {
+.grid-form__select:valid {
   color: #1b1f2b;
 }
-.tour-build .grid-form__select:focus {
+.grid-form__select:focus {
   border: 1px solid #a6a6a6;
   outline: none;
 }
-.tour-build .grid-form #from-date,
-.tour-build .grid-form #to-date {
+.grid-form #from-date,
+.grid-form #to-date {
   text-indent: 10px;
   color: #1b1f2b;
 }
-.tour-build .grid-form #from-date:invalid,
-.tour-build .grid-form #to-date:invalid {
+.grid-form #from-date:invalid,
+.grid-form #to-date:invalid {
   text-transform: uppercase;
   color: #a6a6a6;
 }
-.tour-build .grid-form #from-date::-webkit-calendar-picker-indicator,
-.tour-build .grid-form #to-date::-webkit-calendar-picker-indicator {
+.grid-form #from-date::-webkit-calendar-picker-indicator,
+.grid-form #to-date::-webkit-calendar-picker-indicator {
   opacity: 0;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form #from-date,
-  .tour-build .grid-form #to-date {
+  .grid-form #from-date,
+  .grid-form #to-date {
     text-indent: 5px;
   }
 }
-.tour-build .grid-form--wide {
+.grid-form--wide {
   display: grid;
   grid-column: 1/3;
   row-gap: 8px;
   width: 100%;
 }
-.tour-build .grid-form__textarea {
+.grid-form__textarea {
   display: flex;
   width: 100%;
   max-width: 100%;
@@ -782,48 +780,48 @@ body {
   background-color: #f9f7f4;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__textarea {
+  .grid-form__textarea {
     height: 132px;
     text-indent: 5px;
   }
 }
-.tour-build .grid-form__textarea:focus {
+.grid-form__textarea:focus {
   border: none;
   outline: none;
 }
-.tour-build .grid-form__textarea:focus {
+.grid-form__textarea:focus {
   border: 1px solid #a6a6a6;
   outline: none;
 }
-.tour-build .grid-form__age {
+.grid-form__age {
   display: flex;
   flex-direction: column;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__age {
+  .grid-form__age {
     margin-top: 5px;
   }
 }
-.tour-build .grid-form__age-btns {
+.grid-form__age-btns {
   display: flex;
   justify-content: space-between;
   width: 166px;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__age-btns {
+  .grid-form__age-btns {
     align-items: end;
     width: 139px;
   }
 }
-.tour-build .grid-form__age-input {
+.grid-form__age-input {
   display: none;
 }
-.tour-build .grid-form__age-label {
+.grid-form__age-label {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
 }
-.tour-build .grid-form__age-label::before {
+.grid-form__age-label::before {
   content: "";
   width: 26px;
   height: 26px;
@@ -832,12 +830,12 @@ body {
   border-radius: 50%;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__age-label::before {
+  .grid-form__age-label::before {
     width: 20px;
     height: 20px;
   }
 }
-.tour-build .grid-form__age .grid-form__age-input:checked + .grid-form__age-label::before {
+.grid-form__age .grid-form__age-input:checked + .grid-form__age-label::before {
   content: "●";
   display: flex;
   align-items: center;
@@ -846,11 +844,11 @@ body {
   font-size: 30px;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__age .grid-form__age-input:checked + .grid-form__age-label::before {
+  .grid-form__age .grid-form__age-input:checked + .grid-form__age-label::before {
     font-size: 20px;
   }
 }
-.tour-build .grid-form__license {
+.grid-form__license {
   display: flex;
   letter-spacing: -0.25px;
   font-weight: 400;
@@ -859,19 +857,19 @@ body {
   color: #a6a6a6;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__license {
+  .grid-form__license {
     font-size: 16px;
     line-height: 23px;
     color: #a6a6a6;
   }
 }
-.tour-build .grid-form__license-checkbox {
+.grid-form__license-checkbox {
   display: none;
 }
-.tour-build .grid-form__license-label {
+.grid-form__license-label {
   display: flex;
 }
-.tour-build .grid-form__license-label::before {
+.grid-form__license-label::before {
   content: "";
   width: 25px;
   height: 25px;
@@ -880,55 +878,55 @@ body {
   border-radius: 5px;
 }
 @media (min-width: 551px) and (max-width: 1024px) {
-  .tour-build .grid-form__license-label::before {
+  .grid-form__license-label::before {
     margin-right: 12px;
   }
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__license-label::before {
+  .grid-form__license-label::before {
     width: 20px;
     height: 20px;
     margin-right: 10px;
   }
 }
-.tour-build .grid-form__license-link {
+.grid-form__license-link {
   transition: border-bottom 0.3s ease;
   text-decoration: none;
   word-spacing: 3px;
   color: #1b1f2b;
 }
-.tour-build .grid-form__license-link:hover {
+.grid-form__license-link:hover {
   border-bottom: 1px solid #1b1f2b;
   cursor: pointer;
 }
-.tour-build .grid-form__license-link:active {
+.grid-form__license-link:active {
   border-bottom: 1px solid #286562;
   color: #286562;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__license-link:hover, .tour-build .grid-form__license-link:active {
+  .grid-form__license-link:hover, .grid-form__license-link:active {
     border: none;
     cursor: default;
     color: #1b1f2b;
   }
 }
-.tour-build .grid-form__license .grid-form__license-checkbox:checked + .grid-form__license-label::before {
+.grid-form__license .grid-form__license-checkbox:checked + .grid-form__license-label::before {
   content: "✔";
   text-align: center;
   font-size: 18px;
   color: #1b1f2b;
 }
-.tour-build .grid-form__confirm {
+.grid-form__confirm {
   display: flex;
   justify-content: space-between;
   height: 58px;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__confirm {
+  .grid-form__confirm {
     height: 47px;
   }
 }
-.tour-build .grid-form__confirm-btns {
+.grid-form__confirm-btns {
   display: flex;
   justify-content: space-between;
   gap: 30px;
@@ -936,11 +934,11 @@ body {
   width: 100%;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__confirm-btns {
+  .grid-form__confirm-btns {
     gap: 10px;
   }
 }
-.tour-build .grid-form__confirm-submit, .tour-build .grid-form__confirm-reset {
+.grid-form__confirm-submit, .grid-form__confirm-reset {
   width: 235px;
   border: none;
   border-radius: 10px;
@@ -953,45 +951,45 @@ body {
   background-color: #286562;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__confirm-submit, .tour-build .grid-form__confirm-reset {
+  .grid-form__confirm-submit, .grid-form__confirm-reset {
     font-size: 16px;
     line-height: 23px;
     color: #ffffff;
   }
 }
-.tour-build .grid-form__confirm-submit:hover {
+.grid-form__confirm-submit:hover {
   background-color: #3b7e7b;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__confirm-submit:hover {
+  .grid-form__confirm-submit:hover {
     background-color: #286562;
   }
 }
-.tour-build .grid-form__confirm-submit:active {
+.grid-form__confirm-submit:active {
   background-color: #627f7e;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__confirm-submit:active {
+  .grid-form__confirm-submit:active {
     background-color: #286562;
   }
 }
-.tour-build .grid-form__confirm-reset {
+.grid-form__confirm-reset {
   background-color: #e0f0e5;
   color: #286562;
 }
-.tour-build .grid-form__confirm-reset:hover {
+.grid-form__confirm-reset:hover {
   background-color: #f1f3f2;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__confirm-reset:hover {
+  .grid-form__confirm-reset:hover {
     background-color: #e0f0e5;
   }
 }
-.tour-build .grid-form__confirm-reset:active {
+.grid-form__confirm-reset:active {
   background-color: #d9dfdb;
 }
 @media (max-width: 550px) {
-  .tour-build .grid-form__confirm-reset:active {
+  .grid-form__confirm-reset:active {
     background-color: #e0f0e5;
   }
 }
